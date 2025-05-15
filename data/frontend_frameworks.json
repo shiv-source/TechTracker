@@ -5,14 +5,14 @@
     "full_name": "facebook/react",
     "html_url": "https://github.com/facebook/react",
     "description": "The library for web and native user interfaces.",
-    "stargazers_count": 235384,
-    "forks_count": 48471,
-    "watchers_count": 235384,
-    "subscribers_count": 6735,
-    "open_issues_count": 1042,
+    "stargazers_count": 235427,
+    "forks_count": 48484,
+    "watchers_count": 235427,
+    "subscribers_count": 6734,
+    "open_issues_count": 1048,
     "language": "JavaScript",
-    "updated_at": "2025-05-14T02:35:38Z",
-    "score": 0.87938
+    "updated_at": "2025-05-15T02:56:03Z",
+    "score": 0.87973
   },
   {
     "id": 2126244,
@@ -20,14 +20,14 @@
     "full_name": "twbs/bootstrap",
     "html_url": "https://github.com/twbs/bootstrap",
     "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
-    "stargazers_count": 172306,
-    "forks_count": 79087,
-    "watchers_count": 172306,
+    "stargazers_count": 172302,
+    "forks_count": 79086,
+    "watchers_count": 172302,
     "subscribers_count": 6708,
-    "open_issues_count": 536,
+    "open_issues_count": 537,
     "language": "MDX",
-    "updated_at": "2025-05-14T02:36:16Z",
-    "score": 0.7865
+    "updated_at": "2025-05-15T02:09:22Z",
+    "score": 0.78675
   },
   {
     "id": 11730342,
@@ -35,14 +35,14 @@
     "full_name": "vuejs/vue",
     "html_url": "https://github.com/vuejs/vue",
     "description": "This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core",
-    "stargazers_count": 208853,
+    "stargazers_count": 208861,
     "forks_count": 33748,
-    "watchers_count": 208853,
+    "watchers_count": 208861,
     "subscribers_count": 5836,
     "open_issues_count": 602,
     "language": "TypeScript",
-    "updated_at": "2025-05-14T02:58:06Z",
-    "score": 0.7257
+    "updated_at": "2025-05-15T02:02:58Z",
+    "score": 0.7263
   },
   {
     "id": 24195339,
@@ -50,14 +50,14 @@
     "full_name": "angular/angular",
     "html_url": "https://github.com/angular/angular",
     "description": "Deliver web apps with confidence 🚀",
-    "stargazers_count": 97715,
-    "forks_count": 26193,
-    "watchers_count": 97715,
+    "stargazers_count": 97731,
+    "forks_count": 26196,
+    "watchers_count": 97731,
     "subscribers_count": 3003,
-    "open_issues_count": 1596,
+    "open_issues_count": 1599,
     "language": "TypeScript",
-    "updated_at": "2025-05-14T02:54:53Z",
-    "score": 0.37255
+    "updated_at": "2025-05-15T03:01:28Z",
+    "score": 0.37423
   },
   {
     "id": 167174,
@@ -68,11 +68,11 @@
     "stargazers_count": 59513,
     "forks_count": 20609,
     "watchers_count": 59513,
-    "subscribers_count": 3158,
+    "subscribers_count": 3159,
     "open_issues_count": 91,
     "language": "JavaScript",
-    "updated_at": "2025-05-13T12:32:32Z",
-    "score": 0.19882
+    "updated_at": "2025-05-14T21:36:04Z",
+    "score": 0.20086
   },
   {
     "id": 74293321,
@@ -80,14 +80,29 @@
     "full_name": "sveltejs/svelte",
     "html_url": "https://github.com/sveltejs/svelte",
     "description": "web development for the rest of us",
-    "stargazers_count": 82630,
-    "forks_count": 4514,
-    "watchers_count": 82630,
+    "stargazers_count": 82641,
+    "forks_count": 4515,
+    "watchers_count": 82641,
     "subscribers_count": 853,
-    "open_issues_count": 818,
+    "open_issues_count": 812,
     "language": "JavaScript",
-    "updated_at": "2025-05-14T01:23:51Z",
-    "score": 0.19566
+    "updated_at": "2025-05-15T02:03:18Z",
+    "score": 0.19826
+  },
+  {
+    "id": 106017343,
+    "name": "tailwindcss",
+    "full_name": "tailwindlabs/tailwindcss",
+    "html_url": "https://github.com/tailwindlabs/tailwindcss",
+    "description": "A utility-first CSS framework for rapid UI development.",
+    "stargazers_count": 87761,
+    "forks_count": 4520,
+    "watchers_count": 87761,
+    "subscribers_count": 625,
+    "open_issues_count": 77,
+    "language": "TypeScript",
+    "updated_at": "2025-05-15T02:49:16Z",
+    "score": 0.18483
   },
   {
     "id": 3678731,
@@ -96,13 +111,13 @@
     "html_url": "https://github.com/webpack/webpack",
     "description": "A bundler for javascript and friends. Packs many modules into a few bundled assets. Code Splitting allows for loading parts of the application on demand. Through \"loaders\", modules can be CommonJs, AMD, ES6 modules, CSS, Images, JSON, Coffeescript, LESS, ... and your custom stuff.",
     "stargazers_count": 65278,
-    "forks_count": 9080,
+    "forks_count": 9081,
     "watchers_count": 65278,
-    "subscribers_count": 1450,
-    "open_issues_count": 246,
+    "subscribers_count": 1451,
+    "open_issues_count": 241,
     "language": "JavaScript",
-    "updated_at": "2025-05-13T16:29:36Z",
-    "score": 0.15302
+    "updated_at": "2025-05-15T02:08:47Z",
+    "score": 0.15559
   },
   {
     "id": 71995937,
@@ -110,14 +125,14 @@
     "full_name": "nuxt/nuxt",
     "html_url": "https://github.com/nuxt/nuxt",
     "description": "The Intuitive Vue Framework.",
-    "stargazers_count": 57029,
+    "stargazers_count": 57037,
     "forks_count": 5246,
-    "watchers_count": 57029,
+    "watchers_count": 57037,
     "subscribers_count": 786,
-    "open_issues_count": 878,
+    "open_issues_count": 884,
     "language": "TypeScript",
-    "updated_at": "2025-05-14T03:11:17Z",
-    "score": 0.1268
+    "updated_at": "2025-05-15T02:29:38Z",
+    "score": 0.1298
   },
   {
     "id": 1801829,
@@ -125,13 +140,13 @@
     "full_name": "emberjs/ember.js",
     "html_url": "https://github.com/emberjs/ember.js",
     "description": "Ember.js - A JavaScript framework for creating ambitious web applications",
-    "stargazers_count": 22563,
+    "stargazers_count": 22564,
     "forks_count": 4203,
-    "watchers_count": 22563,
+    "watchers_count": 22564,
     "subscribers_count": 836,
     "open_issues_count": 380,
     "language": "JavaScript",
-    "updated_at": "2025-05-13T23:31:36Z",
-    "score": 0.01044
+    "updated_at": "2025-05-14T21:48:12Z",
+    "score": 0.01341
   }
 ]
