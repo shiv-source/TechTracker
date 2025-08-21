@@ -5,14 +5,14 @@
     "full_name": "flutter/flutter",
     "html_url": "https://github.com/flutter/flutter",
     "description": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
-    "stargazers_count": 171956,
-    "forks_count": 29035,
-    "watchers_count": 171956,
-    "subscribers_count": 3484,
-    "open_issues_count": 12112,
+    "stargazers_count": 171982,
+    "forks_count": 29043,
+    "watchers_count": 171982,
+    "subscribers_count": 3482,
+    "open_issues_count": 12133,
     "language": "Dart",
-    "updated_at": "2025-08-20T03:08:50Z",
-    "score": 0.99751
+    "updated_at": "2025-08-21T03:02:40Z",
+    "score": 0.99739
   },
   {
     "id": 29028775,
@@ -20,14 +20,14 @@
     "full_name": "facebook/react-native",
     "html_url": "https://github.com/facebook/react-native",
     "description": "A framework for building native applications using React",
-    "stargazers_count": 123477,
-    "forks_count": 24819,
-    "watchers_count": 123477,
-    "subscribers_count": 3572,
-    "open_issues_count": 1076,
+    "stargazers_count": 123490,
+    "forks_count": 24823,
+    "watchers_count": 123490,
+    "subscribers_count": 3571,
+    "open_issues_count": 1065,
     "language": "C++",
-    "updated_at": "2025-08-20T02:09:59Z",
-    "score": 0.74805
+    "updated_at": "2025-08-21T02:57:40Z",
+    "score": 0.73184
   },
   {
     "id": 12256376,
@@ -39,10 +39,10 @@
     "forks_count": 13441,
     "watchers_count": 51994,
     "subscribers_count": 1579,
-    "open_issues_count": 595,
+    "open_issues_count": 599,
     "language": "TypeScript",
-    "updated_at": "2025-08-19T23:42:23Z",
-    "score": 0.34109
+    "updated_at": "2025-08-20T20:19:20Z",
+    "score": 0.29841
   },
   {
     "id": 262395224,
@@ -50,14 +50,14 @@
     "full_name": "dotnet/maui",
     "html_url": "https://github.com/dotnet/maui",
     "description": ".NET MAUI is the .NET Multi-platform App UI, a framework for building native device applications spanning mobile, tablet, and desktop.",
-    "stargazers_count": 22926,
-    "forks_count": 1873,
-    "watchers_count": 22926,
+    "stargazers_count": 22933,
+    "forks_count": 1874,
+    "watchers_count": 22933,
     "subscribers_count": 630,
-    "open_issues_count": 4389,
+    "open_issues_count": 4367,
     "language": "C#",
-    "updated_at": "2025-08-19T15:29:53Z",
-    "score": 0.12832
+    "updated_at": "2025-08-21T01:54:33Z",
+    "score": 0.0727
   },
   {
     "id": 31492490,
@@ -65,14 +65,14 @@
     "full_name": "NativeScript/NativeScript",
     "html_url": "https://github.com/NativeScript/NativeScript",
     "description": "⚡ Empowering JavaScript with native platform APIs. ✨ Best of all worlds (TypeScript, Swift, Objective C, Kotlin, Java, Dart). Use what you love ❤️ Angular, React, Solid, Svelte, Vue with: iOS (UIKit, SwiftUI), Android (View, Jetpack Compose), Dart (Flutter) and you name it compatible.",
-    "stargazers_count": 24978,
+    "stargazers_count": 24977,
     "forks_count": 1675,
-    "watchers_count": 24978,
+    "watchers_count": 24977,
     "subscribers_count": 651,
     "open_issues_count": 922,
     "language": "TypeScript",
-    "updated_at": "2025-08-20T01:32:47Z",
-    "score": 0.12002
+    "updated_at": "2025-08-21T01:54:09Z",
+    "score": 0.06482
   },
   {
     "id": 111241370,
@@ -80,28 +80,13 @@
     "full_name": "ionic-team/capacitor",
     "html_url": "https://github.com/ionic-team/capacitor",
     "description": "Build cross-platform Native Progressive Web Apps for iOS, Android, and the Web ⚡️",
-    "stargazers_count": 13787,
+    "stargazers_count": 13794,
     "forks_count": 1084,
-    "watchers_count": 13787,
+    "watchers_count": 13794,
     "subscribers_count": 167,
     "open_issues_count": 232,
     "language": "TypeScript",
-    "updated_at": "2025-08-19T20:25:04Z",
-    "score": 0.05917
-  },
-  {
-    "id": 121366401,
-    "name": "cordova",
-    "full_name": "apache/cordova",
-    "html_url": "https://github.com/apache/cordova",
-    "description": "Apache Cordova",
-    "stargazers_count": 671,
-    "forks_count": 69,
-    "watchers_count": 671,
-    "subscribers_count": 36,
-    "open_issues_count": 49,
-    "language": "",
-    "updated_at": "2025-08-19T03:23:31Z",
+    "updated_at": "2025-08-21T02:20:17Z",
     "score": 0
   }
 ]
