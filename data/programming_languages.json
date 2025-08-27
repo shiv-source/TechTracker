@@ -5,14 +5,14 @@
     "full_name": "nodejs/node",
     "html_url": "https://github.com/nodejs/node",
     "description": "Node.js JavaScript runtime ✨🐢🚀✨",
-    "stargazers_count": 112946,
-    "forks_count": 32783,
-    "watchers_count": 112946,
+    "stargazers_count": 112958,
+    "forks_count": 32803,
+    "watchers_count": 112958,
     "subscribers_count": 2969,
-    "open_issues_count": 2352,
+    "open_issues_count": 2358,
     "language": "JavaScript",
-    "updated_at": "2025-08-26T02:46:09Z",
-    "score": 0.96027
+    "updated_at": "2025-08-27T02:25:36Z",
+    "score": 0.96031
   },
   {
     "id": 724712,
@@ -20,14 +20,14 @@
     "full_name": "rust-lang/rust",
     "html_url": "https://github.com/rust-lang/rust",
     "description": "Empowering everyone to build reliable and efficient software.",
-    "stargazers_count": 106022,
-    "forks_count": 13677,
-    "watchers_count": 106022,
-    "subscribers_count": 1472,
-    "open_issues_count": 11448,
+    "stargazers_count": 106041,
+    "forks_count": 13678,
+    "watchers_count": 106041,
+    "subscribers_count": 1471,
+    "open_issues_count": 11435,
     "language": "Rust",
-    "updated_at": "2025-08-26T02:14:45Z",
-    "score": 0.76707
+    "updated_at": "2025-08-27T02:07:38Z",
+    "score": 0.76703
   },
   {
     "id": 20929025,
@@ -35,14 +35,14 @@
     "full_name": "microsoft/TypeScript",
     "html_url": "https://github.com/microsoft/TypeScript",
     "description": "TypeScript is a superset of JavaScript that compiles to clean JavaScript output.",
-    "stargazers_count": 105716,
-    "forks_count": 12973,
-    "watchers_count": 105716,
-    "subscribers_count": 2156,
-    "open_issues_count": 6056,
+    "stargazers_count": 105733,
+    "forks_count": 12976,
+    "watchers_count": 105733,
+    "subscribers_count": 2157,
+    "open_issues_count": 6060,
     "language": "TypeScript",
-    "updated_at": "2025-08-26T02:46:37Z",
-    "score": 0.75958
+    "updated_at": "2025-08-27T02:14:30Z",
+    "score": 0.75965
   },
   {
     "id": 81598961,
@@ -50,14 +50,14 @@
     "full_name": "python/cpython",
     "html_url": "https://github.com/python/cpython",
     "description": "The Python programming language",
-    "stargazers_count": 68532,
-    "forks_count": 32677,
-    "watchers_count": 68532,
-    "subscribers_count": 1527,
-    "open_issues_count": 9297,
+    "stargazers_count": 68544,
+    "forks_count": 32687,
+    "watchers_count": 68544,
+    "subscribers_count": 1528,
+    "open_issues_count": 9291,
     "language": "Python",
-    "updated_at": "2025-08-26T02:50:39Z",
-    "score": 0.70527
+    "updated_at": "2025-08-27T00:39:05Z",
+    "score": 0.70528
   },
   {
     "id": 44838949,
@@ -65,14 +65,29 @@
     "full_name": "swiftlang/swift",
     "html_url": "https://github.com/swiftlang/swift",
     "description": "The Swift Programming Language",
-    "stargazers_count": 68986,
-    "forks_count": 10519,
-    "watchers_count": 68986,
+    "stargazers_count": 68987,
+    "forks_count": 10520,
+    "watchers_count": 68987,
     "subscribers_count": 2437,
-    "open_issues_count": 8485,
+    "open_issues_count": 8499,
     "language": "C++",
-    "updated_at": "2025-08-26T03:02:32Z",
-    "score": 0.56582
+    "updated_at": "2025-08-27T01:33:49Z",
+    "score": 0.56585
+  },
+  {
+    "id": 3432266,
+    "name": "kotlin",
+    "full_name": "JetBrains/kotlin",
+    "html_url": "https://github.com/JetBrains/kotlin",
+    "description": "The Kotlin Programming Language. ",
+    "stargazers_count": 51157,
+    "forks_count": 5995,
+    "watchers_count": 51157,
+    "subscribers_count": 1525,
+    "open_issues_count": 192,
+    "language": "Kotlin",
+    "updated_at": "2025-08-26T21:41:23Z",
+    "score": 0.3696
   },
   {
     "id": 1903522,
@@ -80,14 +95,14 @@
     "full_name": "php/php-src",
     "html_url": "https://github.com/php/php-src",
     "description": "The PHP Interpreter",
-    "stargazers_count": 39396,
+    "stargazers_count": 39397,
     "forks_count": 7938,
-    "watchers_count": 39396,
+    "watchers_count": 39397,
     "subscribers_count": 1369,
-    "open_issues_count": 1520,
+    "open_issues_count": 1516,
     "language": "C",
-    "updated_at": "2025-08-25T23:01:54Z",
-    "score": 0.32254
+    "updated_at": "2025-08-26T21:49:30Z",
+    "score": 0.32248
   },
   {
     "id": 538746,
@@ -95,14 +110,14 @@
     "full_name": "ruby/ruby",
     "html_url": "https://github.com/ruby/ruby",
     "description": "The Ruby Programming Language",
-    "stargazers_count": 22873,
+    "stargazers_count": 22872,
     "forks_count": 5457,
-    "watchers_count": 22873,
+    "watchers_count": 22872,
     "subscribers_count": 1087,
-    "open_issues_count": 470,
+    "open_issues_count": 471,
     "language": "Ruby",
-    "updated_at": "2025-08-26T02:12:43Z",
-    "score": 0.20176
+    "updated_at": "2025-08-27T03:03:03Z",
+    "score": 0.20172
   },
   {
     "id": 149121954,
@@ -110,14 +125,14 @@
     "full_name": "openjdk/jdk",
     "html_url": "https://github.com/openjdk/jdk",
     "description": "JDK main-line development https://openjdk.org/projects/jdk",
-    "stargazers_count": 21568,
-    "forks_count": 6190,
-    "watchers_count": 21568,
+    "stargazers_count": 21576,
+    "forks_count": 6192,
+    "watchers_count": 21576,
     "subscribers_count": 357,
-    "open_issues_count": 398,
+    "open_issues_count": 388,
     "language": "Java",
-    "updated_at": "2025-08-26T02:53:52Z",
-    "score": 0.17551
+    "updated_at": "2025-08-27T02:54:14Z",
+    "score": 0.17548
   },
   {
     "id": 35726310,
@@ -125,14 +140,14 @@
     "full_name": "dart-lang/sdk",
     "html_url": "https://github.com/dart-lang/sdk",
     "description": "The Dart SDK, including the VM, JS and Wasm compilers, analysis, core libraries, and more.",
-    "stargazers_count": 10754,
+    "stargazers_count": 10755,
     "forks_count": 1679,
-    "watchers_count": 10754,
+    "watchers_count": 10755,
     "subscribers_count": 288,
-    "open_issues_count": 8249,
+    "open_issues_count": 8252,
     "language": "Dart",
-    "updated_at": "2025-08-26T01:33:57Z",
-    "score": 0.11562
+    "updated_at": "2025-08-27T02:03:31Z",
+    "score": 0.11567
   },
   {
     "id": 4072305,
@@ -146,8 +161,8 @@
     "subscribers_count": 203,
     "open_issues_count": 336,
     "language": "Haskell",
-    "updated_at": "2025-08-25T13:57:03Z",
-    "score": 0.05411
+    "updated_at": "2025-08-26T18:27:09Z",
+    "score": 0.0541
   },
   {
     "id": 8183570,
@@ -159,10 +174,10 @@
     "forks_count": 589,
     "watchers_count": 2155,
     "subscribers_count": 23,
-    "open_issues_count": 2388,
+    "open_issues_count": 2383,
     "language": "Perl",
-    "updated_at": "2025-08-26T03:02:58Z",
-    "score": 0.0271
+    "updated_at": "2025-08-26T19:29:05Z",
+    "score": 0.02709
   },
   {
     "id": 19646830,
