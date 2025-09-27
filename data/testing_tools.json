@@ -5,14 +5,14 @@
     "full_name": "puppeteer/puppeteer",
     "html_url": "https://github.com/puppeteer/puppeteer",
     "description": "JavaScript API for Chrome and Firefox",
-    "stargazers_count": 92437,
-    "forks_count": 9291,
-    "watchers_count": 92437,
+    "stargazers_count": 92451,
+    "forks_count": 9293,
+    "watchers_count": 92451,
     "subscribers_count": 1187,
-    "open_issues_count": 281,
+    "open_issues_count": 279,
     "language": "TypeScript",
-    "updated_at": "2025-09-26T03:00:01Z",
-    "score": 0.95327
+    "updated_at": "2025-09-27T02:42:58Z",
+    "score": 0.95323
   },
   {
     "id": 221981891,
@@ -20,14 +20,14 @@
     "full_name": "microsoft/playwright",
     "html_url": "https://github.com/microsoft/playwright",
     "description": "Playwright is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API. ",
-    "stargazers_count": 77497,
-    "forks_count": 4609,
-    "watchers_count": 77497,
+    "stargazers_count": 77535,
+    "forks_count": 4616,
+    "watchers_count": 77535,
     "subscribers_count": 538,
-    "open_issues_count": 522,
+    "open_issues_count": 528,
     "language": "TypeScript",
-    "updated_at": "2025-09-26T03:00:14Z",
-    "score": 0.68082
+    "updated_at": "2025-09-27T02:47:53Z",
+    "score": 0.68143
   },
   {
     "id": 7613257,
@@ -35,29 +35,14 @@
     "full_name": "SeleniumHQ/selenium",
     "html_url": "https://github.com/SeleniumHQ/selenium",
     "description": "A browser automation framework and ecosystem.",
-    "stargazers_count": 33291,
+    "stargazers_count": 33298,
     "forks_count": 8592,
-    "watchers_count": 33291,
+    "watchers_count": 33298,
     "subscribers_count": 1272,
-    "open_issues_count": 264,
+    "open_issues_count": 263,
     "language": "Java",
-    "updated_at": "2025-09-26T02:35:25Z",
-    "score": 0.54718
-  },
-  {
-    "id": 15062869,
-    "name": "jest",
-    "full_name": "jestjs/jest",
-    "html_url": "https://github.com/jestjs/jest",
-    "description": "Delightful JavaScript Testing.",
-    "stargazers_count": 45062,
-    "forks_count": 6602,
-    "watchers_count": 45062,
-    "subscribers_count": 558,
-    "open_issues_count": 259,
-    "language": "TypeScript",
-    "updated_at": "2025-09-25T21:08:01Z",
-    "score": 0.51164
+    "updated_at": "2025-09-27T02:02:56Z",
+    "score": 0.54714
   },
   {
     "id": 31629751,
@@ -65,13 +50,13 @@
     "full_name": "cypress-io/cypress",
     "html_url": "https://github.com/cypress-io/cypress",
     "description": "Fast, easy and reliable testing for anything that runs in a browser.",
-    "stargazers_count": 49292,
-    "forks_count": 3353,
-    "watchers_count": 49292,
+    "stargazers_count": 49298,
+    "forks_count": 3354,
+    "watchers_count": 49298,
     "subscribers_count": 605,
-    "open_issues_count": 1314,
+    "open_issues_count": 1313,
     "language": "TypeScript",
-    "updated_at": "2025-09-26T02:44:57Z",
+    "updated_at": "2025-09-26T15:37:11Z",
     "score": 0.49469
   },
   {
@@ -81,28 +66,13 @@
     "html_url": "https://github.com/mochajs/mocha",
     "description": "☕️ simple, flexible, fun javascript test framework for node.js \u0026 the browser",
     "stargazers_count": 22836,
-    "forks_count": 3043,
+    "forks_count": 3044,
     "watchers_count": 22836,
     "subscribers_count": 391,
     "open_issues_count": 215,
     "language": "JavaScript",
     "updated_at": "2025-09-25T17:54:33Z",
-    "score": 0.2504
-  },
-  {
-    "id": 45942274,
-    "name": "enzyme",
-    "full_name": "enzymejs/enzyme",
-    "html_url": "https://github.com/enzymejs/enzyme",
-    "description": "JavaScript Testing utilities for React",
-    "stargazers_count": 19911,
-    "forks_count": 1991,
-    "watchers_count": 19911,
-    "subscribers_count": 248,
-    "open_issues_count": 280,
-    "language": "JavaScript",
-    "updated_at": "2025-09-24T23:27:04Z",
-    "score": 0.1927
+    "score": 0.25043
   },
   {
     "id": 37489525,
@@ -110,14 +80,29 @@
     "full_name": "pytest-dev/pytest",
     "html_url": "https://github.com/pytest-dev/pytest",
     "description": "The pytest framework makes it easy to write small tests, yet scales to support complex functional testing",
-    "stargazers_count": 13109,
+    "stargazers_count": 13110,
     "forks_count": 2871,
-    "watchers_count": 13109,
+    "watchers_count": 13110,
     "subscribers_count": 191,
-    "open_issues_count": 946,
+    "open_issues_count": 950,
     "language": "Python",
-    "updated_at": "2025-09-26T02:57:21Z",
-    "score": 0.19265
+    "updated_at": "2025-09-26T21:12:22Z",
+    "score": 0.19283
+  },
+  {
+    "id": 45942274,
+    "name": "enzyme",
+    "full_name": "enzymejs/enzyme",
+    "html_url": "https://github.com/enzymejs/enzyme",
+    "description": "JavaScript Testing utilities for React",
+    "stargazers_count": 19910,
+    "forks_count": 1991,
+    "watchers_count": 19910,
+    "subscribers_count": 248,
+    "open_issues_count": 280,
+    "language": "JavaScript",
+    "updated_at": "2025-09-26T11:21:15Z",
+    "score": 0.19271
   },
   {
     "id": 84009,
@@ -129,10 +114,10 @@
     "forks_count": 2241,
     "watchers_count": 15827,
     "subscribers_count": 432,
-    "open_issues_count": 14,
+    "open_issues_count": 13,
     "language": "JavaScript",
-    "updated_at": "2025-09-25T14:53:22Z",
-    "score": 0.17735
+    "updated_at": "2025-09-26T23:53:44Z",
+    "score": 0.17733
   },
   {
     "id": 2560988,
@@ -140,14 +125,14 @@
     "full_name": "karma-runner/karma",
     "html_url": "https://github.com/karma-runner/karma",
     "description": "Spectacular Test Runner for JavaScript",
-    "stargazers_count": 11972,
-    "forks_count": 1718,
-    "watchers_count": 11972,
+    "stargazers_count": 11973,
+    "forks_count": 1717,
+    "watchers_count": 11973,
     "subscribers_count": 312,
     "open_issues_count": 389,
     "language": "JavaScript",
-    "updated_at": "2025-09-25T14:53:25Z",
-    "score": 0.14187
+    "updated_at": "2025-09-26T06:43:56Z",
+    "score": 0.14186
   },
   {
     "id": 434708679,
@@ -155,14 +140,14 @@
     "full_name": "vitest-dev/vitest",
     "html_url": "https://github.com/vitest-dev/vitest",
     "description": "Next generation testing framework powered by Vite.",
-    "stargazers_count": 15008,
-    "forks_count": 1439,
-    "watchers_count": 15008,
+    "stargazers_count": 15012,
+    "forks_count": 1441,
+    "watchers_count": 15012,
     "subscribers_count": 57,
-    "open_issues_count": 325,
+    "open_issues_count": 332,
     "language": "TypeScript",
-    "updated_at": "2025-09-25T18:37:46Z",
-    "score": 0.13091
+    "updated_at": "2025-09-26T21:05:46Z",
+    "score": 0.13128
   },
   {
     "id": 20506004,
@@ -177,7 +162,7 @@
     "open_issues_count": 43,
     "language": "Swift",
     "updated_at": "2025-09-22T03:45:51Z",
-    "score": 0.08461
+    "score": 0.08463
   },
   {
     "id": 2931111,
@@ -192,7 +177,7 @@
     "open_issues_count": 89,
     "language": "JavaScript",
     "updated_at": "2025-09-25T10:24:37Z",
-    "score": 0.06318
+    "score": 0.06321
   },
   {
     "id": 37796696,
@@ -204,10 +189,10 @@
     "forks_count": 687,
     "watchers_count": 3356,
     "subscribers_count": 213,
-    "open_issues_count": 35,
+    "open_issues_count": 38,
     "language": "",
     "updated_at": "2025-09-24T02:14:48Z",
-    "score": 0.03442
+    "score": 0.03457
   },
   {
     "id": 2034023,
@@ -215,14 +200,14 @@
     "full_name": "testem/testem",
     "html_url": "https://github.com/testem/testem",
     "description": "Test'em 'Scripts! A test runner that makes Javascript unit testing fun.",
-    "stargazers_count": 2919,
+    "stargazers_count": 2920,
     "forks_count": 408,
-    "watchers_count": 2919,
+    "watchers_count": 2920,
     "subscribers_count": 66,
     "open_issues_count": 139,
     "language": "JavaScript",
-    "updated_at": "2025-09-19T13:26:44Z",
-    "score": 0.01573
+    "updated_at": "2025-09-26T18:34:58Z",
+    "score": 0.01577
   },
   {
     "id": 14731610,
@@ -237,6 +222,6 @@
     "open_issues_count": 33,
     "language": "Ruby",
     "updated_at": "2025-09-16T22:23:21Z",
-    "score": 0.00164
+    "score": 0.00167
   }
 ]
