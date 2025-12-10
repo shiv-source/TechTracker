@@ -5,14 +5,14 @@
     "full_name": "elastic/elasticsearch",
     "html_url": "https://github.com/elastic/elasticsearch",
     "description": "Free and Open Source, Distributed, RESTful Search Engine",
-    "stargazers_count": 75613,
-    "forks_count": 25651,
-    "watchers_count": 75613,
+    "stargazers_count": 75617,
+    "forks_count": 25657,
+    "watchers_count": 75617,
     "subscribers_count": 2638,
-    "open_issues_count": 5394,
+    "open_issues_count": 5390,
     "language": "Java",
-    "updated_at": "2025-12-09T02:45:24Z",
-    "score": 0.98458
+    "updated_at": "2025-12-10T02:33:14Z",
+    "score": 0.98451
   },
   {
     "id": 156018,
@@ -20,14 +20,14 @@
     "full_name": "redis/redis",
     "html_url": "https://github.com/redis/redis",
     "description": "For developers, who are building real-time data-driven applications, Redis is the preferred, fastest, and most feature-rich cache, data structure server, and document and vector query engine.",
-    "stargazers_count": 72064,
-    "forks_count": 24369,
-    "watchers_count": 72064,
+    "stargazers_count": 72078,
+    "forks_count": 24371,
+    "watchers_count": 72078,
     "subscribers_count": 2498,
-    "open_issues_count": 2739,
+    "open_issues_count": 2737,
     "language": "C",
-    "updated_at": "2025-12-09T02:53:54Z",
-    "score": 0.91971
+    "updated_at": "2025-12-10T03:16:49Z",
+    "score": 0.91972
   },
   {
     "id": 11225014,
@@ -35,14 +35,14 @@
     "full_name": "etcd-io/etcd",
     "html_url": "https://github.com/etcd-io/etcd",
     "description": "Distributed reliable key-value store for the most critical data of a distributed system",
-    "stargazers_count": 50949,
+    "stargazers_count": 50955,
     "forks_count": 10238,
-    "watchers_count": 50949,
+    "watchers_count": 50955,
     "subscribers_count": 1280,
-    "open_issues_count": 216,
+    "open_issues_count": 209,
     "language": "Go",
-    "updated_at": "2025-12-09T02:05:46Z",
-    "score": 0.53912
+    "updated_at": "2025-12-10T02:46:47Z",
+    "score": 0.53907
   },
   {
     "id": 16563587,
@@ -50,14 +50,14 @@
     "full_name": "cockroachdb/cockroach",
     "html_url": "https://github.com/cockroachdb/cockroach",
     "description": "CockroachDB — the cloud native, distributed SQL database designed for high availability, effortless scale, and control over data placement.",
-    "stargazers_count": 31563,
-    "forks_count": 4027,
-    "watchers_count": 31563,
+    "stargazers_count": 31564,
+    "forks_count": 4028,
+    "watchers_count": 31564,
     "subscribers_count": 665,
-    "open_issues_count": 7799,
+    "open_issues_count": 7810,
     "language": "Go",
-    "updated_at": "2025-12-09T02:17:11Z",
-    "score": 0.34019
+    "updated_at": "2025-12-10T03:02:53Z",
+    "score": 0.34018
   },
   {
     "id": 108110,
@@ -65,14 +65,14 @@
     "full_name": "mongodb/mongo",
     "html_url": "https://github.com/mongodb/mongo",
     "description": "The MongoDB Database",
-    "stargazers_count": 27819,
-    "forks_count": 5717,
-    "watchers_count": 27819,
+    "stargazers_count": 27823,
+    "forks_count": 5716,
+    "watchers_count": 27823,
     "subscribers_count": 1247,
     "open_issues_count": 18,
     "language": "C++",
-    "updated_at": "2025-12-09T00:20:26Z",
-    "score": 0.29909
+    "updated_at": "2025-12-10T02:03:52Z",
+    "score": 0.29908
   },
   {
     "id": 13124802,
@@ -80,13 +80,13 @@
     "full_name": "influxdata/influxdb",
     "html_url": "https://github.com/influxdata/influxdb",
     "description": "Scalable datastore for metrics, events, and real-time analytics",
-    "stargazers_count": 30944,
-    "forks_count": 3672,
-    "watchers_count": 30944,
+    "stargazers_count": 30950,
+    "forks_count": 3673,
+    "watchers_count": 30950,
     "subscribers_count": 710,
-    "open_issues_count": 2123,
+    "open_issues_count": 2121,
     "language": "Rust",
-    "updated_at": "2025-12-08T23:26:17Z",
+    "updated_at": "2025-12-10T02:05:42Z",
     "score": 0.29693
   },
   {
@@ -95,14 +95,14 @@
     "full_name": "postgres/postgres",
     "html_url": "https://github.com/postgres/postgres",
     "description": "Mirror of the official PostgreSQL GIT repository. Note that this is just a *mirror* - we don't work with pull requests on github. To contribute, please see https://wiki.postgresql.org/wiki/Submitting_a_Patch",
-    "stargazers_count": 19289,
-    "forks_count": 5275,
-    "watchers_count": 19289,
-    "subscribers_count": 555,
+    "stargazers_count": 19292,
+    "forks_count": 5276,
+    "watchers_count": 19292,
+    "subscribers_count": 556,
     "open_issues_count": 0,
     "language": "C",
-    "updated_at": "2025-12-09T01:59:31Z",
-    "score": 0.19591
+    "updated_at": "2025-12-10T02:59:58Z",
+    "score": 0.19596
   },
   {
     "id": 11008207,
@@ -110,14 +110,14 @@
     "full_name": "vitessio/vitess",
     "html_url": "https://github.com/vitessio/vitess",
     "description": "Vitess is a database clustering system for horizontal scaling of MySQL.",
-    "stargazers_count": 20543,
+    "stargazers_count": 20550,
     "forks_count": 2278,
-    "watchers_count": 20543,
+    "watchers_count": 20550,
     "subscribers_count": 484,
-    "open_issues_count": 881,
+    "open_issues_count": 885,
     "language": "Go",
-    "updated_at": "2025-12-09T01:27:05Z",
-    "score": 0.1795
+    "updated_at": "2025-12-09T21:43:54Z",
+    "score": 0.17955
   },
   {
     "id": 41349039,
@@ -128,11 +128,11 @@
     "stargazers_count": 21384,
     "forks_count": 1564,
     "watchers_count": 21384,
-    "subscribers_count": 358,
+    "subscribers_count": 359,
     "open_issues_count": 38,
     "language": "Go",
     "updated_at": "2025-12-09T00:58:53Z",
-    "score": 0.169
+    "score": 0.16902
   },
   {
     "id": 84240850,
@@ -140,14 +140,14 @@
     "full_name": "timescale/timescaledb",
     "html_url": "https://github.com/timescale/timescaledb",
     "description": "A time-series database for high-performance real-time analytics packaged as a Postgres extension",
-    "stargazers_count": 21020,
+    "stargazers_count": 21029,
     "forks_count": 1006,
-    "watchers_count": 21020,
+    "watchers_count": 21029,
     "subscribers_count": 302,
-    "open_issues_count": 456,
+    "open_issues_count": 460,
     "language": "C",
-    "updated_at": "2025-12-08T20:20:00Z",
-    "score": 0.16089
+    "updated_at": "2025-12-10T01:53:52Z",
+    "score": 0.16097
   },
   {
     "id": 28449431,
@@ -155,14 +155,14 @@
     "full_name": "scylladb/scylladb",
     "html_url": "https://github.com/scylladb/scylladb",
     "description": "NoSQL data store using the Seastar framework, compatible with Apache Cassandra and Amazon DynamoDB",
-    "stargazers_count": 15110,
-    "forks_count": 1441,
-    "watchers_count": 15110,
+    "stargazers_count": 15113,
+    "forks_count": 1444,
+    "watchers_count": 15113,
     "subscribers_count": 331,
-    "open_issues_count": 3720,
+    "open_issues_count": 3716,
     "language": "C++",
-    "updated_at": "2025-12-08T21:57:03Z",
-    "score": 0.13805
+    "updated_at": "2025-12-09T21:37:23Z",
+    "score": 0.13802
   },
   {
     "id": 24494032,
@@ -170,14 +170,14 @@
     "full_name": "mysql/mysql-server",
     "html_url": "https://github.com/mysql/mysql-server",
     "description": "MySQL Server, the world's most popular open source database, and MySQL Cluster, a real-time, open source transactional database.",
-    "stargazers_count": 11900,
-    "forks_count": 4172,
-    "watchers_count": 11900,
+    "stargazers_count": 11902,
+    "forks_count": 4171,
+    "watchers_count": 11902,
     "subscribers_count": 558,
     "open_issues_count": 1,
     "language": "C++",
-    "updated_at": "2025-12-08T13:11:16Z",
-    "score": 0.12356
+    "updated_at": "2025-12-09T07:15:39Z",
+    "score": 0.12355
   },
   {
     "id": 2649214,
@@ -185,14 +185,14 @@
     "full_name": "arangodb/arangodb",
     "html_url": "https://github.com/arangodb/arangodb",
     "description": "🥑 ArangoDB is a native multi-model database with flexible data models for documents, graphs, and key-values. Build high performance applications using a convenient SQL-like query language or JavaScript extensions.",
-    "stargazers_count": 14032,
+    "stargazers_count": 14033,
     "forks_count": 874,
-    "watchers_count": 14032,
+    "watchers_count": 14033,
     "subscribers_count": 321,
-    "open_issues_count": 810,
+    "open_issues_count": 811,
     "language": "C++",
-    "updated_at": "2025-12-08T16:03:24Z",
-    "score": 0.1044
+    "updated_at": "2025-12-09T23:21:38Z",
+    "score": 0.10439
   },
   {
     "id": 206424,
@@ -200,14 +200,14 @@
     "full_name": "apache/cassandra",
     "html_url": "https://github.com/apache/cassandra",
     "description": "Apache Cassandra®",
-    "stargazers_count": 9524,
+    "stargazers_count": 9525,
     "forks_count": 3808,
-    "watchers_count": 9524,
+    "watchers_count": 9525,
     "subscribers_count": 431,
-    "open_issues_count": 586,
+    "open_issues_count": 584,
     "language": "Java",
-    "updated_at": "2025-12-08T22:46:25Z",
-    "score": 0.09884
+    "updated_at": "2025-12-10T02:35:24Z",
+    "score": 0.09882
   },
   {
     "id": 176278485,
@@ -221,8 +221,8 @@
     "subscribers_count": 133,
     "open_issues_count": 20,
     "language": "C",
-    "updated_at": "2025-12-08T19:25:47Z",
-    "score": 0.05242
+    "updated_at": "2025-12-10T03:14:49Z",
+    "score": 0.05241
   },
   {
     "id": 911980,
@@ -231,12 +231,12 @@
     "html_url": "https://github.com/tarantool/tarantool",
     "description": "Get your data in RAM. Get compute close to data. Enjoy the performance.",
     "stargazers_count": 3589,
-    "forks_count": 399,
+    "forks_count": 400,
     "watchers_count": 3589,
     "subscribers_count": 138,
-    "open_issues_count": 1547,
+    "open_issues_count": 1546,
     "language": "Lua",
-    "updated_at": "2025-12-08T12:10:06Z",
-    "score": 0.01012
+    "updated_at": "2025-12-09T14:24:41Z",
+    "score": 0.0101
   }
 ]
