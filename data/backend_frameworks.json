@@ -5,14 +5,14 @@
     "full_name": "spring-projects/spring-boot",
     "html_url": "https://github.com/spring-projects/spring-boot",
     "description": "Spring Boot helps you to create Spring-powered, production-grade applications and services with absolute minimum fuss.",
-    "stargazers_count": 79336,
-    "forks_count": 41712,
-    "watchers_count": 79336,
+    "stargazers_count": 79346,
+    "forks_count": 41716,
+    "watchers_count": 79346,
     "subscribers_count": 3329,
-    "open_issues_count": 524,
+    "open_issues_count": 514,
     "language": "Java",
-    "updated_at": "2025-12-11T18:45:04Z",
-    "score": 0.90096
+    "updated_at": "2025-12-13T00:42:07Z",
+    "score": 0.90081
   },
   {
     "id": 4164482,
@@ -20,14 +20,14 @@
     "full_name": "django/django",
     "html_url": "https://github.com/django/django",
     "description": "The Web framework for perfectionists with deadlines.",
-    "stargazers_count": 86125,
-    "forks_count": 33301,
-    "watchers_count": 86125,
+    "stargazers_count": 86136,
+    "forks_count": 33311,
+    "watchers_count": 86136,
     "subscribers_count": 2261,
-    "open_issues_count": 365,
+    "open_issues_count": 364,
     "language": "Python",
-    "updated_at": "2025-12-12T02:21:54Z",
-    "score": 0.86298
+    "updated_at": "2025-12-13T00:58:31Z",
+    "score": 0.863
   },
   {
     "id": 1148753,
@@ -35,14 +35,14 @@
     "full_name": "spring-projects/spring-framework",
     "html_url": "https://github.com/spring-projects/spring-framework",
     "description": "Spring Framework",
-    "stargazers_count": 59347,
-    "forks_count": 38871,
-    "watchers_count": 59347,
+    "stargazers_count": 59348,
+    "forks_count": 38873,
+    "watchers_count": 59348,
     "subscribers_count": 3300,
-    "open_issues_count": 341,
+    "open_issues_count": 335,
     "language": "Java",
-    "updated_at": "2025-12-12T02:37:05Z",
-    "score": 0.73991
+    "updated_at": "2025-12-12T16:18:06Z",
+    "score": 0.73976
   },
   {
     "id": 20904437,
@@ -50,14 +50,14 @@
     "full_name": "gin-gonic/gin",
     "html_url": "https://github.com/gin-gonic/gin",
     "description": "Gin is a high-performance HTTP web framework written in Go. It provides a Martini-like API but with significantly better performance—up to 40 times faster—thanks to httprouter. Gin is designed for building REST APIs, web applications, and microservices.",
-    "stargazers_count": 87333,
+    "stargazers_count": 87339,
     "forks_count": 8502,
-    "watchers_count": 87333,
+    "watchers_count": 87339,
     "subscribers_count": 1358,
     "open_issues_count": 877,
     "language": "Go",
-    "updated_at": "2025-12-12T03:22:22Z",
-    "score": 0.70109
+    "updated_at": "2025-12-13T00:06:19Z",
+    "score": 0.70102
   },
   {
     "id": 237159,
@@ -65,29 +65,14 @@
     "full_name": "expressjs/express",
     "html_url": "https://github.com/expressjs/express",
     "description": "Fast, unopinionated, minimalist web framework for node.",
-    "stargazers_count": 68336,
-    "forks_count": 21756,
-    "watchers_count": 68336,
+    "stargazers_count": 68337,
+    "forks_count": 21761,
+    "watchers_count": 68337,
     "subscribers_count": 1679,
-    "open_issues_count": 212,
+    "open_issues_count": 211,
     "language": "JavaScript",
-    "updated_at": "2025-12-12T01:29:07Z",
-    "score": 0.64829
-  },
-  {
-    "id": 596892,
-    "name": "flask",
-    "full_name": "pallets/flask",
-    "html_url": "https://github.com/pallets/flask",
-    "description": "The Python micro framework for building web applications.",
-    "stargazers_count": 70920,
-    "forks_count": 16648,
-    "watchers_count": 70920,
-    "subscribers_count": 2098,
-    "open_issues_count": 12,
-    "language": "Python",
-    "updated_at": "2025-12-11T16:41:31Z",
-    "score": 0.64555
+    "updated_at": "2025-12-13T02:11:52Z",
+    "score": 0.64823
   },
   {
     "id": 8514,
@@ -96,13 +81,13 @@
     "html_url": "https://github.com/rails/rails",
     "description": "Ruby on Rails",
     "stargazers_count": 57963,
-    "forks_count": 22058,
+    "forks_count": 22061,
     "watchers_count": 57963,
     "subscribers_count": 2312,
-    "open_issues_count": 1387,
+    "open_issues_count": 1385,
     "language": "Ruby",
-    "updated_at": "2025-12-12T01:16:41Z",
-    "score": 0.61296
+    "updated_at": "2025-12-13T02:19:46Z",
+    "score": 0.61283
   },
   {
     "id": 80945428,
@@ -110,14 +95,14 @@
     "full_name": "nestjs/nest",
     "html_url": "https://github.com/nestjs/nest",
     "description": "A progressive Node.js framework for building efficient, scalable, and enterprise-grade server-side applications with TypeScript/JavaScript 🚀",
-    "stargazers_count": 73826,
-    "forks_count": 8108,
-    "watchers_count": 73826,
+    "stargazers_count": 73845,
+    "forks_count": 8116,
+    "watchers_count": 73845,
     "subscribers_count": 720,
-    "open_issues_count": 67,
+    "open_issues_count": 70,
     "language": "TypeScript",
-    "updated_at": "2025-12-12T03:11:19Z",
-    "score": 0.57303
+    "updated_at": "2025-12-13T03:07:13Z",
+    "score": 0.57319
   },
   {
     "id": 17620347,
@@ -125,14 +110,14 @@
     "full_name": "dotnet/aspnetcore",
     "html_url": "https://github.com/dotnet/aspnetcore",
     "description": "ASP.NET Core is a cross-platform .NET framework for building modern cloud-based web applications on Windows, Mac, or Linux.",
-    "stargazers_count": 37487,
-    "forks_count": 10500,
-    "watchers_count": 37487,
-    "subscribers_count": 1420,
-    "open_issues_count": 3595,
+    "stargazers_count": 37491,
+    "forks_count": 10504,
+    "watchers_count": 37491,
+    "subscribers_count": 1421,
+    "open_issues_count": 3606,
     "language": "C#",
-    "updated_at": "2025-12-12T00:18:50Z",
-    "score": 0.4028
+    "updated_at": "2025-12-13T01:37:50Z",
+    "score": 0.40286
   },
   {
     "id": 7548986,
@@ -140,14 +125,14 @@
     "full_name": "laravel/framework",
     "html_url": "https://github.com/laravel/framework",
     "description": "The Laravel Framework.",
-    "stargazers_count": 34349,
-    "forks_count": 11726,
-    "watchers_count": 34349,
+    "stargazers_count": 34354,
+    "forks_count": 11732,
+    "watchers_count": 34354,
     "subscribers_count": 940,
-    "open_issues_count": 117,
+    "open_issues_count": 119,
     "language": "PHP",
-    "updated_at": "2025-12-12T03:08:35Z",
-    "score": 0.32498
+    "updated_at": "2025-12-13T02:09:41Z",
+    "score": 0.32502
   },
   {
     "id": 3577919,
@@ -155,14 +140,14 @@
     "full_name": "beego/beego",
     "html_url": "https://github.com/beego/beego",
     "description": "beego is an open-source, high-performance web framework for the Go programming language.",
-    "stargazers_count": 32370,
-    "forks_count": 5624,
-    "watchers_count": 32370,
+    "stargazers_count": 32366,
+    "forks_count": 5623,
+    "watchers_count": 32366,
     "subscribers_count": 1157,
     "open_issues_count": 14,
     "language": "Go",
-    "updated_at": "2025-12-11T19:38:16Z",
-    "score": 0.27936
+    "updated_at": "2025-12-12T17:01:07Z",
+    "score": 0.27928
   },
   {
     "id": 11551538,
@@ -170,14 +155,14 @@
     "full_name": "koajs/koa",
     "html_url": "https://github.com/koajs/koa",
     "description": "Expressive middleware for node.js using ES2017 async functions",
-    "stargazers_count": 35698,
+    "stargazers_count": 35699,
     "forks_count": 3219,
-    "watchers_count": 35698,
-    "subscribers_count": 808,
+    "watchers_count": 35699,
+    "subscribers_count": 809,
     "open_issues_count": 24,
     "language": "JavaScript",
-    "updated_at": "2025-12-11T06:29:31Z",
-    "score": 0.27769
+    "updated_at": "2025-12-12T09:29:47Z",
+    "score": 0.27768
   },
   {
     "id": 3757512,
@@ -185,14 +170,14 @@
     "full_name": "balderdashy/sails",
     "html_url": "https://github.com/balderdashy/sails",
     "description": "Realtime MVC Framework for Node.js",
-    "stargazers_count": 22853,
+    "stargazers_count": 22852,
     "forks_count": 1929,
-    "watchers_count": 22853,
+    "watchers_count": 22852,
     "subscribers_count": 627,
     "open_issues_count": 591,
     "language": "JavaScript",
-    "updated_at": "2025-12-07T20:09:46Z",
-    "score": 0.18203
+    "updated_at": "2025-12-12T19:35:14Z",
+    "score": 0.18196
   },
   {
     "id": 13258039,
@@ -200,14 +185,14 @@
     "full_name": "aio-libs/aiohttp",
     "html_url": "https://github.com/aio-libs/aiohttp",
     "description": "Asynchronous HTTP client/server framework for asyncio and Python",
-    "stargazers_count": 16142,
+    "stargazers_count": 16140,
     "forks_count": 2167,
-    "watchers_count": 16142,
+    "watchers_count": 16140,
     "subscribers_count": 211,
-    "open_issues_count": 271,
+    "open_issues_count": 269,
     "language": "Python",
-    "updated_at": "2025-12-12T02:39:18Z",
-    "score": 0.11916
+    "updated_at": "2025-12-12T10:34:24Z",
+    "score": 0.11907
   },
   {
     "id": 2163263,
@@ -216,13 +201,13 @@
     "html_url": "https://github.com/hapijs/hapi",
     "description": "The Simple, Secure Framework Developers Trust",
     "stargazers_count": 14739,
-    "forks_count": 1351,
+    "forks_count": 1352,
     "watchers_count": 14739,
     "subscribers_count": 391,
     "open_issues_count": 59,
     "language": "JavaScript",
     "updated_at": "2025-12-08T11:52:09Z",
-    "score": 0.1069
+    "score": 0.10687
   },
   {
     "id": 26726495,
@@ -230,14 +215,14 @@
     "full_name": "go-swagger/go-swagger",
     "html_url": "https://github.com/go-swagger/go-swagger",
     "description": "Swagger 2.0 implementation for go",
-    "stargazers_count": 9890,
+    "stargazers_count": 9893,
     "forks_count": 1291,
-    "watchers_count": 9890,
+    "watchers_count": 9893,
     "subscribers_count": 112,
-    "open_issues_count": 592,
+    "open_issues_count": 593,
     "language": "Go",
-    "updated_at": "2025-12-12T03:24:30Z",
-    "score": 0.07139
+    "updated_at": "2025-12-13T02:16:23Z",
+    "score": 0.07138
   },
   {
     "id": 7040500,
@@ -246,13 +231,13 @@
     "html_url": "https://github.com/falconry/falcon",
     "description": "The no-magic web API and microservices framework for Python developers, with a focus on reliability and performance at scale.",
     "stargazers_count": 9768,
-    "forks_count": 971,
+    "forks_count": 972,
     "watchers_count": 9768,
     "subscribers_count": 248,
     "open_issues_count": 162,
     "language": "Python",
-    "updated_at": "2025-12-08T18:30:23Z",
-    "score": 0.06675
+    "updated_at": "2025-12-12T06:57:24Z",
+    "score": 0.06672
   },
   {
     "id": 239940,
@@ -267,7 +252,7 @@
     "open_issues_count": 285,
     "language": "Python",
     "updated_at": "2025-12-12T02:53:09Z",
-    "score": 0.06577
+    "score": 0.06573
   },
   {
     "id": 206483,
@@ -275,14 +260,14 @@
     "full_name": "apache/maven",
     "html_url": "https://github.com/apache/maven",
     "description": "Apache Maven core",
-    "stargazers_count": 4880,
+    "stargazers_count": 4882,
     "forks_count": 2803,
-    "watchers_count": 4880,
+    "watchers_count": 4882,
     "subscribers_count": 220,
-    "open_issues_count": 701,
+    "open_issues_count": 699,
     "language": "Java",
-    "updated_at": "2025-12-11T14:39:54Z",
-    "score": 0.05016
+    "updated_at": "2025-12-12T16:19:39Z",
+    "score": 0.05009
   },
   {
     "id": 37173512,
@@ -297,7 +282,7 @@
     "open_issues_count": 14,
     "language": "Java",
     "updated_at": "2025-12-10T07:53:53Z",
-    "score": 0.03964
+    "score": 0.03961
   },
   {
     "id": 1020639,
@@ -312,7 +297,7 @@
     "open_issues_count": 91,
     "language": "Python",
     "updated_at": "2025-12-11T20:18:45Z",
-    "score": 0.02256
+    "score": 0.02253
   },
   {
     "id": 57436777,
@@ -327,6 +312,6 @@
     "open_issues_count": 265,
     "language": "Python",
     "updated_at": "2025-12-04T12:30:45Z",
-    "score": 0.00353
+    "score": 0.00349
   }
 ]
