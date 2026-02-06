@@ -5,14 +5,14 @@
     "full_name": "facebook/react",
     "html_url": "https://github.com/facebook/react",
     "description": "The library for web and native user interfaces.",
-    "stargazers_count": 242789,
-    "forks_count": 50508,
-    "watchers_count": 242789,
+    "stargazers_count": 242821,
+    "forks_count": 50522,
+    "watchers_count": 242821,
     "subscribers_count": 6691,
-    "open_issues_count": 1109,
+    "open_issues_count": 1115,
     "language": "JavaScript",
-    "updated_at": "2026-02-05T04:11:43Z",
-    "score": 0.90201
+    "updated_at": "2026-02-06T03:51:15Z",
+    "score": 0.90293
   },
   {
     "id": 2126244,
@@ -20,14 +20,14 @@
     "full_name": "twbs/bootstrap",
     "html_url": "https://github.com/twbs/bootstrap",
     "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
-    "stargazers_count": 173968,
+    "stargazers_count": 173975,
     "forks_count": 79134,
-    "watchers_count": 173968,
+    "watchers_count": 173975,
     "subscribers_count": 6672,
-    "open_issues_count": 569,
+    "open_issues_count": 571,
     "language": "MDX",
-    "updated_at": "2026-02-05T04:06:31Z",
-    "score": 0.74745
+    "updated_at": "2026-02-06T03:21:15Z",
+    "score": 0.78523
   },
   {
     "id": 11730342,
@@ -39,10 +39,10 @@
     "forks_count": 33890,
     "watchers_count": 209897,
     "subscribers_count": 5763,
-    "open_issues_count": 620,
+    "open_issues_count": 622,
     "language": "TypeScript",
-    "updated_at": "2026-02-05T03:14:45Z",
-    "score": 0.7004
+    "updated_at": "2026-02-05T22:06:01Z",
+    "score": 0.71955
   },
   {
     "id": 24195339,
@@ -50,14 +50,14 @@
     "full_name": "angular/angular",
     "html_url": "https://github.com/angular/angular",
     "description": "Deliver web apps with confidence 🚀",
-    "stargazers_count": 99804,
-    "forks_count": 27045,
-    "watchers_count": 99804,
+    "stargazers_count": 99805,
+    "forks_count": 27046,
+    "watchers_count": 99805,
     "subscribers_count": 2966,
-    "open_issues_count": 1147,
+    "open_issues_count": 1150,
     "language": "TypeScript",
-    "updated_at": "2026-02-05T03:34:37Z",
-    "score": 0.29544
+    "updated_at": "2026-02-06T03:16:06Z",
+    "score": 0.37526
   },
   {
     "id": 74293321,
@@ -65,29 +65,14 @@
     "full_name": "sveltejs/svelte",
     "html_url": "https://github.com/sveltejs/svelte",
     "description": "web development for the rest of us",
-    "stargazers_count": 85686,
-    "forks_count": 4757,
-    "watchers_count": 85686,
+    "stargazers_count": 85696,
+    "forks_count": 4759,
+    "watchers_count": 85696,
     "subscribers_count": 836,
-    "open_issues_count": 978,
+    "open_issues_count": 989,
     "language": "JavaScript",
-    "updated_at": "2026-02-05T02:36:53Z",
-    "score": 0.13134
-  },
-  {
-    "id": 106017343,
-    "name": "tailwindcss",
-    "full_name": "tailwindlabs/tailwindcss",
-    "html_url": "https://github.com/tailwindlabs/tailwindcss",
-    "description": "A utility-first CSS framework for rapid UI development.",
-    "stargazers_count": 93373,
-    "forks_count": 5034,
-    "watchers_count": 93373,
-    "subscribers_count": 621,
-    "open_issues_count": 74,
-    "language": "TypeScript",
-    "updated_at": "2026-02-05T04:09:26Z",
-    "score": 0.11177
+    "updated_at": "2026-02-06T02:59:06Z",
+    "score": 0.2199
   },
   {
     "id": 167174,
@@ -95,14 +80,29 @@
     "full_name": "jquery/jquery",
     "html_url": "https://github.com/jquery/jquery",
     "description": "jQuery JavaScript Library",
-    "stargazers_count": 59834,
-    "forks_count": 20499,
-    "watchers_count": 59834,
+    "stargazers_count": 59835,
+    "forks_count": 20496,
+    "watchers_count": 59835,
     "subscribers_count": 3133,
     "open_issues_count": 93,
     "language": "JavaScript",
-    "updated_at": "2026-02-04T22:25:12Z",
-    "score": 0.09622
+    "updated_at": "2026-02-06T03:54:46Z",
+    "score": 0.19815
+  },
+  {
+    "id": 106017343,
+    "name": "tailwindcss",
+    "full_name": "tailwindlabs/tailwindcss",
+    "html_url": "https://github.com/tailwindlabs/tailwindcss",
+    "description": "A utility-first CSS framework for rapid UI development.",
+    "stargazers_count": 93393,
+    "forks_count": 5041,
+    "watchers_count": 93393,
+    "subscribers_count": 621,
+    "open_issues_count": 74,
+    "language": "TypeScript",
+    "updated_at": "2026-02-06T02:39:55Z",
+    "score": 0.19575
   },
   {
     "id": 3678731,
@@ -114,10 +114,10 @@
     "forks_count": 9228,
     "watchers_count": 65946,
     "subscribers_count": 1428,
-    "open_issues_count": 206,
+    "open_issues_count": 205,
     "language": "JavaScript",
-    "updated_at": "2026-02-04T22:12:44Z",
-    "score": 0.05552
+    "updated_at": "2026-02-06T04:14:28Z",
+    "score": 0.15432
   },
   {
     "id": 71995937,
@@ -125,13 +125,28 @@
     "full_name": "nuxt/nuxt",
     "html_url": "https://github.com/nuxt/nuxt",
     "description": "The Full-Stack Vue Framework.",
-    "stargazers_count": 59517,
-    "forks_count": 5517,
-    "watchers_count": 59517,
+    "stargazers_count": 59528,
+    "forks_count": 5520,
+    "watchers_count": 59528,
     "subscribers_count": 782,
-    "open_issues_count": 948,
+    "open_issues_count": 931,
     "language": "TypeScript",
-    "updated_at": "2026-02-05T03:26:47Z",
-    "score": 0.04593
+    "updated_at": "2026-02-06T03:51:38Z",
+    "score": 0.14756
+  },
+  {
+    "id": 1801829,
+    "name": "ember.js",
+    "full_name": "emberjs/ember.js",
+    "html_url": "https://github.com/emberjs/ember.js",
+    "description": "Ember.js - A JavaScript framework for creating ambitious web applications",
+    "stargazers_count": 22578,
+    "forks_count": 4193,
+    "watchers_count": 22578,
+    "subscribers_count": 822,
+    "open_issues_count": 425,
+    "language": "TypeScript",
+    "updated_at": "2026-02-04T14:52:21Z",
+    "score": 0.01962
   }
 ]
