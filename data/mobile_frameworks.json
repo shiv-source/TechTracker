@@ -5,14 +5,14 @@
     "full_name": "flutter/flutter",
     "html_url": "https://github.com/flutter/flutter",
     "description": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
-    "stargazers_count": 175368,
-    "forks_count": 30059,
-    "watchers_count": 175368,
-    "subscribers_count": 3469,
-    "open_issues_count": 12466,
+    "stargazers_count": 175377,
+    "forks_count": 30069,
+    "watchers_count": 175377,
+    "subscribers_count": 3471,
+    "open_issues_count": 12477,
     "language": "Dart",
-    "updated_at": "2026-02-28T03:57:15Z",
-    "score": 0.99761
+    "updated_at": "2026-03-01T04:02:44Z",
+    "score": 0.9977
   },
   {
     "id": 29028775,
@@ -20,14 +20,29 @@
     "full_name": "facebook/react-native",
     "html_url": "https://github.com/facebook/react-native",
     "description": "A framework for building native applications using React",
-    "stargazers_count": 125458,
-    "forks_count": 25096,
-    "watchers_count": 125458,
-    "subscribers_count": 3553,
-    "open_issues_count": 1226,
+    "stargazers_count": 125464,
+    "forks_count": 25098,
+    "watchers_count": 125464,
+    "subscribers_count": 3552,
+    "open_issues_count": 1222,
     "language": "C++",
-    "updated_at": "2026-02-28T03:52:12Z",
-    "score": 0.74196
+    "updated_at": "2026-03-01T03:38:12Z",
+    "score": 0.74188
+  },
+  {
+    "id": 12256376,
+    "name": "ionic-framework",
+    "full_name": "ionic-team/ionic-framework",
+    "html_url": "https://github.com/ionic-team/ionic-framework",
+    "description": "A powerful cross-platform UI toolkit for building native-quality iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript.",
+    "stargazers_count": 52382,
+    "forks_count": 13389,
+    "watchers_count": 52382,
+    "subscribers_count": 1561,
+    "open_issues_count": 633,
+    "language": "TypeScript",
+    "updated_at": "2026-03-01T00:54:46Z",
+    "score": 0.33431
   },
   {
     "id": 262395224,
@@ -35,14 +50,14 @@
     "full_name": "dotnet/maui",
     "html_url": "https://github.com/dotnet/maui",
     "description": ".NET MAUI is the .NET Multi-platform App UI, a framework for building native device applications spanning mobile, tablet, and desktop.",
-    "stargazers_count": 23192,
+    "stargazers_count": 23194,
     "forks_count": 1917,
-    "watchers_count": 23192,
+    "watchers_count": 23194,
     "subscribers_count": 616,
-    "open_issues_count": 4539,
+    "open_issues_count": 4536,
     "language": "C#",
-    "updated_at": "2026-02-28T03:35:07Z",
-    "score": 0.12731
+    "updated_at": "2026-02-28T20:14:18Z",
+    "score": 0.12727
   },
   {
     "id": 31492490,
@@ -57,7 +72,7 @@
     "open_issues_count": 923,
     "language": "TypeScript",
     "updated_at": "2026-02-27T23:30:23Z",
-    "score": 0.11983
+    "score": 0.11981
   },
   {
     "id": 111241370,
@@ -65,14 +80,14 @@
     "full_name": "ionic-team/capacitor",
     "html_url": "https://github.com/ionic-team/capacitor",
     "description": "Build cross-platform Native Progressive Web Apps for iOS, Android, and the Web ⚡️",
-    "stargazers_count": 15129,
+    "stargazers_count": 15136,
     "forks_count": 1156,
-    "watchers_count": 15129,
+    "watchers_count": 15136,
     "subscribers_count": 162,
     "open_issues_count": 123,
     "language": "TypeScript",
-    "updated_at": "2026-02-27T22:11:51Z",
-    "score": 0.06259
+    "updated_at": "2026-03-01T04:00:21Z",
+    "score": 0.0626
   },
   {
     "id": 121366401,
@@ -80,13 +95,13 @@
     "full_name": "apache/cordova",
     "html_url": "https://github.com/apache/cordova",
     "description": "Apache Cordova",
-    "stargazers_count": 696,
-    "forks_count": 71,
-    "watchers_count": 696,
+    "stargazers_count": 697,
+    "forks_count": 72,
+    "watchers_count": 697,
     "subscribers_count": 34,
     "open_issues_count": 40,
     "language": "",
-    "updated_at": "2026-02-22T11:44:47Z",
+    "updated_at": "2026-02-28T19:19:27Z",
     "score": 0
   }
 ]
