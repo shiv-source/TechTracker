@@ -5,13 +5,13 @@
     "full_name": "puppeteer/puppeteer",
     "html_url": "https://github.com/puppeteer/puppeteer",
     "description": "JavaScript API for Chrome and Firefox",
-    "stargazers_count": 94192,
-    "forks_count": 9408,
-    "watchers_count": 94192,
-    "subscribers_count": 1174,
-    "open_issues_count": 310,
+    "stargazers_count": 94197,
+    "forks_count": 9411,
+    "watchers_count": 94197,
+    "subscribers_count": 1173,
+    "open_issues_count": 307,
     "language": "TypeScript",
-    "updated_at": "2026-04-25T21:02:52Z",
+    "updated_at": "2026-04-27T05:07:21Z",
     "score": 0.95581
   },
   {
@@ -20,14 +20,14 @@
     "full_name": "microsoft/playwright",
     "html_url": "https://github.com/microsoft/playwright",
     "description": "Playwright is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API. ",
-    "stargazers_count": 87321,
-    "forks_count": 5578,
-    "watchers_count": 87321,
-    "subscribers_count": 568,
-    "open_issues_count": 628,
+    "stargazers_count": 87393,
+    "forks_count": 5582,
+    "watchers_count": 87393,
+    "subscribers_count": 569,
+    "open_issues_count": 631,
     "language": "TypeScript",
-    "updated_at": "2026-04-26T04:57:16Z",
-    "score": 0.76708
+    "updated_at": "2026-04-27T05:21:46Z",
+    "score": 0.77043
   },
   {
     "id": 7613257,
@@ -36,13 +36,28 @@
     "html_url": "https://github.com/SeleniumHQ/selenium",
     "description": "A browser automation framework and ecosystem.",
     "stargazers_count": 34062,
-    "forks_count": 8674,
+    "forks_count": 8675,
     "watchers_count": 34062,
     "subscribers_count": 1254,
     "open_issues_count": 195,
     "language": "Java",
-    "updated_at": "2026-04-26T00:42:13Z",
-    "score": 0.54201
+    "updated_at": "2026-04-27T04:45:55Z",
+    "score": 0.54572
+  },
+  {
+    "id": 15062869,
+    "name": "jest",
+    "full_name": "jestjs/jest",
+    "html_url": "https://github.com/jestjs/jest",
+    "description": "Delightful JavaScript Testing.",
+    "stargazers_count": 45339,
+    "forks_count": 6644,
+    "watchers_count": 45339,
+    "subscribers_count": 551,
+    "open_issues_count": 251,
+    "language": "TypeScript",
+    "updated_at": "2026-04-26T21:40:25Z",
+    "score": 0.50781
   },
   {
     "id": 31629751,
@@ -50,14 +65,14 @@
     "full_name": "cypress-io/cypress",
     "html_url": "https://github.com/cypress-io/cypress",
     "description": "Fast, easy and reliable testing for anything that runs in a browser.",
-    "stargazers_count": 49618,
-    "forks_count": 3401,
-    "watchers_count": 49618,
+    "stargazers_count": 49620,
+    "forks_count": 3400,
+    "watchers_count": 49620,
     "subscribers_count": 581,
-    "open_issues_count": 1210,
+    "open_issues_count": 1211,
     "language": "TypeScript",
-    "updated_at": "2026-04-25T10:32:27Z",
-    "score": 0.48412
+    "updated_at": "2026-04-27T05:13:15Z",
+    "score": 0.48977
   },
   {
     "id": 1451352,
@@ -65,14 +80,14 @@
     "full_name": "mochajs/mocha",
     "html_url": "https://github.com/mochajs/mocha",
     "description": "☕️ Classic, reliable, trusted test framework for Node.js and the browser",
-    "stargazers_count": 22883,
+    "stargazers_count": 22884,
     "forks_count": 3065,
-    "watchers_count": 22883,
+    "watchers_count": 22884,
     "subscribers_count": 386,
-    "open_issues_count": 238,
+    "open_issues_count": 233,
     "language": "JavaScript",
-    "updated_at": "2026-04-25T22:14:33Z",
-    "score": 0.24227
+    "updated_at": "2026-04-27T04:02:20Z",
+    "score": 0.24955
   },
   {
     "id": 37489525,
@@ -80,14 +95,14 @@
     "full_name": "pytest-dev/pytest",
     "html_url": "https://github.com/pytest-dev/pytest",
     "description": "The pytest framework makes it easy to write small tests, yet scales to support complex functional testing",
-    "stargazers_count": 13800,
-    "forks_count": 3102,
-    "watchers_count": 13800,
+    "stargazers_count": 13804,
+    "forks_count": 3104,
+    "watchers_count": 13804,
     "subscribers_count": 198,
-    "open_issues_count": 1000,
+    "open_issues_count": 997,
     "language": "Python",
-    "updated_at": "2026-04-25T19:08:53Z",
-    "score": 0.19971
+    "updated_at": "2026-04-27T00:22:01Z",
+    "score": 0.20739
   },
   {
     "id": 45942274,
@@ -95,14 +110,14 @@
     "full_name": "enzymejs/enzyme",
     "html_url": "https://github.com/enzymejs/enzyme",
     "description": "JavaScript Testing utilities for React",
-    "stargazers_count": 19844,
+    "stargazers_count": 19843,
     "forks_count": 1981,
-    "watchers_count": 19844,
+    "watchers_count": 19843,
     "subscribers_count": 246,
     "open_issues_count": 281,
     "language": "JavaScript",
-    "updated_at": "2026-04-24T06:01:07Z",
-    "score": 0.18232
+    "updated_at": "2026-04-26T10:35:59Z",
+    "score": 0.19057
   },
   {
     "id": 84009,
@@ -117,7 +132,7 @@
     "open_issues_count": 11,
     "language": "JavaScript",
     "updated_at": "2026-04-22T14:49:53Z",
-    "score": 0.16668
+    "score": 0.17506
   },
   {
     "id": 434708679,
@@ -125,14 +140,14 @@
     "full_name": "vitest-dev/vitest",
     "html_url": "https://github.com/vitest-dev/vitest",
     "description": "Next generation testing framework powered by Vite.",
-    "stargazers_count": 16421,
-    "forks_count": 1738,
-    "watchers_count": 16421,
+    "stargazers_count": 16420,
+    "forks_count": 1742,
+    "watchers_count": 16420,
     "subscribers_count": 53,
-    "open_issues_count": 396,
+    "open_issues_count": 399,
     "language": "TypeScript",
-    "updated_at": "2026-04-26T04:36:24Z",
-    "score": 0.1418
+    "updated_at": "2026-04-27T03:32:58Z",
+    "score": 0.15056
   },
   {
     "id": 2560988,
@@ -140,14 +155,14 @@
     "full_name": "karma-runner/karma",
     "html_url": "https://github.com/karma-runner/karma",
     "description": "Spectacular Test Runner for JavaScript",
-    "stargazers_count": 11963,
-    "forks_count": 1720,
-    "watchers_count": 11963,
+    "stargazers_count": 11964,
+    "forks_count": 1721,
+    "watchers_count": 11964,
     "subscribers_count": 308,
     "open_issues_count": 400,
     "language": "JavaScript",
-    "updated_at": "2026-04-23T12:11:15Z",
-    "score": 0.13339
+    "updated_at": "2026-04-26T16:40:17Z",
+    "score": 0.1422
   },
   {
     "id": 20506004,
@@ -162,7 +177,22 @@
     "open_issues_count": 47,
     "language": "Swift",
     "updated_at": "2026-04-24T17:20:05Z",
-    "score": 0.07425
+    "score": 0.08371
+  },
+  {
+    "id": 2931111,
+    "name": "chai",
+    "full_name": "chaijs/chai",
+    "html_url": "https://github.com/chaijs/chai",
+    "description": "BDD / TDD assertion framework for node.js and the browser that can be paired with any testing framework.",
+    "stargazers_count": 8267,
+    "forks_count": 717,
+    "watchers_count": 8267,
+    "subscribers_count": 132,
+    "open_issues_count": 90,
+    "language": "JavaScript",
+    "updated_at": "2026-04-26T20:35:28Z",
+    "score": 0.06329
   },
   {
     "id": 37796696,
@@ -177,7 +207,7 @@
     "open_issues_count": 47,
     "language": "",
     "updated_at": "2026-04-24T11:46:01Z",
-    "score": 0.02524
+    "score": 0.03516
   },
   {
     "id": 2034023,
@@ -192,6 +222,21 @@
     "open_issues_count": 110,
     "language": "JavaScript",
     "updated_at": "2026-04-25T16:09:28Z",
-    "score": 0.00496
+    "score": 0.01504
+  },
+  {
+    "id": 14731610,
+    "name": "pact-ruby",
+    "full_name": "pact-foundation/pact-ruby",
+    "html_url": "https://github.com/pact-foundation/pact-ruby",
+    "description": "Enables consumer driven contract testing, providing a mock service and DSL for the consumer project, and interaction playback and verification for the service provider project.",
+    "stargazers_count": 2194,
+    "forks_count": 219,
+    "watchers_count": 2194,
+    "subscribers_count": 64,
+    "open_issues_count": 4,
+    "language": "Ruby",
+    "updated_at": "2026-04-23T13:07:30Z",
+    "score": 0.00092
   }
 ]
