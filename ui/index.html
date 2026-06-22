@@ -8,17 +8,20 @@
   <meta name="color-scheme" content="dark light">
   <title>TechTracker — Open Source Technology Rankings</title>
 
-  <!-- Fonts -->
+  <!-- Fonts (preloaded to avoid render-blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap"></noscript>
 
   <!-- Prevent theme flash -->
   <script>
     (function() {
       var t = localStorage.getItem('techtracker-theme');
       if (!t) {
-        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'dark';
+        t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
       }
       document.documentElement.setAttribute('data-theme', t);
     })();
@@ -27,44 +30,10 @@
   <!-- Design System -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: ['selector', '[data-theme="dark"]'],
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-            mono: ['JetBrains Mono', 'SF Mono', 'Fira Code', 'monospace'],
-          },
-          colors: {
-            accent: {
-              DEFAULT: '#6366f1',
-              hover: '#4f46e5',
-              light: 'rgba(99, 102, 241, 0.08)',
-              glow: 'rgba(99, 102, 241, 0.25)',
-            },
-            surface: {
-              glass: 'rgba(15, 15, 30, 0.75)',
-              raised: 'rgba(20, 20, 40, 0.9)',
-            },
-          },
-          animation: {
-            'grid-drift': 'gridDrift 60s linear infinite',
-            'orb-float': 'orbFloat 20s ease-in-out infinite',
-            'pulse-glow': 'pulse 2s ease-in-out infinite',
-            'shimmer': 'headerShimmer 8s ease-in-out infinite',
-          },
-        },
-      },
-    }
-  </script>
-
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
 </head>
-<body class="flex flex-col min-h-screen antialiased">
+<body class="page-layout">
 
   <!-- ═══════════ Ambient Orbs ═══════════ -->
   <div class="orb orb-1" aria-hidden="true"></div>
@@ -94,10 +63,10 @@
           </span>
           <span id="last-updated" class="last-updated" aria-live="polite"></span>
           <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
-            <span class="theme-icon-light" aria-hidden="true" style="display:inline">
+            <span class="theme-icon-light" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
             </span>
-            <span class="theme-icon-dark" aria-hidden="true" style="display:none">
+            <span class="theme-icon-dark" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
             </span>
           </button>
@@ -112,7 +81,15 @@
   </div>
 
   <!-- ═══════════ Main Content ═══════════ -->
-  <main class="main flex-1" role="main">
+  <main class="page-main" role="main">
+
+    <!-- Noscript fallback -->
+    <noscript>
+      <div class="noscript-banner">
+        <p>JavaScript is required for the interactive dashboard.</p>
+        <p><a href="https://github.com/shiv-source/TechTracker/blob/master/readme.md" target="_blank" rel="noopener noreferrer">View the Markdown rankings →</a></p>
+      </div>
+    </noscript>
 
     <!-- Stats Overview -->
     <section class="stats-bar" aria-label="Key statistics">
@@ -128,7 +105,7 @@
       </div>
       <div class="stat-card">
         <span class="stat-card-icon" aria-hidden="true">⭐</span>
-        <span class="stat-value" id="stat-top-star">—</span>
+        <span class="stat-value is-text" id="stat-top-star">—</span>
         <span class="stat-label">Most Starred</span>
       </div>
     </section>
@@ -152,7 +129,7 @@
         </div>
       </div>
 
-      <div class="table-wrapper" role="region" aria-label="Rankings table" tabindex="0">
+      <div class="table-wrapper" role="region" aria-label="Rankings table">
         <table class="table" id="ranking-table">
           <thead>
             <tr>

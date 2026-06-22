@@ -13,7 +13,7 @@ const state = {
   currentSort: { column: 'score', direction: 'desc' },
   historyCache: new Map(),
   chart: null,
-  theme: 'light',
+  theme: 'dark',
 };
 
 // ═══════════════════════════════════════════════════════════
@@ -22,40 +22,77 @@ const state = {
 const isLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname);
 const BASE = isLocal ? '..' : '/TechTracker';
 
+// Known category file names (fallback; groups derived from data)
+const KNOWN_GROUPS = [
+  'frontend_frameworks', 'backend_frameworks', 'mobile_frameworks',
+  'testing_tools', 'devops_tools', 'databases', 'programming_languages',
+  'design_tools',
+];
+
+// ═══════════════════════════════════════════════════════════
+// URL State (hash-based deep linking)
+// ═══════════════════════════════════════════════════════════
+function readURLState() {
+  const params = new URLSearchParams(window.location.hash.slice(1));
+  if (params.has('group')) state.currentGroup = params.get('group');
+  if (params.has('sort')) {
+    state.currentSort.column = params.get('sort');
+    state.currentSort.direction = params.get('dir') === 'asc' ? 'asc' : 'desc';
+  }
+  const q = params.get('q');
+  if (q) {
+    const input = document.getElementById('search-input');
+    if (input) input.value = q;
+  }
+}
+
+function writeURLState() {
+  const params = new URLSearchParams();
+  if (state.currentGroup !== 'all') params.set('group', state.currentGroup);
+  if (state.currentSort.column !== 'score') params.set('sort', state.currentSort.column);
+  if (state.currentSort.direction !== 'desc') params.set('dir', state.currentSort.direction);
+  const q = document.getElementById('search-input')?.value?.trim();
+  if (q) params.set('q', q);
+  const hash = params.toString();
+  const url = hash ? '#' + hash : window.location.pathname;
+  history.replaceState(null, '', url);
+}
+
 // ═══════════════════════════════════════════════════════════
 // Init
 // ═══════════════════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', async () => {
   initTheme();
+  readURLState();
   renderSkeleton();
   setupEventListeners();
 
-  await loadData();
+  const loaded = await loadData();
 
-  if (state.allRepos.length > 0) {
+  if (loaded && state.allRepos.length > 0) {
     renderCategoryTabs();
     renderStats();
-    renderTable(state.allRepos);
+    restoreTabFromURL();
+    refreshTable();
     await loadHistoryAndChart();
+  } else if (!loaded) {
+    renderErrorState();
   } else {
     renderEmptyState();
   }
 });
 
 // ═══════════════════════════════════════════════════════════
-// Theme
+// Theme (CSS-driven icon visibility)
 // ═══════════════════════════════════════════════════════════
 function initTheme() {
-  const saved = localStorage.getItem('techtracker-theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  state.theme = saved || (prefersDark ? 'dark' : 'light');
-  applyTheme();
+  state.theme = document.documentElement.getAttribute('data-theme') || 'dark';
 
-  // Listen for OS changes
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
     if (!localStorage.getItem('techtracker-theme')) {
       state.theme = e.matches ? 'dark' : 'light';
-      applyTheme();
+      document.documentElement.setAttribute('data-theme', state.theme);
+      updateChartTheme();
     }
   });
 }
@@ -63,20 +100,8 @@ function initTheme() {
 function toggleTheme() {
   state.theme = state.theme === 'light' ? 'dark' : 'light';
   localStorage.setItem('techtracker-theme', state.theme);
-  applyTheme();
-}
-
-function applyTheme() {
   document.documentElement.setAttribute('data-theme', state.theme);
-  const icon = document.querySelector('.theme-icon-light');
-  const iconDark = document.querySelector('.theme-icon-dark');
-  if (icon && iconDark) {
-    icon.style.display = state.theme === 'light' ? 'none' : 'inline';
-    iconDark.style.display = state.theme === 'dark' ? 'none' : 'inline';
-  }
-  if (state.chart) {
-    updateChartTheme();
-  }
+  updateChartTheme();
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -89,32 +114,30 @@ async function loadData() {
       fetch(`${BASE}/data/run-metadata.json`),
     ]);
 
-    if (allResp.status === 'fulfilled' && allResp.value.ok) {
-      state.allRepos = await allResp.value.json();
-    } else {
+    if (allResp.status !== 'fulfilled' || !allResp.value.ok) {
       console.error('Failed to load all.json');
-      return;
+      return false;
     }
+    state.allRepos = await allResp.value.json();
 
     if (metaResp.status === 'fulfilled' && metaResp.value.ok) {
       const meta = await metaResp.value.json();
       const el = document.getElementById('last-updated');
-      if (el) el.textContent = `Updated ${formatDate(meta.end_time)}`;
+      if (el) {
+        el.textContent = `Updated ${formatRelative(meta.end_time)}`;
+        el.title = formatDate(meta.end_time);
+      }
     }
 
-    // Load per-category JSON files
-    const groupFiles = [
-      'frontend_frameworks', 'backend_frameworks', 'mobile_frameworks',
-      'testing_tools', 'devops_tools', 'databases', 'programming_languages',
-      'design_tools',
-    ];
-
+    // Load per-category JSON files in parallel
     const results = await Promise.allSettled(
-      groupFiles.map(async (name) => {
-        const resp = await fetch(`${BASE}/data/${name}.json`);
-        if (!resp.ok) return null;
-        const repos = await resp.json();
-        return repos.length > 0 ? { name, repos } : null;
+      KNOWN_GROUPS.map(async (name) => {
+        try {
+          const resp = await fetch(`${BASE}/data/${name}.json`);
+          if (!resp.ok) return null;
+          const repos = await resp.json();
+          return repos.length > 0 ? { name, repos } : null;
+        } catch { return null; }
       })
     );
 
@@ -127,16 +150,19 @@ async function loadData() {
           .replace(/\b\w/g, (c) => c.toUpperCase()),
         repos: r.value.repos,
       }));
+    return true;
   } catch (err) {
     console.error('Data load error:', err);
+    return false;
   }
 }
 
 // ═══════════════════════════════════════════════════════════
-// Skeleton Loading
+// Skeleton / Error / Empty States
 // ═══════════════════════════════════════════════════════════
 function renderSkeleton() {
   const tbody = document.getElementById('table-body');
+  if (!tbody) return;
   const rows = Array.from({ length: 8 }, () => `
     <tr>
       <td><div class="skeleton skeleton-text-short"></div></td>
@@ -154,6 +180,7 @@ function renderSkeleton() {
 
 function renderEmptyState() {
   const tbody = document.getElementById('table-body');
+  if (!tbody) return;
   tbody.innerHTML = `
     <tr>
       <td colspan="8">
@@ -165,6 +192,30 @@ function renderEmptyState() {
       </td>
     </tr>
   `;
+}
+
+function renderErrorState() {
+  const tbody = document.getElementById('table-body');
+  if (!tbody) return;
+  tbody.innerHTML = `
+    <tr>
+      <td colspan="8">
+        <div class="error-state">
+          <div class="error-state-icon">⚠️</div>
+          <div class="error-state-text">Failed to load data</div>
+          <div class="error-state-hint">Check your connection or try again. If this persists, the data files may be missing.</div>
+          <button class="error-state-retry" onclick="location.reload()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            Retry
+          </button>
+        </div>
+      </td>
+    </tr>
+  `;
+  // Also clear stats
+  document.getElementById('stat-categories').textContent = '—';
+  document.getElementById('stat-repos').textContent = '—';
+  document.getElementById('stat-top-star').textContent = '—';
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -185,6 +236,21 @@ function renderCategoryTabs() {
   });
 }
 
+function restoreTabFromURL() {
+  if (state.currentGroup === 'all') return;
+  const tab = document.querySelector(`.tab[data-group="${state.currentGroup}"]`);
+  if (tab) {
+    document.querySelectorAll('.tab').forEach((t) => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+  } else {
+    state.currentGroup = 'all';
+  }
+}
+
 // ═══════════════════════════════════════════════════════════
 // Stats Bar
 // ═══════════════════════════════════════════════════════════
@@ -193,9 +259,11 @@ function renderStats() {
   document.getElementById('stat-repos').textContent = state.allRepos.length;
 
   const top = [...state.allRepos].sort((a, b) => (b.stargazers_count || 0) - (a.stargazers_count || 0))[0];
+  const el = document.getElementById('stat-top-star');
   if (top) {
-    document.getElementById('stat-top-star').textContent = top.name || top.full_name;
-    document.getElementById('stat-top-star').title = `${(top.stargazers_count || 0).toLocaleString()} ★`;
+    el.textContent = top.name || top.full_name;
+    el.title = `${(top.stargazers_count || 0).toLocaleString()} ★`;
+    el.classList.add('is-text');
   }
 }
 
@@ -226,7 +294,7 @@ function renderTable(repos) {
   const fragment = document.createDocumentFragment();
   repos.forEach((r, i) => {
     const tr = document.createElement('tr');
-    tr.className = 'table-row';
+    tr.className = 'table-row row-entering';
     tr.dataset.fullname = r.full_name || '';
     tr.style.animationDelay = `${i * 20}ms`;
 
@@ -289,12 +357,14 @@ const SORT_KEYS = {
 function sortRepos(repos) {
   const { column, direction } = state.currentSort;
   const keyFn = SORT_KEYS[column] || SORT_KEYS.score;
-  const sorted = [...repos].sort((a, b) => {
-    const va = keyFn(a, repos.indexOf(a));
-    const vb = keyFn(b, repos.indexOf(b));
+  const indexed = repos.map((r, i) => [r, i]);
+  indexed.sort((a, b) => {
+    const va = keyFn(a[0], a[1]);
+    const vb = keyFn(b[0], b[1]);
     if (typeof va === 'string') return va.localeCompare(vb);
     return va - vb;
   });
+  const sorted = indexed.map((x) => x[0]);
   return direction === 'desc' ? sorted.reverse() : sorted;
 }
 
@@ -336,28 +406,46 @@ function refreshTable() {
   repos = sortRepos(repos);
   renderTable(repos);
   updateSortHeaders();
+  writeURLState();
+  updateChartBadge();
 }
 
 // ═══════════════════════════════════════════════════════════
 // History & Chart
 // ═══════════════════════════════════════════════════════════
+async function fetchHistoryDay(dateStr) {
+  try {
+    const resp = await fetch(`${BASE}/data/history/${dateStr}.json`);
+    if (resp.ok) {
+      const data = await resp.json();
+      state.historyCache.set(dateStr, data);
+      return { date: dateStr, repos: data };
+    }
+  } catch { /* day may not exist */ }
+  return null;
+}
+
 async function loadHistoryAndChart() {
   const chartNote = document.getElementById('chart-note');
-  const historyData = [];
 
+  // Build date list for last 30 days
+  const dates = [];
   for (let i = 1; i <= 30; i++) {
     const d = new Date();
     d.setDate(d.getDate() - i);
-    const dateStr = d.toISOString().split('T')[0];
-    try {
-      const resp = await fetch(`${BASE}/data/history/${dateStr}.json`);
-      if (resp.ok) {
-        const data = await resp.json();
-        state.historyCache.set(dateStr, data);
-        historyData.push({ date: dateStr, repos: data });
-      }
-    } catch { /* day may not exist */ }
+    dates.push(d.toISOString().split('T')[0]);
   }
+
+  // Fetch all in parallel (limited concurrency)
+  const CONCURRENCY = 6;
+  const results = [];
+  for (let i = 0; i < dates.length; i += CONCURRENCY) {
+    const batch = dates.slice(i, i + CONCURRENCY).map(fetchHistoryDay);
+    const batchResults = await Promise.all(batch);
+    results.push(...batchResults);
+  }
+
+  const historyData = results.filter(Boolean);
 
   if (historyData.length < 2) {
     chartNote.innerHTML = 'Need at least 2 days of history for trend charts. Run <code>make run</code> daily to build data.';
@@ -368,9 +456,21 @@ async function loadHistoryAndChart() {
   renderTrendChart(historyData);
 }
 
+function updateChartBadge() {
+  const badge = document.getElementById('chart-badge');
+  if (!badge) return;
+  badge.textContent = state.currentGroup === 'all' ? 'Top 5' : 'Top 5 in Category';
+}
+
+function getTopForChart() {
+  const repos = getCurrentRepos();
+  const sorted = sortRepos(repos);
+  return sorted.slice(0, 5);
+}
+
 function renderTrendChart(historyData) {
   const ctx = document.getElementById('trend-chart').getContext('2d');
-  const top5 = state.allRepos.slice(0, 5);
+  const top5 = getTopForChart();
 
   const colors = [
     getComputedStyle(document.documentElement).getPropertyValue('--chart-1').trim() || '#4f46e5',
@@ -507,6 +607,19 @@ function updateChartTheme() {
 }
 
 // ═══════════════════════════════════════════════════════════
+// Chart refresh on category change
+// ═══════════════════════════════════════════════════════════
+async function refreshChart() {
+  if (state.chart && state.historyCache.size > 1) {
+    // Re-render with current category's top 5
+    const historyData = Array.from(state.historyCache.entries())
+      .map(([date, repos]) => ({ date, repos }))
+      .sort((a, b) => a.date.localeCompare(b.date));
+    if (historyData.length >= 2) renderTrendChart(historyData);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
 // Event Listeners
 // ═══════════════════════════════════════════════════════════
 function setupEventListeners() {
@@ -528,6 +641,7 @@ function setupEventListeners() {
     state.currentGroup = tab.dataset.group;
     state.currentSort = { column: 'score', direction: 'desc' };
     refreshTable();
+    refreshChart();
   });
 
   // Column sorting
@@ -560,11 +674,11 @@ function setupEventListeners() {
     row.classList.add('selected');
   });
 
-  // Back to top
+  // Back to top — smart threshold based on viewport height
   const backBtn = document.getElementById('back-to-top');
   window.addEventListener('scroll', () => {
     if (!backBtn) return;
-    backBtn.classList.toggle('visible', window.scrollY > 600);
+    backBtn.classList.toggle('visible', window.scrollY > window.innerHeight * 0.75);
   });
   backBtn?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -572,7 +686,7 @@ function setupEventListeners() {
 
   // Keyboard shortcut: / to focus search
   document.addEventListener('keydown', (e) => {
-    if (e.key === '/' && document.activeElement?.tagName !== 'INPUT') {
+    if (e.key === '/' && document.activeElement?.tagName !== 'INPUT' && document.activeElement?.tagName !== 'TEXTAREA') {
       e.preventDefault();
       document.getElementById('search-input')?.focus();
     }
@@ -600,6 +714,26 @@ function formatDate(isoString) {
       hour: '2-digit',
       minute: '2-digit',
     });
+  } catch {
+    return isoString;
+  }
+}
+
+function formatRelative(isoString) {
+  if (!isoString) return '';
+  try {
+    const then = new Date(isoString);
+    const now = new Date();
+    const diffMs = now - then;
+    const diffMin = Math.floor(diffMs / 60000);
+    const diffHrs = Math.floor(diffMs / 3600000);
+    const diffDays = Math.floor(diffMs / 86400000);
+
+    if (diffMin < 1) return 'just now';
+    if (diffMin < 60) return `${diffMin}m ago`;
+    if (diffHrs < 24) return `${diffHrs}h ago`;
+    if (diffDays < 7) return `${diffDays}d ago`;
+    return formatDate(isoString);
   } catch {
     return isoString;
   }
