@@ -507,12 +507,15 @@ async function loadChartFromTop5History() {
   }
 
   const dates = filterDatesByRange(Object.keys(state.top5History), state.historyRange);
-  if (dates.length < 2) {
-    chartNote.innerHTML = `Only ${dates.length} day(s) of history. Need at least 2 for trends.`;
+  if (dates.length === 0) {
+    chartNote.innerHTML = 'No history data available yet. Run <code>make run</code> daily to build trend data.';
     return;
   }
 
-  chartNote.innerHTML = `Showing <strong>${dates.length}</strong> of <strong>${Object.keys(state.top5History).length}</strong> available days.`;
+  chartNote.innerHTML = dates.length < 2
+    ? `Only <strong>1 day</strong> of history — showing current rankings. Trends will appear after 2+ days.`
+    : `Showing <strong>${dates.length}</strong> of <strong>${Object.keys(state.top5History).length}</strong> available days.`;
+
   renderTrendChart(dates);
 }
 
@@ -552,6 +555,10 @@ function renderTrendChart(dates) {
   ];
 
   const sortedDates = [...dates].sort();
+  const isSingleDay = sortedDates.length === 1;
+
+  // For single day: use bar chart. For multi-day: use line chart.
+  const chartType = isSingleDay ? 'bar' : 'line';
 
   const datasets = top5Names.map((fullName, i) => {
     const scores = sortedDates.map((date) => {
@@ -561,11 +568,13 @@ function renderTrendChart(dates) {
       return found ? found.score : null;
     });
 
-    // Carry-forward gaps.
-    let lastKnown = null;
-    for (let j = 0; j < scores.length; j++) {
-      if (scores[j] != null) lastKnown = scores[j];
-      else scores[j] = lastKnown;
+    // Carry-forward gaps (only relevant for line charts).
+    if (!isSingleDay) {
+      let lastKnown = null;
+      for (let j = 0; j < scores.length; j++) {
+        if (scores[j] != null) lastKnown = scores[j];
+        else scores[j] = lastKnown;
+      }
     }
 
     const shortName = fullName.split('/').pop();
@@ -573,13 +582,15 @@ function renderTrendChart(dates) {
       label: shortName,
       data: scores,
       borderColor: colors[i % colors.length],
-      backgroundColor: colors[i % colors.length] + '20',
-      borderWidth: 2.5,
+      backgroundColor: isSingleDay ? colors[i % colors.length] + 'cc' : colors[i % colors.length] + '20',
+      borderWidth: 2,
       tension: 0.35,
       fill: false,
-      pointRadius: 3,
+      pointRadius: isSingleDay ? 0 : 3,
       pointHoverRadius: 7,
       pointBackgroundColor: colors[i % colors.length],
+      barPercentage: 0.8,
+      categoryPercentage: 0.9,
     };
   }).filter((ds) => ds.data.some((v) => v != null));
 
@@ -589,13 +600,19 @@ function renderTrendChart(dates) {
   const gridColor = isDark ? 'rgba(148, 163, 184, 0.1)' : 'rgba(0, 0, 0, 0.06)';
   const textColor = isDark ? '#94a3b8' : '#64748b';
 
+  const xLabel = isSingleDay
+    ? new Date(sortedDates[0] + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+    : '';
+
   state.chart = new Chart(ctx, {
-    type: 'line',
+    type: chartType,
     data: {
-      labels: sortedDates.map((d) => {
-        const date = new Date(d + 'T00:00:00');
-        return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-      }),
+      labels: isSingleDay
+        ? [''] // single empty label for bar grouping
+        : sortedDates.map((d) => {
+            const date = new Date(d + 'T00:00:00');
+            return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+          }),
       datasets,
     },
     options: {
@@ -615,7 +632,10 @@ function renderTrendChart(dates) {
           borderWidth: 1,
           padding: 12,
           cornerRadius: 8,
-          callbacks: { label: (ctx) => `  ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(4)}` },
+          callbacks: {
+            title: () => xLabel,
+            label: (ctx) => `  ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(4)}`,
+          },
         },
       },
       scales: {
@@ -628,7 +648,7 @@ function renderTrendChart(dates) {
         x: {
           ticks: { color: textColor, font: { size: 11 } },
           grid: { color: gridColor },
-          title: { display: true, text: 'Date', color: textColor, font: { size: 12, weight: '600' } },
+          title: { display: !isSingleDay, text: 'Date', color: textColor, font: { size: 12, weight: '600' } },
         },
       },
     },
