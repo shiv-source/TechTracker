@@ -20,11 +20,11 @@ Stay at the forefront of the development landscape with **TechTracker**, a metic
 | 4 | [next.js](https://github.com/vercel/next.js) | 140130 | 31234 | 4150 | JavaScript |  | The React Framework | 2026-06-22 |
 | 5 | [angular](https://github.com/angular/angular) | 100422 | 27194 | 1173 | TypeScript |  | Deliver web apps with confidence 🚀 | 2026-06-22 |
 | 6 | [tailwindcss](https://github.com/tailwindlabs/tailwindcss) | 95691 | 5300 | 66 | TypeScript |  | A utility-first CSS framework for rapid UI development. | 2026-06-22 |
-| 7 | [svelte](https://github.com/sveltejs/svelte) | 87350 | 4954 | 1039 | JavaScript |  | web development for the rest of us | 2026-06-22 |
+| 7 | [svelte](https://github.com/sveltejs/svelte) | 87349 | 4954 | 1039 | JavaScript |  | web development for the rest of us | 2026-06-22 |
 | 8 | [jquery](https://github.com/jquery/jquery) | 59820 | 20404 | 91 | JavaScript |  | jQuery JavaScript Library | 2026-06-21 |
 | 9 | [webpack](https://github.com/webpack/webpack) | 65856 | 9352 | 178 | JavaScript |  | A bundler for javascript and friends. Packs many modules into a few bundled assets. Code Splitting allows for loading parts of the application on demand. Through &#34;loaders&#34;, modules can be CommonJs, AMD, ES6 modules, CSS, Images, JSON, Coffeescript, LESS, ... and your custom stuff. | 2026-06-22 |
 | 10 | [nuxt](https://github.com/nuxt/nuxt) | 60515 | 5668 | 815 | TypeScript |  | the full-stack Vue framework | 2026-06-22 |
-| 11 | [astro](https://github.com/withastro/astro) | 60350 | 3561 | 159 | TypeScript |  | The web framework for content-driven websites. ⭐️ Star to support our work! | 2026-06-22 |
+| 11 | [astro](https://github.com/withastro/astro) | 60351 | 3561 | 159 | TypeScript |  | The web framework for content-driven websites. ⭐️ Star to support our work! | 2026-06-22 |
 | 12 | [preact](https://github.com/preactjs/preact) | 38711 | 2037 | 150 | JavaScript |  | ⚛️ Fast 3kB React alternative with the same modern API. Components &amp; Virtual DOM. | 2026-06-22 |
 | 13 | [solid](https://github.com/solidjs/solid) | 35653 | 1070 | 73 | TypeScript |  | A declarative, efficient, and flexible JavaScript library for building user interfaces. | 2026-06-22 |
 | 14 | [remix](https://github.com/remix-run/remix) | 33113 | 2776 | 57 | TypeScript |  | Build Better Websites. Create modern, resilient user experiences with web fundamentals. | 2026-06-22 |
@@ -38,7 +38,7 @@ Stay at the forefront of the development landscape with **TechTracker**, a metic
 | SL | Name | Stars | Forks | Issues | Language | Trend | Description | UpdatedAt |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | [spring-boot](https://github.com/spring-projects/spring-boot) | 81014 | 41935 | 525 | Java |  | Spring Boot helps you to create Spring-powered, production-grade applications and services with absolute minimum fuss. | 2026-06-22 |
-| 2 | [django](https://github.com/django/django) | 87935 | 33870 | 452 | Python |  | The Web framework for perfectionists with deadlines. | 2026-06-22 |
+| 2 | [django](https://github.com/django/django) | 87935 | 33870 | 453 | Python |  | The Web framework for perfectionists with deadlines. | 2026-06-22 |
 | 3 | [spring-framework](https://github.com/spring-projects/spring-framework) | 60054 | 38833 | 460 | Java |  | Spring Framework | 2026-06-22 |
 | 4 | [fastapi](https://github.com/fastapi/fastapi) | 99511 | 9464 | 97 | Python |  | FastAPI framework, high performance, easy to learn, fast to code, ready for production | 2026-06-22 |
 | 5 | [gin](https://github.com/gin-gonic/gin) | 88731 | 8632 | 713 | Go |  | Gin is a high-performance HTTP web framework written in Go. It provides a Martini-like API but with significantly better performance—up to 40 times faster—thanks to httprouter. Gin is designed for building REST APIs, web applications, and microservices. | 2026-06-22 |
@@ -55,8 +55,8 @@ Stay at the forefront of the development landscape with **TechTracker**, a metic
 | 16 | [echo](https://github.com/labstack/echo) | 32463 | 2329 | 37 | Go |  | High performance, minimalist Go web framework | 2026-06-22 |
 | 17 | [sails](https://github.com/balderdashy/sails) | 22808 | 1920 | 589 | JavaScript |  | Realtime MVC Framework for Node.js | 2026-06-20 |
 | 18 | [phoenix](https://github.com/phoenixframework/phoenix) | 23029 | 3071 | 54 | Elixir |  | Peace of mind from prototype to production | 2026-06-22 |
-| 19 | [actix-web](https://github.com/actix/actix-web) | 24695 | 1871 | 189 | Rust |  | Actix Web is a powerful, pragmatic, and extremely fast web framework for Rust. | 2026-06-22 |
-| 20 | [quarkus](https://github.com/quarkusio/quarkus) | 15726 | 3211 | 2755 | Java |  | Quarkus: Supersonic Subatomic Java. | 2026-06-22 |
+| 19 | [actix-web](https://github.com/actix/actix-web) | 24695 | 1871 | 187 | Rust |  | Actix Web is a powerful, pragmatic, and extremely fast web framework for Rust. | 2026-06-22 |
+| 20 | [quarkus](https://github.com/quarkusio/quarkus) | 15726 | 3211 | 2756 | Java |  | Quarkus: Supersonic Subatomic Java. | 2026-06-22 |
 | 21 | [aiohttp](https://github.com/aio-libs/aiohttp) | 16458 | 2333 | 219 | Python |  | Asynchronous HTTP client/server framework for asyncio and Python | 2026-06-22 |
 | 22 | [hapi](https://github.com/hapijs/hapi) | 14790 | 1357 | 58 | JavaScript |  | The Simple, Secure Framework Developers Trust | 2026-06-18 |
 | 23 | [go-swagger](https://github.com/go-swagger/go-swagger) | 9989 | 1307 | 329 | Go |  | Swagger 2.0 implementation for go | 2026-06-22 |
@@ -77,7 +77,7 @@ Stay at the forefront of the development landscape with **TechTracker**, a metic
 | 2 | [react-native](https://github.com/react/react-native) | 126050 | 25179 | 1051 | C&#43;&#43; |  | A framework for building native applications using React | 2026-06-22 |
 | 3 | [ionic-framework](https://github.com/ionic-team/ionic-framework) | 52535 | 13355 | 632 | TypeScript |  | A powerful cross-platform UI toolkit for building native-quality iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript. | 2026-06-22 |
 | 4 | [expo](https://github.com/expo/expo) | 50189 | 12830 | 635 | TypeScript |  | An open-source framework for making universal native apps with React. Expo runs on Android, iOS, and the web. | 2026-06-22 |
-| 5 | [maui](https://github.com/dotnet/maui) | 23269 | 1949 | 4001 | C# |  | .NET MAUI is the .NET Multi-platform App UI, a framework for building native device applications spanning mobile, tablet, and desktop. | 2026-06-22 |
+| 5 | [maui](https://github.com/dotnet/maui) | 23269 | 1949 | 4002 | C# |  | .NET MAUI is the .NET Multi-platform App UI, a framework for building native device applications spanning mobile, tablet, and desktop. | 2026-06-22 |
 | 6 | [NativeScript](https://github.com/NativeScript/NativeScript) | 25542 | 1735 | 836 | TypeScript |  | ⚡ Write Native with TypeScript ✨ Best of all worlds (TypeScript, Swift, Objective C, Kotlin, Java, Dart). Use what you love ❤️ Angular, React, Solid, Svelte, Vue with: iOS (UIKit, SwiftUI), Android (View, Jetpack Compose), Flutter and you name it compatible. | 2026-06-21 |
 | 7 | [compose-multiplatform](https://github.com/JetBrains/compose-multiplatform) | 19144 | 1402 | 72 | Kotlin |  | Compose Multiplatform, a modern UI framework for Kotlin that makes building performant and beautiful user interfaces easy and enjoyable. | 2026-06-21 |
 | 8 | [capacitor](https://github.com/ionic-team/capacitor) | 15918 | 1210 | 108 | TypeScript |  | Build cross-platform Native Progressive Web Apps for iOS, Android, and the Web ⚡️ | 2026-06-22 |
@@ -121,18 +121,18 @@ Stay at the forefront of the development landscape with **TechTracker**, a metic
 | 1 | [kubernetes](https://github.com/kubernetes/kubernetes) | 123184 | 43267 | 2740 | Go |  | Production-Grade Container Scheduling and Management | 2026-06-22 |
 | 2 | [moby](https://github.com/moby/moby) | 71728 | 18963 | 3782 | Go |  | The Moby Project - a collaborative project for the container ecosystem to assemble container-based systems | 2026-06-22 |
 | 3 | [ansible](https://github.com/ansible/ansible) | 69021 | 24094 | 790 | Python |  | Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy and maintain. Automate everything from code deployment to network configuration to cloud management, in a language that approaches plain English, using SSH, with no agents to install on remote systems. https://docs.ansible.com. | 2026-06-22 |
-| 4 | [grafana](https://github.com/grafana/grafana) | 74594 | 14086 | 3514 | TypeScript |  | The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. | 2026-06-22 |
+| 4 | [grafana](https://github.com/grafana/grafana) | 74595 | 14086 | 3513 | TypeScript |  | The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. | 2026-06-22 |
 | 5 | [prometheus](https://github.com/prometheus/prometheus) | 64694 | 10513 | 863 | Go |  | The Prometheus monitoring system and time series database. | 2026-06-22 |
 | 6 | [caddy](https://github.com/caddyserver/caddy) | 73490 | 4783 | 246 | Go |  | Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS | 2026-06-22 |
-| 7 | [traefik](https://github.com/traefik/traefik) | 63716 | 6044 | 849 | Go |  | The Cloud Native Application Proxy | 2026-06-22 |
-| 8 | [terraform](https://github.com/hashicorp/terraform) | 48760 | 10372 | 1914 | Go |  | Terraform enables you to safely and predictably create, change, and improve infrastructure. It is a source-available tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned. | 2026-06-22 |
+| 7 | [traefik](https://github.com/traefik/traefik) | 63715 | 6044 | 849 | Go |  | The Cloud Native Application Proxy | 2026-06-22 |
+| 8 | [terraform](https://github.com/hashicorp/terraform) | 48760 | 10372 | 1913 | Go |  | Terraform enables you to safely and predictably create, change, and improve infrastructure. It is a source-available tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned. | 2026-06-22 |
 | 9 | [kong](https://github.com/Kong/kong) | 43645 | 5155 | 150 | Lua |  | 🦍 The API and AI Gateway | 2026-06-22 |
 | 10 | [istio](https://github.com/istio/istio) | 38238 | 8329 | 474 | Go |  | Connect, secure, control, and observe services. | 2026-06-22 |
 | 11 | [jenkins](https://github.com/jenkinsci/jenkins) | 25498 | 9534 | 3596 | Java |  | Jenkins automation server | 2026-06-22 |
 | 12 | [vault](https://github.com/hashicorp/vault) | 35812 | 4698 | 1508 | Go |  | A tool for secrets management, encryption as a service, and privileged access management | 2026-06-22 |
 | 13 | [nginx](https://github.com/nginx/nginx) | 30975 | 8015 | 431 | C |  | The official NGINX Open Source repository. | 2026-06-22 |
 | 14 | [consul](https://github.com/hashicorp/consul) | 29955 | 4610 | 1369 | Go |  | Consul is a distributed, highly available, and data center aware solution to connect and configure applications across dynamic, distributed infrastructure. | 2026-06-21 |
-| 15 | [argo-cd](https://github.com/argoproj/argo-cd) | 23219 | 7354 | 4215 | Go |  | Declarative Continuous Deployment for Kubernetes | 2026-06-22 |
+| 15 | [argo-cd](https://github.com/argoproj/argo-cd) | 23219 | 7356 | 4215 | Go |  | Declarative Continuous Deployment for Kubernetes | 2026-06-22 |
 | 16 | [helm](https://github.com/helm/helm) | 29902 | 7670 | 406 | Go |  | The Kubernetes Package Manager | 2026-06-22 |
 | 17 | [envoy](https://github.com/envoyproxy/envoy) | 28455 | 5442 | 1842 | C&#43;&#43; |  | Cloud-native high-performance edge/middle/service proxy | 2026-06-22 |
 | 18 | [rancher](https://github.com/rancher/rancher) | 25688 | 3208 | 3354 | Go |  | Complete container management platform | 2026-06-22 |
@@ -163,18 +163,18 @@ Stay at the forefront of the development landscape with **TechTracker**, a metic
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | [elasticsearch](https://github.com/elastic/elasticsearch) | 77107 | 25846 | 5852 | Java |  | Free and Open Source, Distributed, RESTful Search Engine | 2026-06-22 |
 | 2 | [redis](https://github.com/redis/redis) | 75033 | 24677 | 2846 | C |  | For developers, who are building real-time data-driven applications, Redis is the preferred, fastest, and most feature-rich cache, data structure server, and document and vector query engine. | 2026-06-22 |
-| 3 | [etcd](https://github.com/etcd-io/etcd) | 51872 | 10394 | 266 | Go |  | Distributed reliable key-value store for the most critical data of a distributed system | 2026-06-22 |
-| 4 | [ClickHouse](https://github.com/ClickHouse/ClickHouse) | 48209 | 8545 | 6183 | C&#43;&#43; |  | ClickHouse® is a real-time analytics database management system | 2026-06-22 |
+| 3 | [etcd](https://github.com/etcd-io/etcd) | 51872 | 10394 | 260 | Go |  | Distributed reliable key-value store for the most critical data of a distributed system | 2026-06-22 |
+| 4 | [ClickHouse](https://github.com/ClickHouse/ClickHouse) | 48209 | 8545 | 6185 | C&#43;&#43; |  | ClickHouse® is a real-time analytics database management system | 2026-06-22 |
 | 5 | [meilisearch](https://github.com/meilisearch/meilisearch) | 58226 | 2577 | 297 | Rust |  | A lightning-fast search engine API bringing AI-powered hybrid search to your sites and applications. | 2026-06-22 |
 | 6 | [tidb](https://github.com/pingcap/tidb) | 40191 | 6199 | 6322 | Go |  | TiDB is built for agentic workloads that grow unpredictably, with ACID guarantees and native support for transactions, analytics, and vector search. No data silos. No noisy neighbors. No infrastructure ceiling. | 2026-06-22 |
-| 7 | [milvus](https://github.com/milvus-io/milvus) | 44889 | 4082 | 921 | Go |  | Milvus is a high-performance, cloud-native vector database built for scalable vector ANN search | 2026-06-22 |
-| 8 | [cockroach](https://github.com/cockroachdb/cockroach) | 32220 | 4059 | 8079 | Go |  | CockroachDB — the cloud native, distributed SQL database designed for high availability, effortless scale, and control over data placement. | 2026-06-22 |
+| 7 | [milvus](https://github.com/milvus-io/milvus) | 44889 | 4082 | 920 | Go |  | Milvus is a high-performance, cloud-native vector database built for scalable vector ANN search | 2026-06-22 |
+| 8 | [cockroach](https://github.com/cockroachdb/cockroach) | 32220 | 4059 | 8080 | Go |  | CockroachDB — the cloud native, distributed SQL database designed for high availability, effortless scale, and control over data placement. | 2026-06-22 |
 | 9 | [duckdb](https://github.com/duckdb/duckdb) | 38936 | 3351 | 554 | C&#43;&#43; |  | DuckDB is an analytical in-process SQL database management system | 2026-06-22 |
 | 10 | [mongo](https://github.com/mongodb/mongo) | 28386 | 5784 | 26 | C&#43;&#43; |  | The MongoDB Database | 2026-06-22 |
 | 11 | [influxdb](https://github.com/influxdata/influxdb) | 31581 | 3705 | 2143 | Rust |  | Scalable datastore for metrics, events, and real-time analytics | 2026-06-22 |
 | 12 | [surrealdb](https://github.com/surrealdb/surrealdb) | 32449 | 1275 | 671 | Rust |  | A scalable, distributed, collaborative, document-graph database, for the realtime web | 2026-06-22 |
 | 13 | [postgres](https://github.com/postgres/postgres) | 21223 | 5719 | 0 | C |  | Mirror of the official PostgreSQL GIT repository. Note that this is just a *mirror* - we don&#39;t work with pull requests on github. To contribute, please see https://wiki.postgresql.org/wiki/Submitting_a_Patch | 2026-06-22 |
-| 14 | [vitess](https://github.com/vitessio/vitess) | 21053 | 2356 | 987 | Go |  | Vitess is a database clustering system for horizontal scaling of MySQL. | 2026-06-22 |
+| 14 | [vitess](https://github.com/vitessio/vitess) | 21053 | 2356 | 988 | Go |  | Vitess is a database clustering system for horizontal scaling of MySQL. | 2026-06-22 |
 | 15 | [timescaledb](https://github.com/timescale/timescaledb) | 22950 | 1107 | 386 | C |  | A time-series database for high-performance real-time analytics packaged as a Postgres extension | 2026-06-22 |
 | 16 | [dgraph](https://github.com/dgraph-io/dgraph) | 21715 | 1592 | 82 | Go |  | high-performance graph database for real-time use cases | 2026-06-22 |
 | 17 | [neo4j](https://github.com/neo4j/neo4j) | 16766 | 2632 | 200 | Java |  | Graphs for Everyone | 2026-06-22 |
@@ -193,19 +193,19 @@ Stay at the forefront of the development landscape with **TechTracker**, a metic
 | SL | Name | Stars | Forks | Issues | Language | Trend | Description | UpdatedAt |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | [node](https://github.com/nodejs/node) | 117914 | 35744 | 2418 | JavaScript |  | Node.js JavaScript runtime ✨🐢🚀✨ | 2026-06-22 |
-| 2 | [go](https://github.com/golang/go) | 134875 | 19028 | 10161 | Go |  | The Go programming language | 2026-06-22 |
-| 3 | [rust](https://github.com/rust-lang/rust) | 114039 | 15007 | 12477 | Rust |  | Empowering everyone to build reliable and efficient software. | 2026-06-22 |
+| 2 | [go](https://github.com/golang/go) | 134876 | 19028 | 10161 | Go |  | The Go programming language | 2026-06-22 |
+| 3 | [rust](https://github.com/rust-lang/rust) | 114040 | 15007 | 12477 | Rust |  | Empowering everyone to build reliable and efficient software. | 2026-06-22 |
 | 4 | [TypeScript](https://github.com/microsoft/TypeScript) | 109357 | 13445 | 5051 | TypeScript |  | TypeScript is a superset of JavaScript that compiles to clean JavaScript output. | 2026-06-22 |
-| 5 | [cpython](https://github.com/python/cpython) | 73362 | 34760 | 9402 | Python |  | The Python programming language | 2026-06-22 |
-| 6 | [swift](https://github.com/swiftlang/swift) | 70097 | 10739 | 9050 | Swift |  | The Swift Programming Language | 2026-06-22 |
+| 5 | [cpython](https://github.com/python/cpython) | 73362 | 34760 | 9403 | Python |  | The Python programming language | 2026-06-22 |
+| 6 | [swift](https://github.com/swiftlang/swift) | 70097 | 10739 | 9051 | Swift |  | The Swift Programming Language | 2026-06-22 |
 | 7 | [kotlin](https://github.com/JetBrains/kotlin) | 52928 | 6344 | 285 | Kotlin |  | The Kotlin Programming Language. | 2026-06-22 |
 | 8 | [julia](https://github.com/JuliaLang/julia) | 48878 | 5794 | 4713 | Julia |  | The Julia Programming Language | 2026-06-22 |
 | 9 | [php-src](https://github.com/php/php-src) | 40173 | 8075 | 1852 | C |  | The PHP Interpreter | 2026-06-22 |
-| 10 | [zig](https://github.com/ziglang/zig) | 43185 | 3060 | 2909 | Zig |  | Moved to Codeberg | 2026-06-22 |
+| 10 | [zig](https://github.com/ziglang/zig) | 43186 | 3060 | 2909 | Zig |  | Moved to Codeberg | 2026-06-22 |
 | 11 | [v](https://github.com/vlang/v) | 37652 | 2248 | 81 | V |  | Simple, fast, safe, compiled language for developing maintainable software. Compiles itself in &lt;1s with zero library dependencies. Supports automatic C =&gt; V translation. https://vlang.io | 2026-06-22 |
 | 12 | [ruby](https://github.com/ruby/ruby) | 23630 | 5609 | 604 | Ruby |  | The Ruby Programming Language | 2026-06-22 |
 | 13 | [carbon-lang](https://github.com/carbon-language/carbon-lang) | 33847 | 1535 | 241 | C&#43;&#43; |  | Carbon Language&#39;s main repository: documents, design, implementation, and related tools. (NOTE: Carbon Language is experimental; see README) | 2026-06-21 |
-| 14 | [elixir](https://github.com/elixir-lang/elixir) | 26560 | 3488 | 26 | Elixir |  | Elixir is a dynamic, functional language for building scalable and maintainable applications | 2026-06-22 |
+| 14 | [elixir](https://github.com/elixir-lang/elixir) | 26561 | 3488 | 26 | Elixir |  | Elixir is a dynamic, functional language for building scalable and maintainable applications | 2026-06-22 |
 | 15 | [jdk](https://github.com/openjdk/jdk) | 23017 | 6356 | 379 | Java |  | JDK main-line development https://openjdk.org/projects/jdk | 2026-06-22 |
 | 16 | [crystal](https://github.com/crystal-lang/crystal) | 20298 | 1687 | 1992 | Crystal |  | The Crystal Programming Language | 2026-06-22 |
 | 17 | [Nim](https://github.com/nim-lang/Nim) | 18061 | 1536 | 2158 | Nim |  | Nim is a statically typed compiled systems programming language. It combines successful concepts from mature languages like Python, Ada and Modula. Its design focuses on efficiency, expressiveness, and elegance (in that order of priority). | 2026-06-22 |
@@ -223,9 +223,9 @@ Stay at the forefront of the development landscape with **TechTracker**, a metic
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | [three.js](https://github.com/mrdoob/three.js) | 113234 | 36394 | 414 | JavaScript |  | JavaScript 3D Library. | 2026-06-22 |
 | 2 | [d3](https://github.com/d3/d3) | 113112 | 22715 | 20 | Shell |  | Bring data to life with SVG, Canvas and HTML. :bar_chart::chart_with_upwards_trend::tada: | 2026-06-22 |
-| 3 | [excalidraw](https://github.com/excalidraw/excalidraw) | 125953 | 14110 | 3178 | TypeScript |  | Virtual whiteboard for sketching hand-drawn like diagrams | 2026-06-22 |
+| 3 | [excalidraw](https://github.com/excalidraw/excalidraw) | 125955 | 14110 | 3178 | TypeScript |  | Virtual whiteboard for sketching hand-drawn like diagrams | 2026-06-22 |
 | 4 | [pixijs](https://github.com/pixijs/pixijs) | 47465 | 5037 | 348 | TypeScript |  | The HTML5 Creation Engine: Create beautiful digital content with the fastest, most flexible 2D WebGL renderer. | 2026-06-22 |
-| 5 | [penpot](https://github.com/penpot/penpot) | 52606 | 3365 | 667 | Clojure |  | Penpot: The open-source design tool for design and code collaboration | 2026-06-22 |
+| 5 | [penpot](https://github.com/penpot/penpot) | 52610 | 3365 | 666 | Clojure |  | Penpot: The open-source design tool for design and code collaboration | 2026-06-22 |
 | 6 | [fabric.js](https://github.com/fabricjs/fabric.js) | 31251 | 3624 | 459 | TypeScript |  | Javascript Canvas Library, SVG-to-Canvas (&amp; canvas-to-SVG) Parser | 2026-06-22 |
 | 7 | [p5.js](https://github.com/processing/p5.js) | 23753 | 3763 | 493 | JavaScript |  | p5.js is a client-side JS platform that empowers artists, designers, students, and anyone to learn to code and express themselves creatively on the web. It is based on the core principles of Processing. Looking for p5.js 2.0? http://beta.p5js.org | 2026-06-21 |
 | 8 | [paper.js](https://github.com/paperjs/paper.js) | 15055 | 1260 | 431 | JavaScript |  | The Swiss Army Knife of Vector Graphics Scripting – Scriptographer ported to JavaScript and the browser, using HTML5 Canvas. Created by @lehni &amp; @puckey | 2026-06-22 |
