@@ -46,8 +46,7 @@
   --transition-bounce: 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* Z-index */
-  --z-header: 100;
-  --z-tabs: 90;
+  --z-header-group: 100;
   --z-overlay: 200;
   --z-tooltip: 300;
   --z-orb: 0;
@@ -277,12 +276,17 @@ a:hover {
   text-decoration: underline;
 }
 
+/* ── Header Group (sticky wrapper) ──────────────────────────── */
+
+.header-group {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header-group);
+}
+
 /* ── Header ────────────────────────────────────────────────── */
 
 .header {
-  position: sticky;
-  top: 0;
-  z-index: var(--z-header);
   background: linear-gradient(135deg, #1e1b4b 0%, #312e81 30%, #4338ca 60%, #6366f1 100%);
   color: var(--color-text-inverse);
   padding: var(--space-6) var(--space-4);
@@ -471,9 +475,6 @@ a:hover {
 /* ── Navigation Tabs ───────────────────────────────────────── */
 
 .tabs {
-  position: sticky;
-  top: 98px;
-  z-index: var(--z-tabs);
   display: flex;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-4);
@@ -1142,7 +1143,6 @@ a:hover {
   .tabs {
     padding: var(--space-2) var(--space-3);
     gap: var(--space-1);
-    top: 70px;
   }
 
   .tab {
@@ -1234,8 +1234,7 @@ a:hover {
 /* ── Print ─────────────────────────────────────────────────── */
 
 @media print {
-  .header,
-  .tabs,
+  .header-group,
   .search-input-wrapper,
   .theme-toggle,
   .back-to-top,

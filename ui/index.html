@@ -71,43 +71,45 @@
   <div class="orb orb-2" aria-hidden="true"></div>
   <div class="orb orb-3" aria-hidden="true"></div>
 
-  <!-- ═══════════ Header ═══════════ -->
-  <header class="header" role="banner">
-    <div class="header-inner">
-      <div class="header-brand">
-        <div class="header-icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+  <!-- ═══════════ Sticky Header Group ═══════════ -->
+  <div class="header-group" role="banner">
+    <header class="header">
+      <div class="header-inner">
+        <div class="header-brand">
+          <div class="header-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div>
+            <h1 class="logo">TechTracker</h1>
+            <p class="subtitle">Open Source Rankings</p>
+          </div>
         </div>
-        <div>
-          <h1 class="logo">TechTracker</h1>
-          <p class="subtitle">Open Source Rankings</p>
+
+        <div class="header-spacer"></div>
+
+        <div class="header-controls">
+          <span class="live-indicator">
+            <span class="live-dot" aria-hidden="true"></span>
+            Live Data
+          </span>
+          <span id="last-updated" class="last-updated" aria-live="polite"></span>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+            <span class="theme-icon-light" aria-hidden="true" style="display:inline">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            </span>
+            <span class="theme-icon-dark" aria-hidden="true" style="display:none">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </span>
+          </button>
         </div>
       </div>
+    </header>
 
-      <div class="header-spacer"></div>
-
-      <div class="header-controls">
-        <span class="live-indicator">
-          <span class="live-dot" aria-hidden="true"></span>
-          Live Data
-        </span>
-        <span id="last-updated" class="last-updated" aria-live="polite"></span>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
-          <span class="theme-icon-light" aria-hidden="true" style="display:inline">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-          </span>
-          <span class="theme-icon-dark" aria-hidden="true" style="display:none">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          </span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- ═══════════ Category Tabs ═══════════ -->
-  <nav class="tabs" id="category-tabs" role="tablist" aria-label="Technology categories">
-    <button class="tab active" role="tab" aria-selected="true" data-group="all">All Technologies</button>
-  </nav>
+    <!-- ═══════════ Category Tabs ═══════════ -->
+    <nav class="tabs" id="category-tabs" role="tablist" aria-label="Technology categories">
+      <button class="tab active" role="tab" aria-selected="true" data-group="all">All Technologies</button>
+    </nav>
+  </div>
 
   <!-- ═══════════ Main Content ═══════════ -->
   <main class="main flex-1" role="main">
