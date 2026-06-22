@@ -13,12 +13,10 @@ import (
 	"time"
 )
 
-func LoadUrlsFromTxtFile(txtFileName string) []string {
+func LoadUrlsFromTxtFile(txtFileName string) ([]string, error) {
 	dataBytes, err := os.ReadFile(txtFileName)
-
 	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
+		return nil, fmt.Errorf("failed to read file %s: %w", txtFileName, err)
 	}
 
 	lines := strings.Split(string(dataBytes), "\n")
@@ -42,7 +40,7 @@ func LoadUrlsFromTxtFile(txtFileName string) []string {
 		urls = append(urls, url)
 	}
 
-	return urls
+	return urls, nil
 }
 
 func MakeAuthenticatedGETRequest[T any](url, token string) (*T, error) {
@@ -125,25 +123,22 @@ func SaveToMarkdown(templatePath string, data interface{}, outputPath string) er
 	return nil
 }
 
-func LoadJSONFromFile[T any](fileName string) *T {
+func LoadJSONFromFile[T any](fileName string) (*T, error) {
 	file, err := os.Open(fileName)
 	if err != nil {
-		fmt.Printf("failed to open file: %v\n", err)
-		os.Exit(1)
+		return nil, fmt.Errorf("failed to open file %s: %w", fileName, err)
 	}
 	defer file.Close()
 
 	data, err := io.ReadAll(file)
 	if err != nil {
-		fmt.Printf("failed to read file: %v\n", err)
-		os.Exit(1)
+		return nil, fmt.Errorf("failed to read file %s: %w", fileName, err)
 	}
 
 	var result T
 	if err := json.Unmarshal(data, &result); err != nil {
-		fmt.Printf("failed to unmarshal JSON: %v\n", err)
-		os.Exit(1)
+		return nil, fmt.Errorf("failed to unmarshal JSON from %s: %w", fileName, err)
 	}
 
-	return &result
+	return &result, nil
 }

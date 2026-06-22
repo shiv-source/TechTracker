@@ -6,6 +6,8 @@ Stay at the forefront of the development landscape with **TechTracker**, a metic
 
 📜 This project is licensed under the [MIT License](LICENSE).
 
+📊 **Live Dashboard:** View the interactive dashboard at [GitHub Pages](https://shiv-source.github.io/TechTracker/)
+
 ---
 
 {{.Table}}
@@ -14,6 +16,14 @@ Stay at the forefront of the development landscape with **TechTracker**, a metic
 
 **⏰ Last Updated:** {{.LastUpdated}}  
 _This page is updated automatically every 24 hours to ensure the latest rankings are displayed._
+
+---
+
+## 📊 Trend Indicators
+
+- **▲ ▼** — Rank change since yesterday (▲ = moved up, ▼ = moved down)
+- **↑ ↓** — Star count change since yesterday (+N ↑ = gained N stars)
+- Trend data appears after the second daily run when historical snapshots are available.
 
 ---
 

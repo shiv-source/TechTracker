@@ -1,221 +1,83 @@
 # 🌟 TechTracker
 
-Stay at the forefront of the development landscape with **TechTracker**, a meticulously curated ranking of the most popular **programming languages**, **frameworks**, **databases**, **testing tools**, and **DevOps tools**. The popularity score for each technology is determined by evaluating a set of key metrics that reflect its community engagement, adoption, and overall usage.
+**Live technology rankings at [shiv-source.github.io/TechTracker](https://shiv-source.github.io/TechTracker/)**
 
-🔄 **Contribute:** To add or update tracked technologies, simply modify the respective `.txt` file in the [`projects`](projects) directory.
+TechTracker tracks the popularity of open-source programming languages, frameworks, databases, testing tools, and DevOps tools using real-time GitHub metrics. Rankings are updated automatically every 24 hours and published to the web dashboard.
 
-📜 This project is licensed under the [MIT License](LICENSE).
+**Built with:** Go 1.26 · HTML/CSS/JS · Tailwind CSS v3 (CDN)
 
----
+## 📊 Live Dashboard
 
-## 📋 Frontend Frameworks 
+👉 **[shiv-source.github.io/TechTracker](https://shiv-source.github.io/TechTracker/)**
 
-| SL | Name                                                       | Stars  | Forks | Issues | Language   | Description                                                                                                                                                                                                                                                                               | UpdatedAt  |
-| -- | ---------------------------------------------------------- | ------ | ----- | ------ | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| 1  | [react](https://github.com/react/react)                    | 245994 | 51078 | 1293   | JavaScript | The library for web and native user interfaces.                                                                                                                                                                                                                                           | 2026-06-22 |
-| 2  | [bootstrap](https://github.com/twbs/bootstrap)             | 174374 | 78792 | 446    | MDX        | The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.                                                                                                                                                                         | 2026-06-22 |
-| 3  | [vue](https://github.com/vuejs/vue)                        | 209953 | 33707 | 635    | TypeScript | This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core                                                                                                                                                                                                                | 2026-06-22 |
-| 4  | [angular](https://github.com/angular/angular)              | 100422 | 27194 | 1171   | TypeScript | Deliver web apps with confidence 🚀                                                                                                                                                                                                                                                     | 2026-06-22 |
-| 5  | [svelte](https://github.com/sveltejs/svelte)               | 87350  | 4954  | 1041   | JavaScript | web development for the rest of us                                                                                                                                                                                                                                                        | 2026-06-22 |
-| 6  | [tailwindcss](https://github.com/tailwindlabs/tailwindcss) | 95689  | 5299  | 66     | TypeScript | A utility-first CSS framework for rapid UI development.                                                                                                                                                                                                                                   | 2026-06-22 |
-| 7  | [jquery](https://github.com/jquery/jquery)                 | 59820  | 20404 | 91     | JavaScript | jQuery JavaScript Library                                                                                                                                                                                                                                                                 | 2026-06-21 |
-| 8  | [webpack](https://github.com/webpack/webpack)              | 65856  | 9352  | 178    | JavaScript | A bundler for javascript and friends. Packs many modules into a few bundled assets. Code Splitting allows for loading parts of the application on demand. Through &#34;loaders&#34;, modules can be CommonJs, AMD, ES6 modules, CSS, Images, JSON, Coffeescript, LESS, ... and your custom stuff. | 2026-06-22 |
-| 9  | [nuxt](https://github.com/nuxt/nuxt)                       | 60516  | 5668  | 813    | TypeScript | the full-stack Vue framework                                                                                                                                                                                                                                                              | 2026-06-22 |
-| 10 | [ember.js](https://github.com/emberjs/ember.js)            | 22563  | 4181  | 371    | TypeScript | Ember.js - A JavaScript framework for creating ambitious web applications                                                                                                                                                                                                                 | 2026-06-21 |
- 
+The dashboard features:
+- **Interactive rankings** — sort, search, and filter across 8 technology categories
+- **Trend charts** — score history and movement over time
+- **Dark/light themes** — respects your system preference
+- **100+ technologies** tracked daily via GitHub Actions
 
+## 📂 Raw Data
 
-## 📋 Backend Frameworks 
+Machine-readable JSON is available in the [`data/`](data/) directory:
 
-| SL | Name                                                                    | Stars | Forks | Issues | Language   | Description                                                                                                                                                                                                                                                       | UpdatedAt  |
-| -- | ----------------------------------------------------------------------- | ----- | ----- | ------ | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| 1  | [spring-boot](https://github.com/spring-projects/spring-boot)           | 81009 | 41935 | 525    | Java       | Spring Boot helps you to create Spring-powered, production-grade applications and services with absolute minimum fuss.                                                                                                                                            | 2026-06-22 |
-| 2  | [django](https://github.com/django/django)                              | 87933 | 33869 | 452    | Python     | The Web framework for perfectionists with deadlines.                                                                                                                                                                                                              | 2026-06-22 |
-| 3  | [spring-framework](https://github.com/spring-projects/spring-framework) | 60054 | 38831 | 459    | Java       | Spring Framework                                                                                                                                                                                                                                                  | 2026-06-22 |
-| 4  | [gin](https://github.com/gin-gonic/gin)                                 | 88729 | 8631  | 718    | Go         | Gin is a high-performance HTTP web framework written in Go. It provides a Martini-like API but with significantly better performance—up to 40 times faster—thanks to httprouter. Gin is designed for building REST APIs, web applications, and microservices. | 2026-06-22 |
-| 5  | [express](https://github.com/expressjs/express)                         | 69233 | 23796 | 208    | JavaScript | Fast, unopinionated, minimalist web framework for node.                                                                                                                                                                                                           | 2026-06-22 |
-| 6  | [flask](https://github.com/pallets/flask)                               | 71693 | 16877 | 4      | Python     | The Python micro framework for building web applications.                                                                                                                                                                                                         | 2026-06-22 |
-| 7  | [rails](https://github.com/rails/rails)                                 | 58713 | 22175 | 1511   | Ruby       | Ruby on Rails                                                                                                                                                                                                                                                     | 2026-06-22 |
-| 8  | [nest](https://github.com/nestjs/nest)                                  | 75934 | 8322  | 36     | TypeScript | A progressive Node.js framework for building efficient, scalable, and enterprise-grade server-side applications with TypeScript/JavaScript 🚀                                                                                                                   | 2026-06-22 |
-| 9  | [aspnetcore](https://github.com/dotnet/aspnetcore)                      | 38141 | 10714 | 4060   | C#         | ASP.NET Core is a cross-platform .NET framework for building modern cloud-based web applications on Windows, Mac, or Linux.                                                                                                                                       | 2026-06-22 |
-| 10 | [framework](https://github.com/laravel/framework)                       | 34785 | 11887 | 102    | PHP        | Laravel is a web application framework with expressive, elegant syntax.                                                                                                                                                                                           | 2026-06-22 |
-| 11 | [beego](https://github.com/beego/beego)                                 | 32400 | 5580  | 16     | Go         | beego is an open-source, high-performance web framework for the Go programming language.                                                                                                                                                                          | 2026-06-19 |
-| 12 | [koa](https://github.com/koajs/koa)                                     | 35717 | 3235  | 34     | JavaScript | Expressive middleware for node.js using ES2017 async functions                                                                                                                                                                                                    | 2026-06-22 |
-| 13 | [sails](https://github.com/balderdashy/sails)                           | 22808 | 1920  | 589    | JavaScript | Realtime MVC Framework for Node.js                                                                                                                                                                                                                                | 2026-06-20 |
-| 14 | [aiohttp](https://github.com/aio-libs/aiohttp)                          | 16458 | 2333  | 219    | Python     | Asynchronous HTTP client/server framework for asyncio and Python                                                                                                                                                                                                  | 2026-06-22 |
-| 15 | [hapi](https://github.com/hapijs/hapi)                                  | 14790 | 1357  | 58     | JavaScript | The Simple, Secure Framework Developers Trust                                                                                                                                                                                                                     | 2026-06-18 |
-| 16 | [go-swagger](https://github.com/go-swagger/go-swagger)                  | 9988  | 1307  | 329    | Go         | Swagger 2.0 implementation for go                                                                                                                                                                                                                                 | 2026-06-21 |
-| 17 | [falcon](https://github.com/falconry/falcon)                            | 9793  | 1002  | 162    | Python     | The no-magic web API and microservices framework for Python developers, with a focus on reliability and performance at scale.                                                                                                                                     | 2026-06-22 |
-| 18 | [bottle](https://github.com/bottlepy/bottle)                            | 8770  | 1502  | 283    | Python     | bottle.py is a fast and simple micro-framework for python web-applications.                                                                                                                                                                                       | 2026-06-17 |
-| 19 | [maven](https://github.com/apache/maven)                                | 5161  | 2892  | 708    | Java       | Apache Maven core                                                                                                                                                                                                                                                 | 2026-06-21 |
-| 20 | [blade](https://github.com/lets-blade/blade)                            | 5878  | 1158  | 14     | Java       | :rocket: Lightning fast and elegant mvc framework for Java8                                                                                                                                                                                                       | 2026-06-17 |
-| 21 | [pyramid](https://github.com/Pylons/pyramid)                            | 4086  | 891   | 87     | Python     | Pyramid - A Python web framework                                                                                                                                                                                                                                  | 2026-06-19 |
-| 22 | [cherrypy](https://github.com/cherrypy/cherrypy)                        | 1942  | 364   | 266    | Python     | CherryPy is a pythonic, object-oriented HTTP framework.      https://cherrypy.dev                                                                                                                                                                                 | 2026-06-20 |
- 
-
-
-## 📋 Mobile Application Frameworks 
-
-| SL | Name                                                             | Stars  | Forks | Issues | Language   | Description                                                                                                                                                                                                                                                                | UpdatedAt  |
-| -- | ---------------------------------------------------------------- | ------ | ----- | ------ | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| 1  | [flutter](https://github.com/flutter/flutter)                    | 177030 | 30537 | 12853  | Dart       | Flutter makes it easy and fast to build beautiful apps for mobile and beyond                                                                                                                                                                                               | 2026-06-22 |
-| 2  | [react-native](https://github.com/react/react-native)            | 126049 | 25179 | 1051   | C&#43;&#43;        | A framework for building native applications using React                                                                                                                                                                                                                   | 2026-06-22 |
-| 3  | [ionic-framework](https://github.com/ionic-team/ionic-framework) | 52533  | 13355 | 631    | TypeScript | A powerful cross-platform UI toolkit for building native-quality iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript.                                                                                                                                    | 2026-06-22 |
-| 4  | [maui](https://github.com/dotnet/maui)                           | 23272  | 1949  | 3999   | C#         | .NET MAUI is the .NET Multi-platform App UI, a framework for building native device applications spanning mobile, tablet, and desktop.                                                                                                                                     | 2026-06-21 |
-| 5  | [NativeScript](https://github.com/NativeScript/NativeScript)     | 25542  | 1735  | 836    | TypeScript | ⚡ Write Native with TypeScript ✨ Best of all worlds (TypeScript, Swift, Objective C, Kotlin, Java, Dart). Use what you love ❤️ Angular, React, Solid, Svelte, Vue with: iOS (UIKit, SwiftUI), Android (View, Jetpack Compose), Flutter and you name it compatible. | 2026-06-21 |
-| 6  | [capacitor](https://github.com/ionic-team/capacitor)             | 15916  | 1210  | 108    | TypeScript | Build cross-platform Native Progressive Web Apps for iOS, Android, and the Web ⚡️                                                                                                                                                                                      | 2026-06-22 |
-| 7  | [cordova](https://github.com/apache/cordova)                     | 705    | 73    | 40     |            | Apache Cordova                                                                                                                                                                                                                                                             | 2026-06-21 |
- 
-
-
-## 📋 Testing Tools 
-
-| SL | Name                                                      | Stars | Forks | Issues | Language   | Description                                                                                                                                                                      | UpdatedAt  |
-| -- | --------------------------------------------------------- | ----- | ----- | ------ | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| 1  | [puppeteer](https://github.com/puppeteer/puppeteer)       | 95185 | 9461  | 264    | TypeScript | JavaScript API for Chrome and Firefox                                                                                                                                            | 2026-06-22 |
-| 2  | [playwright](https://github.com/microsoft/playwright)     | 91375 | 5948  | 190    | TypeScript | Playwright is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API.                                                      | 2026-06-22 |
-| 3  | [selenium](https://github.com/SeleniumHQ/selenium)        | 34211 | 8682  | 203    | Java       | A browser automation framework and ecosystem.                                                                                                                                    | 2026-06-22 |
-| 4  | [jest](https://github.com/jestjs/jest)                    | 45460 | 6663  | 232    | TypeScript | Delightful JavaScript Testing.                                                                                                                                                   | 2026-06-21 |
-| 5  | [cypress](https://github.com/cypress-io/cypress)          | 50398 | 3429  | 1166   | TypeScript | Fast, easy and reliable testing for anything that runs in a browser.                                                                                                             | 2026-06-22 |
-| 6  | [mocha](https://github.com/mochajs/mocha)                 | 22968 | 3079  | 254    | JavaScript | ☕️ Classic, reliable, trusted test framework for Node.js and the browser                                                                                                     | 2026-06-22 |
-| 7  | [pytest](https://github.com/pytest-dev/pytest)            | 14267 | 3200  | 967    | Python     | The pytest framework makes it easy to write small tests, yet scales to support complex functional testing                                                                        | 2026-06-22 |
-| 8  | [enzyme](https://github.com/enzymejs/enzyme)              | 19831 | 1971  | 281    | JavaScript | JavaScript Testing utilities for React                                                                                                                                           | 2026-06-12 |
-| 9  | [jasmine](https://github.com/jasmine/jasmine)             | 15824 | 2240  | 7      | JavaScript | Simple JavaScript testing framework for browsers and node.js                                                                                                                     | 2026-06-20 |
-| 10 | [vitest](https://github.com/vitest-dev/vitest)            | 16739 | 1835  | 396    | TypeScript | Next generation testing framework powered by Vite.                                                                                                                               | 2026-06-22 |
-| 11 | [karma](https://github.com/karma-runner/karma)            | 11960 | 1715  | 402    | JavaScript | Spectacular Test Runner for JavaScript                                                                                                                                           | 2026-06-19 |
-| 12 | [Quick](https://github.com/Quick/Quick)                   | 9830  | 896   | 48     | Swift      | The Swift (and Objective-C) testing framework.                                                                                                                                   | 2026-06-18 |
-| 13 | [chai](https://github.com/chaijs/chai)                    | 8264  | 717   | 90     | JavaScript | BDD / TDD assertion framework for node.js and the browser that can be paired with any testing framework.                                                                         | 2026-06-19 |
-| 14 | [common](https://github.com/cucumber/common)              | 3354  | 681   | 43     |            | A home for issues that are common to multiple cucumber repositories                                                                                                              | 2026-05-20 |
-| 15 | [testem](https://github.com/testem/testem)                | 2917  | 406   | 112    | JavaScript | Test&#39;em &#39;Scripts! A test runner that makes Javascript unit testing fun.                                                                                                          | 2026-06-06 |
-| 16 | [pact-ruby](https://github.com/pact-foundation/pact-ruby) | 2195  | 219   | 5      | Ruby       | Enables consumer driven contract testing, providing a mock service and DSL for the consumer project, and interaction playback and verification for the service provider project. | 2026-06-21 |
- 
-
-
-## 📋 DevOps Tools 
-
-| SL | Name                                                                            | Stars  | Forks | Issues | Language | Description                                                                                                                                                                                                                                                                                                                                        | UpdatedAt  |
-| -- | ------------------------------------------------------------------------------- | ------ | ----- | ------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| 1  | [kubernetes](https://github.com/kubernetes/kubernetes)                          | 123183 | 43265 | 2760   | Go       | Production-Grade Container Scheduling and Management                                                                                                                                                                                                                                                                                               | 2026-06-22 |
-| 2  | [moby](https://github.com/moby/moby)                                            | 71725  | 18963 | 3784   | Go       | The Moby Project - a collaborative project for the container ecosystem to assemble container-based systems                                                                                                                                                                                                                                         | 2026-06-22 |
-| 3  | [ansible](https://github.com/ansible/ansible)                                   | 69021  | 24094 | 790    | Python   | Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy and maintain. Automate everything from code deployment to network configuration to cloud management, in a language that approaches plain English, using SSH, with no agents to install on remote systems. https://docs.ansible.com. | 2026-06-22 |
-| 4  | [prometheus](https://github.com/prometheus/prometheus)                          | 64686  | 10513 | 859    | Go       | The Prometheus monitoring system and time series database.                                                                                                                                                                                                                                                                                         | 2026-06-22 |
-| 5  | [terraform](https://github.com/hashicorp/terraform)                             | 48758  | 10372 | 1914   | Go       | Terraform enables you to safely and predictably create, change, and improve infrastructure. It is a source-available tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.                                                                       | 2026-06-22 |
-| 6  | [kong](https://github.com/Kong/kong)                                            | 43642  | 5155  | 150    | Lua      | 🦍 The API and AI Gateway                                                                                                                                                                                                                                                                                                                        | 2026-06-22 |
-| 7  | [jenkins](https://github.com/jenkinsci/jenkins)                                 | 25496  | 9534  | 3597   | Java     | Jenkins automation server                                                                                                                                                                                                                                                                                                                          | 2026-06-22 |
-| 8  | [argo-cd](https://github.com/argoproj/argo-cd)                                  | 23218  | 7353  | 4219   | Go       | Declarative Continuous Deployment for Kubernetes                                                                                                                                                                                                                                                                                                   | 2026-06-22 |
-| 9  | [helm](https://github.com/helm/helm)                                            | 29904  | 7670  | 406    | Go       | The Kubernetes Package Manager                                                                                                                                                                                                                                                                                                                     | 2026-06-22 |
-| 10 | [rancher](https://github.com/rancher/rancher)                                   | 25685  | 3208  | 3351   | Go       | Complete container management platform                                                                                                                                                                                                                                                                                                             | 2026-06-22 |
-| 11 | [vagrant](https://github.com/hashicorp/vagrant)                                 | 27163  | 4409  | 747    | Ruby     | Vagrant is a tool for building and distributing development environments.                                                                                                                                                                                                                                                                          | 2026-06-22 |
-| 12 | [k3s](https://github.com/k3s-io/k3s)                                            | 33298  | 2675  | 110    | Go       | Lightweight Kubernetes                                                                                                                                                                                                                                                                                                                             | 2026-06-22 |
-| 13 | [gitlabhq](https://github.com/gitlabhq/gitlabhq)                                | 24455  | 5799  | 36     | Ruby     | GitLab CE Mirror | Please open new issues in our issue tracker on GitLab.com                                                                                                                                                                                                                                                                       | 2026-06-22 |
-| 14 | [faas](https://github.com/openfaas/faas)                                        | 26184  | 1969  | 32     | Go       | OpenFaaS - Serverless Functions Made Simple                                                                                                                                                                                                                                                                                                        | 2026-06-22 |
-| 15 | [beats](https://github.com/elastic/beats)                                       | 12629  | 5006  | 1069   | Go       | :tropical_fish: Beats - Lightweight shippers for Elasticsearch &amp; Logstash                                                                                                                                                                                                                                                                          | 2026-06-21 |
-| 16 | [velero](https://github.com/velero-io/velero)                                   | 10068  | 1540  | 736    | Go       | Backup and migrate Kubernetes applications and their persistent volumes                                                                                                                                                                                                                                                                            | 2026-06-22 |
-| 17 | [chef](https://github.com/chef/chef)                                            | 8198   | 2520  | 358    | Ruby     | Chef Infra, a powerful automation platform that transforms infrastructure into code automating how infrastructure is configured, deployed and managed across any environment, at any scale                                                                                                                                                         | 2026-06-22 |
-| 18 | [spinnaker](https://github.com/spinnaker/spinnaker)                             | 9740   | 1268  | 135    | Java     | Spinnaker is an open source, multi-cloud continuous delivery platform for releasing software changes with high velocity and confidence.                                                                                                                                                                                                            | 2026-06-21 |
-| 19 | [puppet](https://github.com/puppetlabs/puppet)                                  | 7889   | 2210  | 96     | Ruby     | Server automation framework and application                                                                                                                                                                                                                                                                                                        | 2026-06-21 |
-| 20 | [cfssl](https://github.com/cloudflare/cfssl)                                    | 9441   | 1145  | 332    | Go       | CFSSL: Cloudflare&#39;s PKI and TLS toolkit                                                                                                                                                                                                                                                                                                            | 2026-06-21 |
-| 21 | [datadog-agent](https://github.com/DataDog/datadog-agent)                       | 3651   | 1448  | 814    | Go       | Main repository for Datadog Agent                                                                                                                                                                                                                                                                                                                  | 2026-06-22 |
-| 22 | [metallb](https://github.com/metallb/metallb)                                   | 8241   | 1055  | 94     | Go       | A network load-balancer implementation for Kubernetes using standard routing protocols                                                                                                                                                                                                                                                             | 2026-06-21 |
-| 23 | [terraform-aws-vpc](https://github.com/terraform-aws-modules/terraform-aws-vpc) | 3238   | 4630  | 17     | HCL      | Terraform module to create AWS VPC resources 🇺🇦                                                                                                                                                                                                                                                                                              | 2026-06-21 |
- 
-
-
-## 📋 Databases 
-
-| SL | Name                                                      | Stars | Forks | Issues | Language | Description                                                                                                                                                                                                              | UpdatedAt  |
-| -- | --------------------------------------------------------- | ----- | ----- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- |
-| 1  | [elasticsearch](https://github.com/elastic/elasticsearch) | 77103 | 25846 | 5862   | Java     | Free and Open Source, Distributed, RESTful Search Engine                                                                                                                                                                 | 2026-06-22 |
-| 2  | [redis](https://github.com/redis/redis)                   | 75031 | 24675 | 2846   | C        | For developers, who are building real-time data-driven applications, Redis is the preferred, fastest, and most feature-rich cache, data structure server, and document and vector query engine.                          | 2026-06-22 |
-| 3  | [etcd](https://github.com/etcd-io/etcd)                   | 51872 | 10394 | 267    | Go       | Distributed reliable key-value store for the most critical data of a distributed system                                                                                                                                  | 2026-06-22 |
-| 4  | [cockroach](https://github.com/cockroachdb/cockroach)     | 32220 | 4058  | 8079   | Go       | CockroachDB — the cloud native, distributed SQL database designed for high availability, effortless scale, and control over data placement.                                                                            | 2026-06-22 |
-| 5  | [mongo](https://github.com/mongodb/mongo)                 | 28384 | 5784  | 26     | C&#43;&#43;      | The MongoDB Database                                                                                                                                                                                                     | 2026-06-22 |
-| 6  | [influxdb](https://github.com/influxdata/influxdb)        | 31581 | 3705  | 2144   | Rust     | Scalable datastore for metrics, events, and real-time analytics                                                                                                                                                          | 2026-06-22 |
-| 7  | [postgres](https://github.com/postgres/postgres)          | 21223 | 5718  | 0      | C        | Mirror of the official PostgreSQL GIT repository. Note that this is just a *mirror* - we don&#39;t work with pull requests on github. To contribute, please see https://wiki.postgresql.org/wiki/Submitting_a_Patch          | 2026-06-22 |
-| 8  | [vitess](https://github.com/vitessio/vitess)              | 21052 | 2355  | 985    | Go       | Vitess is a database clustering system for horizontal scaling of MySQL.                                                                                                                                                  | 2026-06-22 |
-| 9  | [dgraph](https://github.com/dgraph-io/dgraph)             | 21714 | 1592  | 82     | Go       | high-performance graph database for real-time use cases                                                                                                                                                                  | 2026-06-22 |
-| 10 | [scylladb](https://github.com/scylladb/scylladb)          | 15613 | 1503  | 3585   | C&#43;&#43;      | NoSQL data store using the Seastar framework, compatible with Apache Cassandra and Amazon DynamoDB                                                                                                                       | 2026-06-21 |
-| 11 | [mysql-server](https://github.com/mysql/mysql-server)     | 12313 | 4294  | 11     | C&#43;&#43;      | MySQL Server, the world&#39;s most popular open source database, and MySQL Cluster, a real-time, open source transactional database.                                                                                         | 2026-06-22 |
-| 12 | [arangodb](https://github.com/arangodb/arangodb)          | 14208 | 882   | 809    | C&#43;&#43;      | 🥑 ArangoDB is a native multi-model database with flexible data models for documents, graphs, and key-values. Build high performance applications using a convenient SQL-like query language or JavaScript extensions. | 2026-06-22 |
-| 13 | [cassandra](https://github.com/apache/cassandra)          | 9785  | 3889  | 444    | Java     | Open source transactional distributed database. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure without compromising performance.                                            | 2026-06-21 |
-| 14 | [sqlite](https://github.com/sqlite/sqlite)                | 9857  | 1536  | 23     | C        | Official Git mirror of the SQLite source tree                                                                                                                                                                            | 2026-06-22 |
-| 15 | [tarantool](https://github.com/tarantool/tarantool)       | 3642  | 408   | 1667   | Lua      | Get your data in RAM. Get compute close to data. Enjoy the performance.                                                                                                                                                  | 2026-06-21 |
- 
-
-
-## 📋 Programming Languages 
-
-| SL | Name                                                  | Stars  | Forks | Issues | Language   | Description                                                                                | UpdatedAt  |
-| -- | ----------------------------------------------------- | ------ | ----- | ------ | ---------- | ------------------------------------------------------------------------------------------ | ---------- |
-| 1  | [rust](https://github.com/rust-lang/rust)             | 114035 | 15006 | 12481  | Rust       | Empowering everyone to build reliable and efficient software.                              | 2026-06-22 |
-| 2  | [TypeScript](https://github.com/microsoft/TypeScript) | 109357 | 13445 | 5051   | TypeScript | TypeScript is a superset of JavaScript that compiles to clean JavaScript output.           | 2026-06-22 |
-| 3  | [cpython](https://github.com/python/cpython)          | 73358  | 34753 | 9396   | Python     | The Python programming language                                                            | 2026-06-22 |
-| 4  | [swift](https://github.com/swiftlang/swift)           | 70096  | 10739 | 9053   | Swift      | The Swift Programming Language                                                             | 2026-06-22 |
-| 5  | [kotlin](https://github.com/JetBrains/kotlin)         | 52927  | 6345  | 285    | Kotlin     | The Kotlin Programming Language.                                                           | 2026-06-22 |
-| 6  | [php-src](https://github.com/php/php-src)             | 40173  | 8075  | 1854   | C          | The PHP Interpreter                                                                        | 2026-06-22 |
-| 7  | [ruby](https://github.com/ruby/ruby)                  | 23630  | 5608  | 605    | Ruby       | The Ruby Programming Language                                                              | 2026-06-22 |
-| 8  | [jdk](https://github.com/openjdk/jdk)                 | 23016  | 6356  | 380    | Java       | JDK main-line development https://openjdk.org/projects/jdk                                 | 2026-06-22 |
-| 9  | [sdk](https://github.com/dart-lang/sdk)               | 11180  | 1826  | 8405   | Dart       | The Dart SDK, including the VM, JS and Wasm compilers, analysis, core libraries, and more. | 2026-06-22 |
-| 10 | [compiler](https://github.com/elm/compiler)           | 7793   | 681   | 341    | Haskell    | Compiler for Elm, a functional language for reliable webapps.                              | 2026-06-21 |
-| 11 | [perl5](https://github.com/Perl/perl5)                | 2301   | 631   | 2395   | Perl       | 🐪 The Perl programming language                                                         | 2026-06-21 |
-| 12 | [go](https://github.com/go-lang/go)                   | 0      | 1     | 0      | Go         | Mirror of code.google.com/p/go/                                                            | 2018-09-30 |
- 
-
-
-
-
----
-
-**⏰ Last Updated:** June 22, 2026  
-_This page is updated automatically every 24 hours to ensure the latest rankings are displayed._
-
----
-
-## 📂 JSON Data Availability
-
-Looking for programmatic access to this data? The rankings and other details are available in their respective `.json` files inside the [`data`](data) folder.
-
----
+| File | Description |
+|------|-------------|
+| [`data/all.json`](data/all.json) | Combined global rankings with scores |
+| [`data/frontend_frameworks.json`](data/frontend_frameworks.json) | Frontend frameworks |
+| [`data/backend_frameworks.json`](data/backend_frameworks.json) | Backend frameworks |
+| [`data/mobile_frameworks.json`](data/mobile_frameworks.json) | Mobile application frameworks |
+| [`data/testing_tools.json`](data/testing_tools.json) | Testing tools |
+| [`data/devops_tools.json`](data/devops_tools.json) | DevOps tools |
+| [`data/databases.json`](data/databases.json) | Databases |
+| [`data/programming_languages.json`](data/programming_languages.json) | Programming languages |
+| [`data/design_tools.json`](data/design_tools.json) | Design tools |
+| [`data/run-metadata.json`](data/run-metadata.json) | Last run timing and status |
 
 ## 📊 Score Calculation
 
-The popularity score of each technology (programming language, framework, database, testing tool, or DevOps tool) is calculated by considering various factors such as Stars, Forks, Watchers, Subscribers, and Issues. Each of these metrics has a weighted contribution to the final score, giving a more comprehensive view of its standing in the developer community.
+The popularity score is a weighted composite of five GitHub metrics, normalized via min-max scaling within each category:
 
-- **Stars (40%)**: The number of stars a project has on GitHub, indicating its popularity.
-- **Forks (25%)**: The number of forks, which represents how often the tool or technology is being used as a base for other projects.
-- **Watchers (20%)**: The number of watchers, reflecting interest in the repository for updates.
-- **Subscribers (10%)**: The number of users subscribed to the repository for notifications on new changes.
-- **Issues (5%)**: The number of open issues, with a higher number of issues affecting the overall score.
+| Metric | Weight |
+|--------|--------|
+| Stars | 40% |
+| Forks | 25% |
+| Watchers | 20% |
+| Subscribers | 10% |
+| Open Issues | 5% |
 
-The score is calculated using a weighted average of these metrics. Each metric is multiplied by its respective weight, and the total score is normalized to fall between 0 and 1.
+All metrics are normalized to [0, 1] before weighting. Per-category weights can be customized in [`config.json`](config.json).
 
-Example formula:
+## 🤝 Contributing
 
+To add or update tracked technologies:
+
+1. Open the [`projects/`](projects/) directory
+2. Edit the relevant `.txt` file (one GitHub URL per line)
+3. Submit a pull request
+
+Example:
 ```
-Score = (Stars * 0.4) + (Forks * 0.25) + (Watchers * 0.2) + (Subscribers * 0.1) + (Issues * 0.05)
+https://github.com/facebook/react
+https://github.com/vuejs/vue
 ```
 
----
+## ⚙️ Running Locally
 
-## 🤝 Contribution
+**Prerequisites:** Go 1.26
 
-We welcome contributions from the community! To contribute:
+```bash
+# Backend (Go)
+export GITHUB_TOKEN=your_github_token
+make build
+make run
 
-1. Open the [`projects`](projects) directory.
-2. Add a new line with the GitHub repository URL of the technology (programming language, framework, database, testing tool, or DevOps tool) in the respective `.txt` file. Each item should have its own line.  
-   Example:
+# Frontend (UI dashboard)
+cd ui
+python3 -m http.server 8080    # Serve from project root, open /ui/
+```
 
-   ```
-   https://github.com/facebook/react
-   https://github.com/angular/angular
-   https://github.com/nodejs/node
-   https://github.com/mysql/mysql-server
-   ```
+See [`CLAUDE.md`](CLAUDE.md) for full development documentation.
 
-3. Save the file, commit your changes, and submit a pull request.
+## 📜 License
 
----
-
-## ⚖️ License
-
-This project is open source and available under the [MIT License](LICENSE). Feel free to use, share, and contribute!
+MIT — see [LICENSE](LICENSE).

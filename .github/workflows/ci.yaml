@@ -1,22 +1,18 @@
-name: Build Executable and Update Stack CI
+name: Build and Test CI
 
 on:
   push:
     branches: [master]
-
-  pull_request:
-    branches: [master]
-
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
-  build_executable:
+  build_and_test:
     runs-on: ubuntu-latest
     if: github.repository == 'shiv-source/TechTracker'
     steps:
@@ -25,21 +21,16 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: 1.23
+          go-version: '1.26'
 
       - name: Download dependencies
         run: go mod download
 
-      - name: Delete existing & build new executable
-        run: make clean && make build
+      - name: Run vet
+        run: go vet ./...
 
-      - name: Run executable
-        run: make run
+      - name: Run tests
+        run: go test -v -race -count=1 ./...
 
-      - name: Commit and Push Executable & Updated Stack
-        run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git add .
-          git commit -m "chore: 📝 updated tech stack after ⚙️ build executable"
-          git push -u origin master
+      - name: Build
+        run: go build -o bin/main ./cmd/techtracker

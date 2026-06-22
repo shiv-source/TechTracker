@@ -20,6 +20,9 @@ jobs:
       - name: Delete existing stack data
         run: make clean-stack
 
+      - name: Build executable
+        run: make build
+
       - name: Run executable
         run: make run
 
@@ -28,5 +31,5 @@ jobs:
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git add .
-          git commit -m "chore: 📝 update tech stack"
+          git commit -m "chore: 📝 update tech stack" || echo "No changes to commit"
           git push -u origin master

@@ -2,36 +2,97 @@
     {
         "id": 1,
         "groupName": "Frontend Frameworks",
-        "filePath": "projects/frontend_frameworks.txt"
+        "filePath": "projects/frontend_frameworks.txt",
+        "weights": {
+            "stars": 0.4,
+            "forks": 0.25,
+            "watchers": 0.2,
+            "subscribers": 0.1,
+            "issues": 0.05
+        }
     },
     {
         "id": 2,
         "groupName": "Backend Frameworks",
-        "filePath": "projects/backend_frameworks.txt"
+        "filePath": "projects/backend_frameworks.txt",
+        "weights": {
+            "stars": 0.4,
+            "forks": 0.25,
+            "watchers": 0.2,
+            "subscribers": 0.1,
+            "issues": 0.05
+        }
     },
     {
         "id": 3,
         "groupName": "Mobile Application Frameworks",
-        "filePath": "projects/mobile_frameworks.txt"
+        "filePath": "projects/mobile_frameworks.txt",
+        "weights": {
+            "stars": 0.4,
+            "forks": 0.25,
+            "watchers": 0.2,
+            "subscribers": 0.1,
+            "issues": 0.05
+        }
     },
     {
         "id": 4,
         "groupName": "Testing Tools",
-        "filePath": "projects/testing_tools.txt"
+        "filePath": "projects/testing_tools.txt",
+        "weights": {
+            "stars": 0.4,
+            "forks": 0.25,
+            "watchers": 0.2,
+            "subscribers": 0.1,
+            "issues": 0.05
+        }
     },
     {
         "id": 5,
         "groupName": "DevOps Tools",
-        "filePath": "projects/devops_tools.txt"
+        "filePath": "projects/devops_tools.txt",
+        "weights": {
+            "stars": 0.4,
+            "forks": 0.25,
+            "watchers": 0.2,
+            "subscribers": 0.1,
+            "issues": 0.05
+        }
     },
     {
         "id": 6,
         "groupName": "Databases",
-        "filePath": "projects/databases.txt"
+        "filePath": "projects/databases.txt",
+        "weights": {
+            "stars": 0.4,
+            "forks": 0.25,
+            "watchers": 0.2,
+            "subscribers": 0.1,
+            "issues": 0.05
+        }
     },
     {
         "id": 7,
         "groupName": "Programming Languages",
-        "filePath": "projects/programming_languages.txt"
+        "filePath": "projects/programming_languages.txt",
+        "weights": {
+            "stars": 0.4,
+            "forks": 0.25,
+            "watchers": 0.2,
+            "subscribers": 0.1,
+            "issues": 0.05
+        }
+    },
+    {
+        "id": 8,
+        "groupName": "Design Tools",
+        "filePath": "projects/design_tools.txt",
+        "weights": {
+            "stars": 0.4,
+            "forks": 0.25,
+            "watchers": 0.2,
+            "subscribers": 0.1,
+            "issues": 0.05
+        }
     }
 ]
