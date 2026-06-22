@@ -28,15 +28,21 @@ func EffectiveWeights(cfg models.Config) models.Weights {
 }
 
 // Load reads and parses the config.json file.
-func Load(path string) ([]models.Config, error) {
-	configs, err := utils.LoadJSONFromFile[[]models.Config](path)
+func Load(path string) (*models.AppConfig, error) {
+	appConfig, err := utils.LoadJSONFromFile[models.AppConfig](path)
 	if err != nil {
 		return nil, fmt.Errorf("failed to load config: %w", err)
 	}
-	if configs == nil || len(*configs) == 0 {
+	if appConfig == nil {
 		return nil, fmt.Errorf("no configurations found in %s", path)
 	}
-	return *configs, nil
+	if len(appConfig.Groups) == 0 {
+		return nil, fmt.Errorf("no groups configured in %s", path)
+	}
+	if appConfig.RetentionDays <= 0 {
+		appConfig.RetentionDays = 30 // default
+	}
+	return appConfig, nil
 }
 
 // Validate checks that all configured file paths exist and IDs are unique.

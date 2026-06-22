@@ -1020,6 +1020,35 @@ a:focus-visible {
   border: 1px solid var(--color-border);
 }
 
+/* Chunk loader & sentinel */
+.chunk-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-6) 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.chunk-loader-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-glass-border);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: chunk-spin 0.6s linear infinite;
+}
+
+@keyframes chunk-spin {
+  to { transform: rotate(360deg); }
+}
+
+#chunk-sentinel {
+  height: 1px;
+  width: 100%;
+}
+
 /* Error state */
 .error-state {
   text-align: center;
@@ -1146,6 +1175,42 @@ a:focus-visible {
   background: var(--color-accent-light);
   color: var(--color-accent);
   border: 1px solid var(--color-accent-glow);
+}
+
+.chart-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.range-pills {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.range-pill {
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-glass-border);
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.range-pill:hover {
+  border-color: var(--color-accent-glow);
+  color: var(--color-text);
+}
+
+.range-pill.active {
+  background: var(--color-accent);
+  color: #fff;
+  border-color: var(--color-accent);
 }
 
 .chart-container {

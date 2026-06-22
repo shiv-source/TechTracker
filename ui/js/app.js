@@ -1,17 +1,30 @@
 /**
  * TechTracker Dashboard
- * Interactive rankings with sort, search, category filtering, and Chart.js trends.
+ * Progressive loading: metadata → chunked data + lazy groups + top5 chart history.
  */
 
 // ═══════════════════════════════════════════════════════════
 // State
 // ═══════════════════════════════════════════════════════════
 const state = {
-  allRepos: [],
-  groups: [],
+  // Bootstrap
+  latestDate: '',
+  categoryMeta: [],
+
+  // Data
+  allRepos: [],           // accumulated from chunks
+  loadedChunks: 0,
+  allChunksTotal: 0,
+  groups: [],             // { name, label, repos } — populated on demand
+  groupCache: {},         // key → repos (lazy loaded)
   currentGroup: 'all',
   currentSort: { column: 'score', direction: 'desc' },
-  historyCache: new Map(),
+  isLoadingChunk: false,
+
+  // History & chart
+  historyRange: 30,
+  availableDates: [],
+  top5History: null,
   chart: null,
   theme: 'dark',
 };
@@ -21,13 +34,6 @@ const state = {
 // ═══════════════════════════════════════════════════════════
 const isLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname);
 const BASE = isLocal ? '..' : '/TechTracker';
-
-// Known category file names (fallback; groups derived from data)
-const KNOWN_GROUPS = [
-  'frontend_frameworks', 'backend_frameworks', 'mobile_frameworks',
-  'testing_tools', 'devops_tools', 'databases', 'programming_languages',
-  'design_tools',
-];
 
 // ═══════════════════════════════════════════════════════════
 // URL State (hash-based deep linking)
@@ -66,28 +72,34 @@ document.addEventListener('DOMContentLoaded', async () => {
   readURLState();
   renderSkeleton();
   setupEventListeners();
+  setupScrollObserver();
 
-  const loaded = await loadData();
-
-  if (loaded && state.allRepos.length > 0) {
-    renderCategoryTabs();
-    renderStats();
-    restoreTabFromURL();
-    refreshTable();
-    await loadHistoryAndChart();
-  } else if (!loaded) {
+  const loaded = await loadMetadata();
+  if (!loaded) {
     renderErrorState();
-  } else {
-    renderEmptyState();
+    return;
   }
+
+  renderStatsFromMeta();
+  renderCategoryTabs();
+  restoreTabFromURL();
+
+  // Start loading data for the active tab.
+  if (state.currentGroup === 'all') {
+    await loadNextChunk();
+  } else {
+    await switchToGroup(state.currentGroup);
+  }
+
+  // Chart: load lightweight top5 history.
+  await loadChartFromTop5History();
 });
 
 // ═══════════════════════════════════════════════════════════
-// Theme (CSS-driven icon visibility)
+// Theme
 // ═══════════════════════════════════════════════════════════
 function initTheme() {
   state.theme = document.documentElement.getAttribute('data-theme') || 'dark';
-
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
     if (!localStorage.getItem('techtracker-theme')) {
       state.theme = e.matches ? 'dark' : 'light';
@@ -105,56 +117,124 @@ function toggleTheme() {
 }
 
 // ═══════════════════════════════════════════════════════════
-// Data Loading
+// Metadata Loading (fast, ~1KB)
 // ═══════════════════════════════════════════════════════════
-async function loadData() {
+async function loadMetadata() {
   try {
-    const [allResp, metaResp] = await Promise.allSettled([
-      fetch(`${BASE}/data/all.json`),
-      fetch(`${BASE}/data/run-metadata.json`),
-    ]);
-
-    if (allResp.status !== 'fulfilled' || !allResp.value.ok) {
-      console.error('Failed to load all.json');
+    const resp = await fetch(`${BASE}/data/metadata.json`);
+    if (!resp.ok) {
+      console.error('Failed to load metadata.json');
       return false;
     }
-    state.allRepos = await allResp.value.json();
+    const meta = await resp.json();
 
-    if (metaResp.status === 'fulfilled' && metaResp.value.ok) {
-      const meta = await metaResp.value.json();
-      const el = document.getElementById('last-updated');
-      if (el) {
-        el.textContent = `Updated ${formatRelative(meta.end_time)}`;
-        el.title = formatDate(meta.end_time);
-      }
+    state.latestDate = meta.latest_date || '';
+    state.allChunksTotal = meta.all_chunks || 0;
+    state.categoryMeta = meta.categories || [];
+    state.availableDates = meta.history?.available_dates || [];
+
+    // Update last-updated display.
+    const el = document.getElementById('last-updated');
+    if (el && meta.end_time) {
+      el.textContent = `Updated ${formatRelative(meta.end_time)}`;
+      el.title = formatDate(meta.end_time);
     }
 
-    // Load per-category JSON files in parallel
-    const results = await Promise.allSettled(
-      KNOWN_GROUPS.map(async (name) => {
-        try {
-          const resp = await fetch(`${BASE}/data/${name}.json`);
-          if (!resp.ok) return null;
-          const repos = await resp.json();
-          return repos.length > 0 ? { name, repos } : null;
-        } catch { return null; }
-      })
-    );
-
-    state.groups = results
-      .filter((r) => r.status === 'fulfilled' && r.value)
-      .map((r) => ({
-        name: r.value.name,
-        label: r.value.name
-          .replace(/_/g, ' ')
-          .replace(/\b\w/g, (c) => c.toUpperCase()),
-        repos: r.value.repos,
-      }));
     return true;
   } catch (err) {
-    console.error('Data load error:', err);
+    console.error('Metadata load error:', err);
     return false;
   }
+}
+
+// ═══════════════════════════════════════════════════════════
+// Chunk Loading (infinite scroll)
+// ═══════════════════════════════════════════════════════════
+async function loadNextChunk() {
+  if (state.isLoadingChunk) return;
+  if (state.loadedChunks >= state.allChunksTotal) return;
+
+  state.isLoadingChunk = true;
+  showChunkLoader(true);
+
+  const n = state.loadedChunks + 1;
+  try {
+    const resp = await fetch(`${BASE}/data/${state.latestDate}/all/chunk_${n}.json`);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const repos = await resp.json();
+
+    state.allRepos.push(...repos);
+    state.loadedChunks = n;
+
+    refreshTable();
+  } catch (err) {
+    console.error(`Chunk ${n} load failed:`, err);
+  } finally {
+    state.isLoadingChunk = false;
+    showChunkLoader(false);
+  }
+}
+
+function setupScrollObserver() {
+  const sentinel = document.getElementById('chunk-sentinel');
+  if (!sentinel) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && state.currentGroup === 'all') {
+      loadNextChunk();
+    }
+  }, { rootMargin: '200px' });
+
+  observer.observe(sentinel);
+}
+
+function showChunkLoader(show) {
+  const el = document.getElementById('chunk-loader');
+  if (el) el.style.display = show ? 'flex' : 'none';
+}
+
+// ═══════════════════════════════════════════════════════════
+// Group (Category) Loading — lazy, on tab click
+// ═══════════════════════════════════════════════════════════
+async function loadGroupData(key) {
+  if (state.groupCache[key]) return state.groupCache[key];
+
+  try {
+    const resp = await fetch(`${BASE}/data/${state.latestDate}/groups/${key}.json`);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const repos = await resp.json();
+    state.groupCache[key] = repos;
+    return repos;
+  } catch (err) {
+    console.error(`Group ${key} load failed:`, err);
+    return [];
+  }
+}
+
+async function switchToGroup(key) {
+  state.currentGroup = key;
+  state.currentSort = { column: 'score', direction: 'desc' };
+
+  if (key === 'all') {
+    // Already loaded via chunks; just refresh.
+  } else {
+    const repos = await loadGroupData(key);
+    // Ensure groups array has this entry.
+    const existing = state.groups.find((g) => g.name === key);
+    const meta = state.categoryMeta.find((c) => c.key === key);
+    if (existing) {
+      existing.repos = repos;
+    } else {
+      state.groups.push({
+        name: key,
+        label: meta?.label || key,
+        repos,
+      });
+    }
+  }
+
+  refreshTable();
+  refreshChart();
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -163,7 +243,7 @@ async function loadData() {
 function renderSkeleton() {
   const tbody = document.getElementById('table-body');
   if (!tbody) return;
-  const rows = Array.from({ length: 8 }, () => `
+  tbody.innerHTML = Array.from({ length: 8 }, () => `
     <tr>
       <td><div class="skeleton skeleton-text-short"></div></td>
       <td><div class="skeleton skeleton-text"></div></td>
@@ -175,47 +255,26 @@ function renderSkeleton() {
       <td><div class="skeleton skeleton-text-short"></div></td>
     </tr>
   `).join('');
-  tbody.innerHTML = rows;
-}
-
-function renderEmptyState() {
-  const tbody = document.getElementById('table-body');
-  if (!tbody) return;
-  tbody.innerHTML = `
-    <tr>
-      <td colspan="8">
-        <div class="table-status">
-          <div class="table-status-icon">📭</div>
-          <div class="table-status-text">No data available</div>
-          <div class="table-status-hint">Run <code>make run</code> to generate rankings, or check that <code>data/</code> files exist.</div>
-        </div>
-      </td>
-    </tr>
-  `;
 }
 
 function renderErrorState() {
   const tbody = document.getElementById('table-body');
   if (!tbody) return;
   tbody.innerHTML = `
-    <tr>
-      <td colspan="8">
-        <div class="error-state">
-          <div class="error-state-icon">⚠️</div>
-          <div class="error-state-text">Failed to load data</div>
-          <div class="error-state-hint">Check your connection or try again. If this persists, the data files may be missing.</div>
-          <button class="error-state-retry" onclick="location.reload()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
-            Retry
-          </button>
-        </div>
-      </td>
-    </tr>
-  `;
-  // Also clear stats
-  document.getElementById('stat-categories').textContent = '—';
-  document.getElementById('stat-repos').textContent = '—';
-  document.getElementById('stat-top-star').textContent = '—';
+    <tr><td colspan="8">
+      <div class="error-state">
+        <div class="error-state-icon">⚠️</div>
+        <div class="error-state-text">Failed to load data</div>
+        <div class="error-state-hint">Check your connection or try again.</div>
+        <button class="error-state-retry" onclick="location.reload()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+          Retry
+        </button>
+      </div>
+    </td></tr>`;
+  ['stat-categories', 'stat-repos', 'stat-top-star'].forEach((id) => {
+    document.getElementById(id).textContent = '—';
+  });
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -225,13 +284,13 @@ function renderCategoryTabs() {
   const container = document.getElementById('category-tabs');
   container.innerHTML = '<button class="tab active" role="tab" aria-selected="true" data-group="all">All Technologies</button>';
 
-  state.groups.forEach((g) => {
+  state.categoryMeta.forEach((c) => {
     const btn = document.createElement('button');
     btn.className = 'tab';
     btn.setAttribute('role', 'tab');
     btn.setAttribute('aria-selected', 'false');
-    btn.dataset.group = g.name;
-    btn.textContent = `${g.label} (${g.repos.length})`;
+    btn.dataset.group = c.key;
+    btn.textContent = `${c.label} (${c.count})`;
     container.appendChild(btn);
   });
 }
@@ -252,59 +311,76 @@ function restoreTabFromURL() {
 }
 
 // ═══════════════════════════════════════════════════════════
-// Stats Bar
+// Stats Bar (from metadata)
 // ═══════════════════════════════════════════════════════════
-function renderStats() {
-  document.getElementById('stat-categories').textContent = state.groups.length;
-  document.getElementById('stat-repos').textContent = state.allRepos.length;
+function renderStatsFromMeta() {
+  document.getElementById('stat-categories').textContent = state.categoryMeta.length;
+  document.getElementById('stat-repos').textContent = state.allChunksTotal > 0
+    ? (state.allChunksTotal * 50 > 177 ? 177 : state.allChunksTotal * 50) // approximate
+    : '...';
 
-  const top = [...state.allRepos].sort((a, b) => (b.stargazers_count || 0) - (a.stargazers_count || 0))[0];
-  const el = document.getElementById('stat-top-star');
+  // We'll update the top repo once chunk_1 is loaded (has #1 repo).
+  // For now, show a placeholder from metadata.
+  const topEl = document.getElementById('stat-top-star');
+  topEl.textContent = '...';
+  topEl.classList.add('is-text');
+}
+
+function updateStatsFromData() {
+  if (state.allRepos.length === 0) return;
+  document.getElementById('stat-repos').textContent = state.allRepos.length;
+  const top = state.allRepos[0]; // sorted by score
+  const topEl = document.getElementById('stat-top-star');
   if (top) {
-    el.textContent = top.name || top.full_name;
-    el.title = `${(top.stargazers_count || 0).toLocaleString()} ★`;
-    el.classList.add('is-text');
+    topEl.textContent = top.name || top.full_name;
+    topEl.title = `${(top.stargazers_count || 0).toLocaleString()} ★`;
+    topEl.classList.add('is-text');
   }
 }
 
 // ═══════════════════════════════════════════════════════════
 // Table Rendering
 // ═══════════════════════════════════════════════════════════
-function renderTable(repos) {
+function renderTable(repos, append) {
   const tbody = document.getElementById('table-body');
   const title = document.getElementById('table-title');
 
   const groupLabel = state.currentGroup === 'all'
     ? 'All Technologies'
     : state.groups.find((g) => g.name === state.currentGroup)?.label || 'Results';
-  title.textContent = `${groupLabel} (${repos.length})`;
 
-  if (repos.length === 0) {
-    tbody.innerHTML = `
-      <tr><td colspan="8">
-        <div class="table-status">
-          <div class="table-status-icon">🔍</div>
-          <div class="table-status-text">No matches found</div>
-          <div class="table-status-hint">Try a different search term or category.</div>
-        </div>
-      </td></tr>`;
-    return;
+  if (!append) {
+    title.textContent = `${groupLabel} (${repos.length})`;
+    if (repos.length === 0) {
+      tbody.innerHTML = `
+        <tr><td colspan="8">
+          <div class="table-status">
+            <div class="table-status-icon">🔍</div>
+            <div class="table-status-text">No matches found</div>
+            <div class="table-status-hint">Try a different search term or category.</div>
+          </div>
+        </td></tr>`;
+      return;
+    }
   }
 
   const fragment = document.createDocumentFragment();
+  const startIdx = append ? tbody.querySelectorAll('.table-row').length : 0;
+
   repos.forEach((r, i) => {
     const tr = document.createElement('tr');
     tr.className = 'table-row row-entering';
     tr.dataset.fullname = r.full_name || '';
-    tr.style.animationDelay = `${i * 20}ms`;
+    tr.style.animationDelay = `${(startIdx + i) * 15}ms`;
 
     const score = r.score != null ? r.score.toFixed(4) : '—';
     const lang = r.language || '';
     const name = r.name || r.full_name || '';
     const url = r.html_url || '';
+    const rank = startIdx + i + 1;
 
     tr.innerHTML = `
-      <td class="cell-rank">${i < 3 ? `<span class="rank-badge rank-${i + 1}">${i + 1}</span>` : `<span class="rank-normal">${i + 1}</span>`}</td>
+      <td class="cell-rank">${rank <= 3 ? `<span class="rank-badge rank-${rank}">${rank}</span>` : `<span class="rank-normal">${rank}</span>`}</td>
       <td class="cell-name">${url ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(name)}</a>` : esc(name)}</td>
       <td class="cell-stars">${(r.stargazers_count || 0).toLocaleString()}</td>
       <td>${(r.forks_count || 0).toLocaleString()}</td>
@@ -313,31 +389,31 @@ function renderTable(repos) {
       <td class="cell-score">${score}</td>
       <td>${buildTrend(r)}</td>
     `;
-
     fragment.appendChild(tr);
   });
 
-  tbody.innerHTML = '';
-  tbody.appendChild(fragment);
+  if (append) {
+    tbody.appendChild(fragment);
+  } else {
+    tbody.innerHTML = '';
+    tbody.appendChild(fragment);
+  }
 }
 
 function buildTrend(repo) {
   const parts = [];
-
   if (repo.star_delta && repo.star_delta !== 0) {
     const cls = repo.star_delta > 0 ? 'trend-up' : 'trend-down';
     const arrow = repo.star_delta > 0 ? '↑' : '↓';
     const sign = repo.star_delta > 0 ? '+' : '';
     parts.push(`<span class="trend ${cls}">${arrow} ${sign}${repo.star_delta.toLocaleString()} ★</span>`);
   }
-
   if (repo.rank_change && repo.rank_change !== 0) {
     const cls = repo.rank_change > 0 ? 'trend-up' : 'trend-down';
     const arrow = repo.rank_change > 0 ? '▲' : '▼';
     const sign = repo.rank_change > 0 ? '+' : '';
     parts.push(`<span class="trend ${cls}">${arrow} ${sign}${repo.rank_change}</span>`);
   }
-
   return parts.length > 0 ? parts.join(' ') : '<span class="trend trend-neutral">━</span>';
 }
 
@@ -404,73 +480,68 @@ function refreshTable() {
   const query = document.getElementById('search-input')?.value || '';
   repos = filterBySearch(repos, query);
   repos = sortRepos(repos);
-  renderTable(repos);
+  const isAppend = state.currentGroup === 'all' && state.loadedChunks > 1 && !query && state.currentSort.column === 'score' && state.currentSort.direction === 'desc';
+  renderTable(repos, false); // full re-render for simplicity — chunks are small enough
   updateSortHeaders();
+  updateStatsFromData();
   writeURLState();
   updateChartBadge();
 }
 
 // ═══════════════════════════════════════════════════════════
-// History & Chart
+// Chart from top5_history.json (lightweight)
 // ═══════════════════════════════════════════════════════════
-async function fetchHistoryDay(dateStr) {
-  try {
-    const resp = await fetch(`${BASE}/data/history/${dateStr}.json`);
-    if (resp.ok) {
-      const data = await resp.json();
-      state.historyCache.set(dateStr, data);
-      return { date: dateStr, repos: data };
-    }
-  } catch { /* day may not exist */ }
-  return null;
-}
-
-async function loadHistoryAndChart() {
+async function loadChartFromTop5History() {
   const chartNote = document.getElementById('chart-note');
 
-  // Build date list for last 30 days
-  const dates = [];
-  for (let i = 1; i <= 30; i++) {
-    const d = new Date();
-    d.setDate(d.getDate() - i);
-    dates.push(d.toISOString().split('T')[0]);
-  }
-
-  // Fetch all in parallel (limited concurrency)
-  const CONCURRENCY = 6;
-  const results = [];
-  for (let i = 0; i < dates.length; i += CONCURRENCY) {
-    const batch = dates.slice(i, i + CONCURRENCY).map(fetchHistoryDay);
-    const batchResults = await Promise.all(batch);
-    results.push(...batchResults);
-  }
-
-  const historyData = results.filter(Boolean);
-
-  if (historyData.length < 2) {
-    chartNote.innerHTML = 'Need at least 2 days of history for trend charts. Run <code>make run</code> daily to build data.';
+  try {
+    const resp = await fetch(`${BASE}/data/top5_history.json`);
+    if (!resp.ok) {
+      chartNote.innerHTML = 'No chart data yet. Run <code>make run</code> daily to build history.';
+      return;
+    }
+    state.top5History = await resp.json();
+  } catch {
+    chartNote.innerHTML = 'Chart data unavailable.';
     return;
   }
 
-  chartNote.innerHTML = `Showing score trends over <strong>${historyData.length} days</strong> of data.`;
-  renderTrendChart(historyData);
+  const dates = filterDatesByRange(Object.keys(state.top5History), state.historyRange);
+  if (dates.length < 2) {
+    chartNote.innerHTML = `Only ${dates.length} day(s) of history. Need at least 2 for trends.`;
+    return;
+  }
+
+  chartNote.innerHTML = `Showing <strong>${dates.length}</strong> of <strong>${Object.keys(state.top5History).length}</strong> available days.`;
+  renderTrendChart(dates);
+}
+
+function filterDatesByRange(allDates, rangeDays) {
+  if (!allDates || allDates.length === 0) return [];
+  const sorted = [...allDates].sort().reverse();
+  if (rangeDays === 0) return sorted;
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - rangeDays);
+  const cutoffStr = cutoff.toISOString().split('T')[0];
+  return sorted.filter((d) => d >= cutoffStr);
 }
 
 function updateChartBadge() {
   const badge = document.getElementById('chart-badge');
   if (!badge) return;
-  badge.textContent = state.currentGroup === 'all' ? 'Top 5' : 'Top 5 in Category';
+  badge.textContent = state.currentGroup === 'all' ? 'Top 5 Overall' : 'Top 5 in Category';
 }
 
-function getTopForChart() {
+function getTop5RepoNames() {
+  // From currently loaded data (first 5 repos = top 5 by score).
   const repos = getCurrentRepos();
   const sorted = sortRepos(repos);
-  return sorted.slice(0, 5);
+  return sorted.slice(0, 5).map((r) => r.full_name);
 }
 
-function renderTrendChart(historyData) {
+function renderTrendChart(dates) {
   const ctx = document.getElementById('trend-chart').getContext('2d');
-  const top5 = getTopForChart();
+  const top5Names = getTop5RepoNames();
 
   const colors = [
     getComputedStyle(document.documentElement).getPropertyValue('--chart-1').trim() || '#4f46e5',
@@ -480,23 +551,26 @@ function renderTrendChart(historyData) {
     getComputedStyle(document.documentElement).getPropertyValue('--chart-5').trim() || '#e11d48',
   ];
 
-  const sortedHistory = [...historyData].sort((a, b) => a.date.localeCompare(b.date));
+  const sortedDates = [...dates].sort();
 
-  const datasets = top5.map((repo, i) => {
-    const scores = sortedHistory.map((day) => {
-      const found = day.repos.find((r) => r.full_name === repo.full_name);
+  const datasets = top5Names.map((fullName, i) => {
+    const scores = sortedDates.map((date) => {
+      const dayEntries = state.top5History[date];
+      if (!dayEntries) return null;
+      const found = dayEntries.find((e) => e.full_name === fullName);
       return found ? found.score : null;
     });
 
-    // Fill gaps: carry forward last known value
+    // Carry-forward gaps.
     let lastKnown = null;
     for (let j = 0; j < scores.length; j++) {
       if (scores[j] != null) lastKnown = scores[j];
       else scores[j] = lastKnown;
     }
 
+    const shortName = fullName.split('/').pop();
     return {
-      label: repo.name || repo.full_name,
+      label: shortName,
       data: scores,
       borderColor: colors[i % colors.length],
       backgroundColor: colors[i % colors.length] + '20',
@@ -518,8 +592,8 @@ function renderTrendChart(historyData) {
   state.chart = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: sortedHistory.map((d) => {
-        const date = new Date(d.date + 'T00:00:00');
+      labels: sortedDates.map((d) => {
+        const date = new Date(d + 'T00:00:00');
         return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
       }),
       datasets,
@@ -527,19 +601,11 @@ function renderTrendChart(historyData) {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      interaction: {
-        mode: 'index',
-        intersect: false,
-      },
+      interaction: { mode: 'index', intersect: false },
       plugins: {
         legend: {
           position: 'bottom',
-          labels: {
-            usePointStyle: true,
-            padding: 24,
-            color: textColor,
-            font: { size: 13, family: "'Inter', sans-serif" },
-          },
+          labels: { usePointStyle: true, padding: 24, color: textColor, font: { size: 13, family: "'Inter', sans-serif" } },
         },
         tooltip: {
           backgroundColor: isDark ? '#1e293b' : '#ffffff',
@@ -549,37 +615,20 @@ function renderTrendChart(historyData) {
           borderWidth: 1,
           padding: 12,
           cornerRadius: 8,
-          callbacks: {
-            label: (ctx) => `  ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(4)}`,
-          },
+          callbacks: { label: (ctx) => `  ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(4)}` },
         },
       },
       scales: {
         y: {
-          min: 0,
-          max: 1,
-          ticks: {
-            callback: (v) => v.toFixed(2),
-            color: textColor,
-            font: { size: 11 },
-          },
+          min: 0, max: 1,
+          ticks: { callback: (v) => v.toFixed(2), color: textColor, font: { size: 11 } },
           grid: { color: gridColor },
-          title: {
-            display: true,
-            text: 'Popularity Score',
-            color: textColor,
-            font: { size: 12, weight: '600' },
-          },
+          title: { display: true, text: 'Popularity Score', color: textColor, font: { size: 12, weight: '600' } },
         },
         x: {
           ticks: { color: textColor, font: { size: 11 } },
           grid: { color: gridColor },
-          title: {
-            display: true,
-            text: 'Date',
-            color: textColor,
-            font: { size: 12, weight: '600' },
-          },
+          title: { display: true, text: 'Date', color: textColor, font: { size: 12, weight: '600' } },
         },
       },
     },
@@ -591,7 +640,6 @@ function updateChartTheme() {
   const isDark = state.theme === 'dark';
   const textColor = isDark ? '#94a3b8' : '#64748b';
   const gridColor = isDark ? 'rgba(148, 163, 184, 0.1)' : 'rgba(0, 0, 0, 0.06)';
-
   state.chart.options.plugins.legend.labels.color = textColor;
   state.chart.options.plugins.tooltip.backgroundColor = isDark ? '#1e293b' : '#ffffff';
   state.chart.options.plugins.tooltip.titleColor = textColor;
@@ -606,16 +654,10 @@ function updateChartTheme() {
   state.chart.update('none');
 }
 
-// ═══════════════════════════════════════════════════════════
-// Chart refresh on category change
-// ═══════════════════════════════════════════════════════════
-async function refreshChart() {
-  if (state.chart && state.historyCache.size > 1) {
-    // Re-render with current category's top 5
-    const historyData = Array.from(state.historyCache.entries())
-      .map(([date, repos]) => ({ date, repos }))
-      .sort((a, b) => a.date.localeCompare(b.date));
-    if (historyData.length >= 2) renderTrendChart(historyData);
+function refreshChart() {
+  if (state.top5History) {
+    const dates = filterDatesByRange(Object.keys(state.top5History), state.historyRange);
+    if (dates.length >= 2) renderTrendChart(dates);
   }
 }
 
@@ -626,8 +668,29 @@ function setupEventListeners() {
   // Theme toggle
   document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
 
+  // Date range pills
+  document.getElementById('range-pills')?.addEventListener('click', (e) => {
+    const pill = e.target.closest('.range-pill');
+    if (!pill) return;
+    document.querySelectorAll('.range-pill').forEach((p) => {
+      p.classList.remove('active');
+      p.setAttribute('aria-pressed', 'false');
+    });
+    pill.classList.add('active');
+    pill.setAttribute('aria-pressed', 'true');
+    state.historyRange = parseInt(pill.dataset.days, 10);
+    if (state.top5History) {
+      const dates = filterDatesByRange(Object.keys(state.top5History), state.historyRange);
+      const note = document.getElementById('chart-note');
+      if (dates.length >= 2) {
+        note.innerHTML = `Showing <strong>${dates.length}</strong> of <strong>${Object.keys(state.top5History).length}</strong> available days.`;
+        renderTrendChart(dates);
+      }
+    }
+  });
+
   // Category tabs
-  document.getElementById('category-tabs')?.addEventListener('click', (e) => {
+  document.getElementById('category-tabs')?.addEventListener('click', async (e) => {
     const tab = e.target.closest('.tab');
     if (!tab) return;
 
@@ -638,10 +701,8 @@ function setupEventListeners() {
     tab.classList.add('active');
     tab.setAttribute('aria-selected', 'true');
 
-    state.currentGroup = tab.dataset.group;
-    state.currentSort = { column: 'score', direction: 'desc' };
-    refreshTable();
-    refreshChart();
+    const group = tab.dataset.group;
+    await switchToGroup(group);
   });
 
   // Column sorting
@@ -649,7 +710,6 @@ function setupEventListeners() {
     const th = e.target.closest('th.sortable');
     if (!th) return;
     const column = th.dataset.sort;
-
     if (state.currentSort.column === column) {
       state.currentSort.direction = state.currentSort.direction === 'asc' ? 'desc' : 'asc';
     } else {
@@ -674,15 +734,13 @@ function setupEventListeners() {
     row.classList.add('selected');
   });
 
-  // Back to top — smart threshold based on viewport height
+  // Back to top
   const backBtn = document.getElementById('back-to-top');
   window.addEventListener('scroll', () => {
     if (!backBtn) return;
     backBtn.classList.toggle('visible', window.scrollY > window.innerHeight * 0.75);
   });
-  backBtn?.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  backBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
   // Keyboard shortcut: / to focus search
   document.addEventListener('keydown', (e) => {
@@ -707,16 +765,8 @@ function formatDate(isoString) {
   if (!isoString) return '';
   try {
     const d = new Date(isoString);
-    return d.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-  } catch {
-    return isoString;
-  }
+    return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+  } catch { return isoString; }
 }
 
 function formatRelative(isoString) {
@@ -728,13 +778,10 @@ function formatRelative(isoString) {
     const diffMin = Math.floor(diffMs / 60000);
     const diffHrs = Math.floor(diffMs / 3600000);
     const diffDays = Math.floor(diffMs / 86400000);
-
     if (diffMin < 1) return 'just now';
     if (diffMin < 60) return `${diffMin}m ago`;
     if (diffHrs < 24) return `${diffHrs}h ago`;
     if (diffDays < 7) return `${diffDays}d ago`;
     return formatDate(isoString);
-  } catch {
-    return isoString;
-  }
+  } catch { return isoString; }
 }

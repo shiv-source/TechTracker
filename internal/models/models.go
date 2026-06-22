@@ -22,6 +22,12 @@ type Repository struct {
 	StarDelta  int     `json:"star_delta,omitempty"`
 }
 
+// AppConfig is the top-level configuration structure for config.json.
+type AppConfig struct {
+	RetentionDays int      `json:"retention_days"`
+	Groups        []Config `json:"groups"`
+}
+
 // Config represents a single group configuration from config.json.
 type Config struct {
 	ID        int      `json:"id"`
@@ -41,28 +47,65 @@ type Weights struct {
 
 // GroupResult holds the processed results for a single group.
 type GroupResult struct {
-	ID             int          `json:"id"`
-	GroupName      string       `json:"groupName"`
-	InputFilePath  string       `json:"InputFilePath"`
-	OutputFilePath string       `json:"OutputFilePath"`
-	Repositories   []Repository `json:"repositories"`
+	ID            int          `json:"id"`
+	GroupName     string       `json:"groupName"`
+	GroupKey      string       `json:"groupKey"`
+	InputFilePath string       `json:"inputFilePath"`
+	Repositories  []Repository `json:"repositories"`
 }
 
 // Delta holds the difference between two snapshots for a single repository.
 type Delta struct {
-	FullName   string `json:"full_name"`
-	RankChange int    `json:"rank_change"` // positive = moved up in rank
-	StarDelta  int    `json:"star_delta"`
+	FullName   string  `json:"full_name"`
+	RankChange int     `json:"rank_change"` // positive = moved up in rank
+	StarDelta  int     `json:"star_delta"`
 	PrevScore  float64 `json:"prev_score"`
 }
 
+// Summary holds aggregate statistics for the UI stats bar.
+type Summary struct {
+	TotalRepos int    `json:"total_repos"`
+	Categories int    `json:"categories"`
+	TopRepo    string `json:"top_repo"`
+	TopStars   int    `json:"top_stars"`
+}
+
+// CategoryMeta describes a single category for the UI tab bar.
+type CategoryMeta struct {
+	Key   string `json:"key"`
+	Label string `json:"label"`
+	Count int    `json:"count"`
+}
+
+// HistoryInfo tracks what historical snapshots are available.
+type HistoryInfo struct {
+	AvailableDates []string `json:"available_dates"`
+	FirstDate      string   `json:"first_date,omitempty"`
+	LastDate       string   `json:"last_date,omitempty"`
+	Count          int      `json:"count"`
+}
+
 // RunMetadata captures information about a single execution run.
+// Written to both data/<date>/metadata.json and data/metadata.json (root catalog).
 type RunMetadata struct {
 	Version    string         `json:"version"`
+	LatestDate string         `json:"latest_date"`
 	StartTime  string         `json:"start_time"`
 	EndTime    string         `json:"end_time"`
 	DurationMs int64          `json:"duration_ms"`
-	Groups     map[string]int `json:"groups"` // group name → repo count
+	Summary    Summary        `json:"summary"`
+	Categories []CategoryMeta `json:"categories"`
+	AllChunks  int            `json:"all_chunks"`
+	History    HistoryInfo    `json:"history"`
 	Errors     []string       `json:"errors,omitempty"`
 	DryRun     bool           `json:"dry_run"`
 }
+
+// Top5Entry is a single repo's score on a given date (used in top5_history.json).
+type Top5Entry struct {
+	FullName string  `json:"full_name"`
+	Score    float64 `json:"score"`
+}
+
+// Top5History maps dates to their top-5 repos (appended to data/top5_history.json each run).
+type Top5History map[string][]Top5Entry

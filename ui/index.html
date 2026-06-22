@@ -147,6 +147,11 @@
             <!-- Rendered by JS -->
           </tbody>
         </table>
+        <div class="chunk-loader" id="chunk-loader" style="display:none" aria-live="polite">
+          <div class="chunk-loader-spinner"></div>
+          <span>Loading more repositories…</span>
+        </div>
+        <div id="chunk-sentinel" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -154,7 +159,17 @@
     <section class="chart-section" aria-label="Score trends">
       <div class="chart-header">
         <h2 class="chart-title">📈 Score Trends</h2>
-        <span class="chart-badge" id="chart-badge">Top 5</span>
+        <div class="chart-controls">
+          <div class="range-pills" id="range-pills">
+            <button class="range-pill" data-days="7">7d</button>
+            <button class="range-pill" data-days="15">15d</button>
+            <button class="range-pill active" data-days="30">30d</button>
+            <button class="range-pill" data-days="60">60d</button>
+            <button class="range-pill" data-days="90">90d</button>
+            <button class="range-pill" data-days="0">All</button>
+          </div>
+          <span class="chart-badge" id="chart-badge">Top 5</span>
+        </div>
       </div>
       <div class="chart-container">
         <canvas id="trend-chart" role="img" aria-label="Score trend chart showing top technologies over time"></canvas>

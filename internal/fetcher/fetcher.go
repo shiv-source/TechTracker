@@ -155,13 +155,19 @@ func FetchAll(urls []string, token string, concurrency int, verbose bool) ([]mod
 			defer func() { <-sem }()
 
 			repo, err := FetchRepository(apiURL, token, limiter)
-			if err != nil && verbose {
-				fmt.Printf("Error fetching %s: %v\n", apiURL, err)
-			}
-			results <- FetchResult{
-				URL:   apiURL,
-				Error: err,
-				Repo:  *repo,
+			if err != nil {
+				if verbose {
+					fmt.Printf("Error fetching %s: %v\n", apiURL, err)
+				}
+				results <- FetchResult{
+					URL:   apiURL,
+					Error: err,
+				}
+			} else {
+				results <- FetchResult{
+					URL:  apiURL,
+					Repo: *repo,
+				}
 			}
 		}(url)
 	}

@@ -35,17 +35,3 @@ docker:
 	docker build -t $(APP_NAME) .
 
 all: clean-stack build run
-
-# ── UI (Node.js 24 · pnpm v11 workspace) ───────────────────
-
-ui-install:
-	pnpm install
-
-ui-dev:
-	pnpm --filter techtracker-ui dev
-
-ui-build:
-	pnpm --filter techtracker-ui build
-
-ui-clean:
-	rm -rf ui/dist ui/node_modules

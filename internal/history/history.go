@@ -5,7 +5,6 @@ import (
 	"os"
 	"path/filepath"
 	"sort"
-	"strings"
 	"time"
 
 	"github.com/shiv-source/TechTracker/internal/models"
@@ -13,23 +12,25 @@ import (
 	"github.com/shiv-source/TechTracker/utils"
 )
 
-// SnapshotPath returns the file path for a history snapshot on a given date.
-func SnapshotPath(dir string, date time.Time) string {
-	return filepath.Join(dir, date.Format("2006-01-02")+".json")
+// SnapshotPath returns the path to the snapshot file for a given date directory.
+// Format: data/<YYYY-MM-DD>/snapshot.json
+func SnapshotPath(dataDir string, date time.Time) string {
+	return filepath.Join(dataDir, date.Format("2006-01-02"), "snapshot.json")
 }
 
-// SaveSnapshot writes a full daily snapshot to the history directory.
-func SaveSnapshot(dir string, date time.Time, repos []models.Repository) error {
-	if err := os.MkdirAll(dir, 0755); err != nil {
-		return fmt.Errorf("failed to create history dir: %w", err)
+// SaveSnapshot writes a full daily snapshot inside a date-named directory.
+func SaveSnapshot(dataDir string, date time.Time, repos []models.Repository) error {
+	dateDir := filepath.Join(dataDir, date.Format("2006-01-02"))
+	if err := os.MkdirAll(dateDir, 0755); err != nil {
+		return fmt.Errorf("failed to create date dir: %w", err)
 	}
-	path := SnapshotPath(dir, date)
+	path := SnapshotPath(dataDir, date)
 	return utils.SaveToJsonFile(repos, path)
 }
 
 // LoadSnapshot reads a historical snapshot for a given date.
-func LoadSnapshot(dir string, date time.Time) ([]models.Repository, error) {
-	path := SnapshotPath(dir, date)
+func LoadSnapshot(dataDir string, date time.Time) ([]models.Repository, error) {
+	path := SnapshotPath(dataDir, date)
 	result, err := utils.LoadJSONFromFile[[]models.Repository](path)
 	if err != nil {
 		return nil, err
@@ -37,39 +38,41 @@ func LoadSnapshot(dir string, date time.Time) ([]models.Repository, error) {
 	return *result, nil
 }
 
-// LatestSnapshot finds the most recent snapshot in the history directory.
+// LatestSnapshot finds the most recent snapshot by scanning date-named directories.
 // Returns the repositories, the date, or an error if no snapshots exist.
-func LatestSnapshot(dir string) ([]models.Repository, time.Time, error) {
-	entries, err := os.ReadDir(dir)
+func LatestSnapshot(dataDir string) ([]models.Repository, time.Time, error) {
+	entries, err := os.ReadDir(dataDir)
 	if err != nil {
-		return nil, time.Time{}, fmt.Errorf("failed to read history dir: %w", err)
+		return nil, time.Time{}, fmt.Errorf("failed to read data dir: %w", err)
 	}
 
 	var latest time.Time
-	var latestFile string
+	var latestPath string
 	for _, entry := range entries {
-		if entry.IsDir() || !strings.HasSuffix(entry.Name(), ".json") {
+		if !entry.IsDir() {
 			continue
 		}
-		name := strings.TrimSuffix(entry.Name(), ".json")
-		t, err := time.Parse("2006-01-02", name)
+		t, err := time.Parse("2006-01-02", entry.Name())
 		if err != nil {
+			continue
+		}
+		snapPath := filepath.Join(dataDir, entry.Name(), "snapshot.json")
+		if _, err := os.Stat(snapPath); os.IsNotExist(err) {
 			continue
 		}
 		if t.After(latest) {
 			latest = t
-			latestFile = entry.Name()
+			latestPath = snapPath
 		}
 	}
 
-	if latestFile == "" {
-		return nil, time.Time{}, fmt.Errorf("no snapshots found in %s", dir)
+	if latestPath == "" {
+		return nil, time.Time{}, fmt.Errorf("no snapshots found in %s", dataDir)
 	}
 
-	path := filepath.Join(dir, latestFile)
-	repos, err := utils.LoadJSONFromFile[[]models.Repository](path)
+	repos, err := utils.LoadJSONFromFile[[]models.Repository](latestPath)
 	if err != nil {
-		return nil, time.Time{}, fmt.Errorf("failed to load snapshot %s: %w", latestFile, err)
+		return nil, time.Time{}, fmt.Errorf("failed to load snapshot %s: %w", latestPath, err)
 	}
 
 	return *repos, latest, nil
@@ -126,25 +129,24 @@ func findPrevScore(repos []models.Repository, fullName string) (float64, bool) {
 	return 0, false
 }
 
-// PruneOldSnapshots removes snapshots older than maxDays from the history directory.
-func PruneOldSnapshots(dir string, maxDays int) error {
-	entries, err := os.ReadDir(dir)
+// PruneOldSnapshots removes date-named directories older than maxDays.
+func PruneOldSnapshots(dataDir string, maxDays int) error {
+	entries, err := os.ReadDir(dataDir)
 	if err != nil {
 		return err
 	}
 
 	cutoff := time.Now().AddDate(0, 0, -maxDays)
 	for _, entry := range entries {
-		if entry.IsDir() || !strings.HasSuffix(entry.Name(), ".json") {
+		if !entry.IsDir() {
 			continue
 		}
-		name := strings.TrimSuffix(entry.Name(), ".json")
-		t, err := time.Parse("2006-01-02", name)
+		t, err := time.Parse("2006-01-02", entry.Name())
 		if err != nil {
 			continue
 		}
 		if t.Before(cutoff) {
-			os.Remove(filepath.Join(dir, entry.Name()))
+			os.RemoveAll(filepath.Join(dataDir, entry.Name()))
 		}
 	}
 	return nil

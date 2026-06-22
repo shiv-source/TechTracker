@@ -8,6 +8,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"path/filepath"
 	"regexp"
 	"strings"
 	"time"
@@ -88,6 +89,13 @@ func SaveToJsonFile[T any](data T, fileName string) error {
 	jsonBytes, err := json.MarshalIndent(data, "", "  ")
 	if err != nil {
 		return fmt.Errorf("error marshaling data to JSON: %w", err)
+	}
+
+	// Ensure parent directories exist.
+	if dir := filepath.Dir(fileName); dir != "." {
+		if err := os.MkdirAll(dir, 0755); err != nil {
+			return fmt.Errorf("error creating directory %s: %w", dir, err)
+		}
 	}
 
 	err = os.WriteFile(fileName, jsonBytes, 0644)

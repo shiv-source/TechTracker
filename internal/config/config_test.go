@@ -39,7 +39,7 @@ func TestLoad_Valid(t *testing.T) {
 	// Create a temporary config file.
 	dir := t.TempDir()
 	path := filepath.Join(dir, "config.json")
-	content := `[{"id": 1, "groupName": "Test", "filePath": "test.txt"}]`
+	content := `{"retention_days": 14, "groups": [{"id": 1, "groupName": "Test", "filePath": "test.txt"}]}`
 	if err := os.WriteFile(path, []byte(content), 0644); err != nil {
 		t.Fatal(err)
 	}
@@ -48,15 +48,18 @@ func TestLoad_Valid(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	configs, err := Load(path)
+	appConfig, err := Load(path)
 	if err != nil {
 		t.Fatalf("Load failed: %v", err)
 	}
-	if len(configs) != 1 {
-		t.Fatalf("expected 1 config, got %d", len(configs))
+	if appConfig.RetentionDays != 14 {
+		t.Errorf("expected RetentionDays=14, got %d", appConfig.RetentionDays)
 	}
-	if configs[0].GroupName != "Test" {
-		t.Errorf("expected 'Test', got %q", configs[0].GroupName)
+	if len(appConfig.Groups) != 1 {
+		t.Fatalf("expected 1 group, got %d", len(appConfig.Groups))
+	}
+	if appConfig.Groups[0].GroupName != "Test" {
+		t.Errorf("expected 'Test', got %q", appConfig.Groups[0].GroupName)
 	}
 }
 

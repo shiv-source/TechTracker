@@ -47,10 +47,10 @@ func TestSaveAndLoadSnapshot(t *testing.T) {
 }
 
 func TestSnapshotPath_Format(t *testing.T) {
-	dir := "/tmp/history"
+	dir := "/tmp/data"
 	date := time.Date(2024, 6, 15, 0, 0, 0, 0, time.UTC)
 	path := SnapshotPath(dir, date)
-	expected := "/tmp/history/2024-06-15.json"
+	expected := "/tmp/data/2024-06-15/snapshot.json"
 	if path != expected {
 		t.Errorf("expected %s, got %s", expected, path)
 	}

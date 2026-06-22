@@ -9,18 +9,55 @@ import (
 	"github.com/shiv-source/TechTracker/utils"
 )
 
-// SaveGroupJSON writes a group's repository data to a JSON file.
-func SaveGroupJSON(repos []models.Repository, path string) error {
+// ChunkSize is the number of repos per chunk file for the "All" view.
+const ChunkSize = 50
+
+// SaveAllChunks splits repos into chunk files under dir/all/.
+// Returns the number of chunks written.
+func SaveAllChunks(repos []models.Repository, dir string) (int, error) {
+	chunkDir := dir + "/all"
+	chunks := (len(repos) + ChunkSize - 1) / ChunkSize
+	for i := 0; i < chunks; i++ {
+		start := i * ChunkSize
+		end := start + ChunkSize
+		if end > len(repos) {
+			end = len(repos)
+		}
+		path := fmt.Sprintf("%s/chunk_%d.json", chunkDir, i+1)
+		if err := utils.SaveToJsonFile(repos[start:end], path); err != nil {
+			return 0, fmt.Errorf("save chunk %d: %w", i+1, err)
+		}
+	}
+	return chunks, nil
+}
+
+// SaveGroupFile writes a single group's repos to a group file.
+func SaveGroupFile(repos []models.Repository, dir, key string) error {
+	groupDir := dir + "/groups"
+	path := fmt.Sprintf("%s/%s.json", groupDir, key)
 	return utils.SaveToJsonFile(repos, path)
 }
 
-// SaveAllJSON writes all repositories to a combined JSON file.
-func SaveAllJSON(repos []models.Repository, path string) error {
-	return utils.SaveToJsonFile(repos, path)
+// SaveTop5History loads the existing top5_history.json, appends today's top 5,
+// and writes it back. The dateKey is the YYYY-MM-DD string.
+func SaveTop5History(path, dateKey string, top5 []models.Repository) error {
+	// Load existing history (ok if missing — start fresh).
+	history := make(models.Top5History)
+	if existing, err := utils.LoadJSONFromFile[models.Top5History](path); err == nil && existing != nil {
+		history = *existing
+	}
+
+	entries := make([]models.Top5Entry, len(top5))
+	for i, r := range top5 {
+		entries[i] = models.Top5Entry{FullName: r.FullName, Score: r.Score}
+	}
+	history[dateKey] = entries
+
+	return utils.SaveToJsonFile(history, path)
 }
 
-// SaveRunMetadata writes the run metadata JSON file.
-func SaveRunMetadata(meta models.RunMetadata, path string) error {
+// SaveMetadata writes a metadata.json file.
+func SaveMetadata(meta models.RunMetadata, path string) error {
 	return utils.SaveToJsonFile(meta, path)
 }
 
