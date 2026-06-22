@@ -1,0 +1,65 @@
+{
+  "version": "2.0.0",
+  "latest_date": "2026-06-22",
+  "start_time": "2026-06-22T17:01:13+05:30",
+  "end_time": "2026-06-22T17:01:28+05:30",
+  "duration_ms": 14586,
+  "summary": {
+    "total_repos": 177,
+    "categories": 8,
+    "top_repo": "react/react",
+    "top_stars": 245998
+  },
+  "categories": [
+    {
+      "key": "frontend_frameworks",
+      "label": "Frontend Frameworks",
+      "count": 17
+    },
+    {
+      "key": "backend_frameworks",
+      "label": "Backend Frameworks",
+      "count": 30
+    },
+    {
+      "key": "mobile_frameworks",
+      "label": "Mobile Application Frameworks",
+      "count": 9
+    },
+    {
+      "key": "testing_tools",
+      "label": "Testing Tools",
+      "count": 24
+    },
+    {
+      "key": "devops_tools",
+      "label": "DevOps Tools",
+      "count": 37
+    },
+    {
+      "key": "databases",
+      "label": "Databases",
+      "count": 25
+    },
+    {
+      "key": "programming_languages",
+      "label": "Programming Languages",
+      "count": 23
+    },
+    {
+      "key": "design_tools",
+      "label": "Design Tools",
+      "count": 12
+    }
+  ],
+  "all_chunks": 4,
+  "history": {
+    "available_dates": [
+      "2026-06-22"
+    ],
+    "first_date": "2026-06-22",
+    "last_date": "2026-06-22",
+    "count": 1
+  },
+  "dry_run": false
+}
