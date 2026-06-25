@@ -2,6 +2,8 @@
 
 Stay at the forefront of the development landscape with **TechTracker**, a meticulously curated ranking of the most popular **programming languages**, **frameworks**, **databases**, **testing tools**, and **DevOps tools**. The popularity score for each technology is determined by evaluating a set of key metrics that reflect its community engagement, adoption, and overall usage.
 
+**hello world**
+
 🔄 **Contribute:** To add or update tracked technologies, simply modify the respective `.txt` file in the [`projects`](projects) directory.
 
 📜 This project is licensed under the [MIT License](LICENSE).
