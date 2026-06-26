@@ -6,6 +6,9 @@ Stay at the forefront of the development landscape with **TechTracker**, a metic
 
 📜 This project is licensed under the [MIT License](LICENSE).
 
+> 💬 *"There are only two hard things in Computer Science: cache invalidation, naming things, and off-by-one errors."*
+> — **Phil Karlton** (with a little help from the internet)
+
 ---
 
 ## 📋 Frontend Frameworks 
