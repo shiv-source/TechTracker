@@ -11,6 +11,9 @@ Stay at the forefront of the development landscape with **TechTracker**, a metic
 >
 > 💬 *"Debugging is like being the detective in a crime movie where you are also the murderer."*
 > — **Filipe Fortes**
+>
+> 💬 *"99 little bugs in the code. 99 little bugs. Take one down, patch it around. 127 little bugs in the code."*
+> — **Anonymous**
 
 ---
 
