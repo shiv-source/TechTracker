@@ -17,6 +17,9 @@ Stay at the forefront of the development landscape with **TechTracker**, a metic
 >
 > 💬 *"If at first you don't succeed, call it version 1.0."*
 > — **Unknown**
+>
+> 💬 *"A SQL query walks into a bar, approaches two tables and asks: 'May I join you?'"*
+> — **Anonymous**
 
 ---
 
