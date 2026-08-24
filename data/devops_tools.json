@@ -5,14 +5,14 @@
     "full_name": "kubernetes/kubernetes",
     "html_url": "https://github.com/kubernetes/kubernetes",
     "description": "Production-Grade Container Scheduling and Management",
-    "stargazers_count": 124881,
-    "forks_count": 43898,
-    "watchers_count": 124881,
-    "subscribers_count": 3257,
-    "open_issues_count": 3007,
+    "stargazers_count": 124935,
+    "forks_count": 43903,
+    "watchers_count": 124935,
+    "subscribers_count": 3258,
+    "open_issues_count": 3012,
     "language": "Go",
-    "updated_at": "2026-08-23T02:49:43Z",
-    "score": 0.98414
+    "updated_at": "2026-08-24T02:45:50Z",
+    "score": 0.98422
   },
   {
     "id": 7691631,
@@ -20,14 +20,14 @@
     "full_name": "moby/moby",
     "html_url": "https://github.com/moby/moby",
     "description": "The Moby Project - a collaborative project for the container ecosystem to assemble container-based systems",
-    "stargazers_count": 71993,
+    "stargazers_count": 71990,
     "forks_count": 19203,
-    "watchers_count": 71993,
+    "watchers_count": 71990,
     "subscribers_count": 2861,
-    "open_issues_count": 3896,
+    "open_issues_count": 3902,
     "language": "Go",
-    "updated_at": "2026-08-22T22:28:38Z",
-    "score": 0.57678
+    "updated_at": "2026-08-24T02:05:51Z",
+    "score": 0.57668
   },
   {
     "id": 3638964,
@@ -35,14 +35,14 @@
     "full_name": "ansible/ansible",
     "html_url": "https://github.com/ansible/ansible",
     "description": "Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy and maintain. Automate everything from code deployment to network configuration to cloud management, in a language that approaches plain English, using SSH, with no agents to install on remote systems. https://docs.ansible.com.",
-    "stargazers_count": 70436,
+    "stargazers_count": 70442,
     "forks_count": 24317,
-    "watchers_count": 70436,
+    "watchers_count": 70442,
     "subscribers_count": 1919,
     "open_issues_count": 838,
     "language": "Python",
-    "updated_at": "2026-08-23T02:24:44Z",
-    "score": 0.53438
+    "updated_at": "2026-08-24T02:22:26Z",
+    "score": 0.53423
   },
   {
     "id": 6838921,
@@ -50,14 +50,14 @@
     "full_name": "prometheus/prometheus",
     "html_url": "https://github.com/prometheus/prometheus",
     "description": "The Prometheus monitoring system and time series database.",
-    "stargazers_count": 65774,
-    "forks_count": 10786,
-    "watchers_count": 65774,
+    "stargazers_count": 65788,
+    "forks_count": 10787,
+    "watchers_count": 65788,
     "subscribers_count": 1161,
-    "open_issues_count": 922,
+    "open_issues_count": 921,
     "language": "Go",
-    "updated_at": "2026-08-23T00:47:52Z",
-    "score": 0.40951
+    "updated_at": "2026-08-24T00:55:59Z",
+    "score": 0.40942
   },
   {
     "id": 17728164,
@@ -65,14 +65,14 @@
     "full_name": "hashicorp/terraform",
     "html_url": "https://github.com/hashicorp/terraform",
     "description": "Terraform enables you to safely and predictably create, change, and improve infrastructure. It is a source-available tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.",
-    "stargazers_count": 49511,
+    "stargazers_count": 49523,
     "forks_count": 10610,
-    "watchers_count": 49511,
+    "watchers_count": 49523,
     "subscribers_count": 1181,
     "open_issues_count": 1915,
     "language": "Go",
-    "updated_at": "2026-08-22T22:41:26Z",
-    "score": 0.34022
+    "updated_at": "2026-08-24T02:59:37Z",
+    "score": 0.34018
   },
   {
     "id": 26783295,
@@ -80,14 +80,14 @@
     "full_name": "Kong/kong",
     "html_url": "https://github.com/Kong/kong",
     "description": "🦍 The API and AI Gateway",
-    "stargazers_count": 44023,
+    "stargazers_count": 44027,
     "forks_count": 5207,
-    "watchers_count": 44023,
+    "watchers_count": 44027,
     "subscribers_count": 995,
     "open_issues_count": 190,
     "language": "Lua",
-    "updated_at": "2026-08-23T01:23:10Z",
-    "score": 0.25605
+    "updated_at": "2026-08-23T18:17:14Z",
+    "score": 0.25597
   },
   {
     "id": 1103607,
@@ -96,13 +96,13 @@
     "html_url": "https://github.com/jenkinsci/jenkins",
     "description": "Jenkins automation server",
     "stargazers_count": 26481,
-    "forks_count": 9802,
+    "forks_count": 9803,
     "watchers_count": 26481,
     "subscribers_count": 896,
-    "open_issues_count": 3615,
+    "open_issues_count": 3608,
     "language": "Java",
-    "updated_at": "2026-08-22T12:33:24Z",
-    "score": 0.23235
+    "updated_at": "2026-08-24T01:36:42Z",
+    "score": 0.23224
   },
   {
     "id": 120896210,
@@ -110,14 +110,14 @@
     "full_name": "argoproj/argo-cd",
     "html_url": "https://github.com/argoproj/argo-cd",
     "description": "Declarative Continuous Deployment for Kubernetes",
-    "stargazers_count": 23973,
-    "forks_count": 7765,
-    "watchers_count": 23973,
+    "stargazers_count": 23978,
+    "forks_count": 7772,
+    "watchers_count": 23978,
     "subscribers_count": 219,
-    "open_issues_count": 4395,
+    "open_issues_count": 4392,
     "language": "Go",
-    "updated_at": "2026-08-22T22:31:41Z",
-    "score": 0.19569
+    "updated_at": "2026-08-23T23:16:22Z",
+    "score": 0.19571
   },
   {
     "id": 43723161,
@@ -125,14 +125,14 @@
     "full_name": "helm/helm",
     "html_url": "https://github.com/helm/helm",
     "description": "The Kubernetes Package Manager",
-    "stargazers_count": 30164,
-    "forks_count": 7757,
-    "watchers_count": 30164,
+    "stargazers_count": 30169,
+    "forks_count": 7759,
+    "watchers_count": 30169,
     "subscribers_count": 495,
-    "open_issues_count": 450,
+    "open_issues_count": 449,
     "language": "Go",
-    "updated_at": "2026-08-22T10:44:38Z",
-    "score": 0.18981
+    "updated_at": "2026-08-24T02:45:55Z",
+    "score": 0.18977
   },
   {
     "id": 26337322,
@@ -144,10 +144,10 @@
     "forks_count": 3219,
     "watchers_count": 25867,
     "subscribers_count": 608,
-    "open_issues_count": 3347,
+    "open_issues_count": 3343,
     "language": "Go",
-    "updated_at": "2026-08-21T20:44:52Z",
-    "score": 0.17877
+    "updated_at": "2026-08-24T00:45:21Z",
+    "score": 0.17869
   },
   {
     "id": 135516270,
@@ -155,14 +155,14 @@
     "full_name": "k3s-io/k3s",
     "html_url": "https://github.com/k3s-io/k3s",
     "description": "Lightweight Kubernetes",
-    "stargazers_count": 33790,
+    "stargazers_count": 33793,
     "forks_count": 2709,
-    "watchers_count": 33790,
+    "watchers_count": 33793,
     "subscribers_count": 289,
-    "open_issues_count": 70,
+    "open_issues_count": 71,
     "language": "Go",
-    "updated_at": "2026-08-22T22:41:12Z",
-    "score": 0.16741
+    "updated_at": "2026-08-24T02:45:54Z",
+    "score": 0.16736
   },
   {
     "id": 481872,
@@ -176,8 +176,8 @@
     "subscribers_count": 704,
     "open_issues_count": 753,
     "language": "Ruby",
-    "updated_at": "2026-08-22T10:38:08Z",
-    "score": 0.16559
+    "updated_at": "2026-08-24T01:43:14Z",
+    "score": 0.16553
   },
   {
     "id": 2500088,
@@ -185,14 +185,14 @@
     "full_name": "gitlabhq/gitlabhq",
     "html_url": "https://github.com/gitlabhq/gitlabhq",
     "description": "GitLab CE Mirror | Please open new issues in our issue tracker on GitLab.com",
-    "stargazers_count": 24537,
+    "stargazers_count": 24535,
     "forks_count": 5986,
-    "watchers_count": 24537,
+    "watchers_count": 24535,
     "subscribers_count": 991,
     "open_issues_count": 37,
     "language": "Ruby",
-    "updated_at": "2026-08-22T14:20:48Z",
-    "score": 0.1626
+    "updated_at": "2026-08-24T01:56:04Z",
+    "score": 0.16253
   },
   {
     "id": 77144337,
@@ -200,14 +200,14 @@
     "full_name": "openfaas/faas",
     "html_url": "https://github.com/openfaas/faas",
     "description": "OpenFaaS - Serverless Functions Made Simple",
-    "stargazers_count": 26228,
+    "stargazers_count": 26232,
     "forks_count": 1970,
-    "watchers_count": 26228,
+    "watchers_count": 26232,
     "subscribers_count": 454,
     "open_issues_count": 31,
     "language": "Go",
-    "updated_at": "2026-08-21T01:24:24Z",
-    "score": 0.13053
+    "updated_at": "2026-08-24T02:15:51Z",
+    "score": 0.1305
   },
   {
     "id": 16554739,
@@ -215,14 +215,14 @@
     "full_name": "elastic/beats",
     "html_url": "https://github.com/elastic/beats",
     "description": ":tropical_fish: Beats - Lightweight shippers for Elasticsearch \u0026 Logstash",
-    "stargazers_count": 12640,
-    "forks_count": 5006,
-    "watchers_count": 12640,
+    "stargazers_count": 12639,
+    "forks_count": 5005,
+    "watchers_count": 12639,
     "subscribers_count": 653,
-    "open_issues_count": 1040,
+    "open_issues_count": 1041,
     "language": "Go",
-    "updated_at": "2026-08-21T20:51:57Z",
-    "score": 0.09901
+    "updated_at": "2026-08-23T05:03:42Z",
+    "score": 0.09899
   },
   {
     "id": 99143276,
@@ -230,14 +230,14 @@
     "full_name": "velero-io/velero",
     "html_url": "https://github.com/velero-io/velero",
     "description": "Backup and migrate Kubernetes applications and their persistent volumes",
-    "stargazers_count": 10249,
+    "stargazers_count": 10252,
     "forks_count": 1604,
-    "watchers_count": 10249,
+    "watchers_count": 10252,
     "subscribers_count": 129,
-    "open_issues_count": 830,
+    "open_issues_count": 834,
     "language": "Go",
-    "updated_at": "2026-08-21T20:47:54Z",
-    "score": 0.04847
+    "updated_at": "2026-08-23T16:21:35Z",
+    "score": 0.04852
   },
   {
     "id": 108278,
@@ -252,7 +252,7 @@
     "open_issues_count": 399,
     "language": "Ruby",
     "updated_at": "2026-08-22T21:44:00Z",
-    "score": 0.04588
+    "score": 0.04587
   },
   {
     "id": 910744,
@@ -267,7 +267,7 @@
     "open_issues_count": 98,
     "language": "Ruby",
     "updated_at": "2026-08-22T10:34:23Z",
-    "score": 0.04222
+    "score": 0.04221
   },
   {
     "id": 21436816,
@@ -275,14 +275,14 @@
     "full_name": "spinnaker/spinnaker",
     "html_url": "https://github.com/spinnaker/spinnaker",
     "description": "Spinnaker is an open source, multi-cloud continuous delivery platform for releasing software changes with high velocity and confidence.",
-    "stargazers_count": 9771,
-    "forks_count": 1273,
-    "watchers_count": 9771,
-    "subscribers_count": 322,
+    "stargazers_count": 9773,
+    "forks_count": 1272,
+    "watchers_count": 9773,
+    "subscribers_count": 321,
     "open_issues_count": 106,
     "language": "Java",
-    "updated_at": "2026-08-22T02:34:29Z",
-    "score": 0.04198
+    "updated_at": "2026-08-23T15:40:05Z",
+    "score": 0.04194
   },
   {
     "id": 21591001,
@@ -297,7 +297,7 @@
     "open_issues_count": 336,
     "language": "Go",
     "updated_at": "2026-08-21T09:03:11Z",
-    "score": 0.03854
+    "score": 0.03852
   },
   {
     "id": 49970739,
@@ -320,14 +320,14 @@
     "full_name": "metallb/metallb",
     "html_url": "https://github.com/metallb/metallb",
     "description": "A network load-balancer implementation for Kubernetes using standard routing protocols",
-    "stargazers_count": 8330,
+    "stargazers_count": 8331,
     "forks_count": 1069,
-    "watchers_count": 8330,
+    "watchers_count": 8331,
     "subscribers_count": 99,
     "open_issues_count": 102,
     "language": "Go",
-    "updated_at": "2026-08-22T18:15:14Z",
-    "score": 0.02662
+    "updated_at": "2026-08-23T17:22:20Z",
+    "score": 0.02661
   },
   {
     "id": 101660954,
@@ -336,12 +336,12 @@
     "html_url": "https://github.com/terraform-aws-modules/terraform-aws-vpc",
     "description": "Terraform module to create AWS VPC resources 🇺🇦",
     "stargazers_count": 3256,
-    "forks_count": 4626,
+    "forks_count": 4625,
     "watchers_count": 3256,
     "subscribers_count": 79,
     "open_issues_count": 18,
     "language": "HCL",
     "updated_at": "2026-08-22T22:55:29Z",
-    "score": 0.02076
+    "score": 0.02075
   }
 ]
