@@ -5,14 +5,14 @@
     "full_name": "react/react",
     "html_url": "https://github.com/react/react",
     "description": "The library for web and native user interfaces.",
-    "stargazers_count": 250933,
-    "forks_count": 51445,
-    "watchers_count": 250933,
-    "subscribers_count": 6601,
-    "open_issues_count": 1421,
+    "stargazers_count": 250754,
+    "forks_count": 51457,
+    "watchers_count": 250754,
+    "subscribers_count": 6602,
+    "open_issues_count": 1427,
     "language": "JavaScript",
-    "updated_at": "2026-10-08T08:35:34Z",
-    "score": 0.90868
+    "updated_at": "2026-10-09T08:24:32Z",
+    "score": 0.90874
   },
   {
     "id": 2126244,
@@ -20,14 +20,14 @@
     "full_name": "twbs/bootstrap",
     "html_url": "https://github.com/twbs/bootstrap",
     "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
-    "stargazers_count": 174998,
+    "stargazers_count": 174792,
     "forks_count": 78544,
-    "watchers_count": 174998,
+    "watchers_count": 174792,
     "subscribers_count": 6615,
-    "open_issues_count": 224,
+    "open_issues_count": 225,
     "language": "MDX",
-    "updated_at": "2026-10-08T08:01:59Z",
-    "score": 0.75533
+    "updated_at": "2026-10-09T07:50:27Z",
+    "score": 0.75515
   },
   {
     "id": 11730342,
@@ -35,14 +35,14 @@
     "full_name": "vuejs/vue",
     "html_url": "https://github.com/vuejs/vue",
     "description": "This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core",
-    "stargazers_count": 212813,
-    "forks_count": 33705,
-    "watchers_count": 212813,
+    "stargazers_count": 212596,
+    "forks_count": 33703,
+    "watchers_count": 212596,
     "subscribers_count": 5776,
     "open_issues_count": 640,
     "language": "TypeScript",
-    "updated_at": "2026-10-08T08:05:28Z",
-    "score": 0.70536
+    "updated_at": "2026-10-09T08:33:57Z",
+    "score": 0.70511
   },
   {
     "id": 24195339,
@@ -50,14 +50,14 @@
     "full_name": "angular/angular",
     "html_url": "https://github.com/angular/angular",
     "description": "Deliver web apps with confidence 🚀",
-    "stargazers_count": 101021,
-    "forks_count": 29588,
-    "watchers_count": 101021,
+    "stargazers_count": 101019,
+    "forks_count": 29689,
+    "watchers_count": 101019,
     "subscribers_count": 2997,
-    "open_issues_count": 1165,
+    "open_issues_count": 1168,
     "language": "TypeScript",
-    "updated_at": "2026-10-08T08:19:54Z",
-    "score": 0.37024
+    "updated_at": "2026-10-09T01:53:53Z",
+    "score": 0.37067
   },
   {
     "id": 74293321,
@@ -65,14 +65,14 @@
     "full_name": "sveltejs/svelte",
     "html_url": "https://github.com/sveltejs/svelte",
     "description": "web development for the rest of us",
-    "stargazers_count": 88359,
-    "forks_count": 7390,
-    "watchers_count": 88359,
+    "stargazers_count": 88364,
+    "forks_count": 7504,
+    "watchers_count": 88364,
     "subscribers_count": 918,
-    "open_issues_count": 1127,
+    "open_issues_count": 1128,
     "language": "JavaScript",
-    "updated_at": "2026-10-08T08:07:10Z",
-    "score": 0.22548
+    "updated_at": "2026-10-09T06:43:43Z",
+    "score": 0.22588
   },
   {
     "id": 106017343,
@@ -80,14 +80,14 @@
     "full_name": "tailwindlabs/tailwindcss",
     "html_url": "https://github.com/tailwindlabs/tailwindcss",
     "description": "A utility-first CSS framework for rapid UI development.",
-    "stargazers_count": 97803,
-    "forks_count": 7695,
-    "watchers_count": 97803,
+    "stargazers_count": 97806,
+    "forks_count": 7823,
+    "watchers_count": 97806,
     "subscribers_count": 750,
-    "open_issues_count": 100,
+    "open_issues_count": 101,
     "language": "TypeScript",
-    "updated_at": "2026-10-08T08:33:35Z",
-    "score": 0.2097
+    "updated_at": "2026-10-09T07:21:36Z",
+    "score": 0.21037
   },
   {
     "id": 167174,
@@ -95,14 +95,14 @@
     "full_name": "jquery/jquery",
     "html_url": "https://github.com/jquery/jquery",
     "description": "jQuery JavaScript Library",
-    "stargazers_count": 59893,
+    "stargazers_count": 59892,
     "forks_count": 20397,
-    "watchers_count": 59893,
+    "watchers_count": 59892,
     "subscribers_count": 3098,
-    "open_issues_count": 96,
+    "open_issues_count": 95,
     "language": "JavaScript",
-    "updated_at": "2026-10-08T05:09:29Z",
-    "score": 0.19267
+    "updated_at": "2026-10-09T07:52:29Z",
+    "score": 0.19275
   },
   {
     "id": 3678731,
@@ -110,14 +110,14 @@
     "full_name": "webpack/webpack",
     "html_url": "https://github.com/webpack/webpack",
     "description": "A bundler for javascript and friends. Packs many modules into a few bundled assets. Code Splitting allows for loading parts of the application on demand. Through \"loaders\", modules can be CommonJs, AMD, ES6 modules, CSS, Images, JSON, Coffeescript, LESS, ... and your custom stuff.",
-    "stargazers_count": 66057,
-    "forks_count": 9529,
-    "watchers_count": 66057,
+    "stargazers_count": 66056,
+    "forks_count": 9530,
+    "watchers_count": 66056,
     "subscribers_count": 1453,
-    "open_issues_count": 141,
+    "open_issues_count": 124,
     "language": "JavaScript",
-    "updated_at": "2026-10-08T06:05:05Z",
-    "score": 0.14599
+    "updated_at": "2026-10-09T05:44:24Z",
+    "score": 0.14547
   },
   {
     "id": 71995937,
@@ -125,14 +125,14 @@
     "full_name": "nuxt/nuxt",
     "html_url": "https://github.com/nuxt/nuxt",
     "description": "The full-stack Vue framework.",
-    "stargazers_count": 60926,
+    "stargazers_count": 60929,
     "forks_count": 5815,
-    "watchers_count": 60926,
-    "subscribers_count": 802,
-    "open_issues_count": 488,
+    "watchers_count": 60929,
+    "subscribers_count": 801,
+    "open_issues_count": 480,
     "language": "TypeScript",
-    "updated_at": "2026-10-08T04:43:00Z",
-    "score": 0.12202
+    "updated_at": "2026-10-09T07:59:51Z",
+    "score": 0.12175
   },
   {
     "id": 1801829,
@@ -141,12 +141,12 @@
     "html_url": "https://github.com/emberjs/ember.js",
     "description": "Ember.js - A JavaScript framework for creating ambitious web applications",
     "stargazers_count": 22562,
-    "forks_count": 4165,
+    "forks_count": 4164,
     "watchers_count": 22562,
     "subscribers_count": 809,
-    "open_issues_count": 269,
+    "open_issues_count": 272,
     "language": "TypeScript",
-    "updated_at": "2026-10-07T20:36:33Z",
-    "score": 0.00753
+    "updated_at": "2026-10-09T05:42:18Z",
+    "score": 0.00765
   }
 ]
